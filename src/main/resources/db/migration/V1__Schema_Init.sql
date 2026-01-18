@@ -158,14 +158,19 @@ CREATE TABLE old_gold_purchase (
 
     karat VARCHAR(10) NOT NULL,
     weight NUMERIC(10, 3) NOT NULL,
-    buy_rate NUMERIC(10, 2) NOT NULL, -- The Buying Price per gram
+    buy_rate NUMERIC(10, 2) NOT NULL,
     total_value NUMERIC(12, 2) NOT NULL,
 
-    sale_id VARCHAR(26), -- Linked Sale ID (for Trade-ins/Estbdal)
-    customer_national_id VARCHAR(50), -- Security requirement
+    sale_id VARCHAR(26),
+    customer_national_id VARCHAR(50),
     description VARCHAR(255),
 
+    -- Audit Columns (REQUIRED by Auditable Entity)
     created_by VARCHAR(255) NOT NULL,
+    created_date TIMESTAMP NOT NULL,
+    last_modified_by VARCHAR(255),
+    last_modified_date TIMESTAMP,
+
     FOREIGN KEY (sale_id) REFERENCES sale(id)
 );
 
@@ -175,11 +180,15 @@ CREATE TABLE scrap_purification (
     transaction_date TIMESTAMP NOT NULL,
 
     karat VARCHAR(10) NOT NULL,
-    weight_out NUMERIC(10, 3) NOT NULL, -- Weight removed from box
+    weight_out NUMERIC(10, 3) NOT NULL,
     cash_received NUMERIC(12, 2) NOT NULL,
     factory_name VARCHAR(255),
 
-    created_by VARCHAR(255) NOT NULL
+    -- Audit Columns (REQUIRED by Auditable Entity)
+    created_by VARCHAR(255) NOT NULL,
+    created_date TIMESTAMP NOT NULL,
+    last_modified_by VARCHAR(255),
+    last_modified_date TIMESTAMP
 );
 
 -- ==========================================

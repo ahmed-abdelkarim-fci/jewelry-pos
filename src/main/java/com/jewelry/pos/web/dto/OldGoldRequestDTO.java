@@ -1,13 +1,25 @@
 package com.jewelry.pos.web.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 public record OldGoldRequestDTO(
-    @NotNull String karat, // KARAT_21
-    @Positive BigDecimal weight,
-    @Positive BigDecimal buyRate, // Price per gram
-    String description,
-    String customerNationalId
+
+        @NotBlank(message = "Karat type is required (e.g., KARAT_21)")
+        String karat,
+
+        @NotNull(message = "Weight is required")
+        @Positive(message = "Weight must be greater than zero")
+        BigDecimal weight,
+
+        @NotNull(message = "Buy Rate is required")
+        @Positive(message = "Buy Rate must be greater than zero")
+        BigDecimal buyRate, // Price per gram
+
+        String description, // Optional
+
+        @NotBlank(message = "Customer National ID is required for security regulations")
+        String customerNationalId
 ) {}

@@ -16,7 +16,7 @@ import java.math.BigDecimal;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ScrapInventory extends Auditable {
+public class ScrapInventory {
 
     @Id
     @Column(length = 10)

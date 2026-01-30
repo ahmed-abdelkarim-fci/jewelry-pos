@@ -3,6 +3,7 @@ package com.jewelry.pos.service;
 import com.jewelry.pos.domain.entity.Sale;
 import com.jewelry.pos.domain.entity.SaleItem;
 import com.jewelry.pos.domain.repository.SaleRepository;
+import com.jewelry.pos.web.dto.RecentTransactionDTO;
 import com.jewelry.pos.web.dto.ZReportDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -41,8 +42,17 @@ public class ZReportService {
     }
 
     @Transactional(readOnly = true)
-    public List<Sale> getRecentTransactions() {
+    public List<RecentTransactionDTO> getRecentTransactions() {
         LocalDateTime thirtyDaysAgo = LocalDateTime.now().minusDays(30);
-        return saleRepository.findSalesBetween(thirtyDaysAgo, LocalDateTime.now());
+        return saleRepository.findSalesBetween(thirtyDaysAgo, LocalDateTime.now())
+                .stream()
+                .map(sale -> new RecentTransactionDTO(
+                        sale.getId(),
+                        sale.getTransactionDate(),
+                        "SALE",
+                        sale.getTotalAmount(),
+                        sale.getCustomerName()
+                ))
+                .toList();
     }
 }

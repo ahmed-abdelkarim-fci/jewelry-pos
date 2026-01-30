@@ -13,8 +13,8 @@ public class SystemConfigService {
     private final SystemSettingRepository repository;
 
     // Define the Keys
-    public static final String KEY_GOLD_AUTO_UPDATE = "GOLD_AUTO_UPDATE";
-    public static final String KEY_HARDWARE_ENABLED = "HARDWARE_ENABLED"; // <--- New Key
+    public static final String KEY_GOLD_AUTO_UPDATE = "gold_auto_update";
+    public static final String KEY_HARDWARE_ENABLED = "hardware_enabled"; // <--- New Key
 
     // --- GOLD SETTINGS (Existing) ---
     public boolean isGoldAutoUpdateEnabled() {

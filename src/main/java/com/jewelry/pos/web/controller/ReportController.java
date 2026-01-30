@@ -1,6 +1,7 @@
 package com.jewelry.pos.web.controller;
 
 import com.jewelry.pos.service.ZReportService;
+import com.jewelry.pos.web.dto.RecentTransactionDTO;
 import com.jewelry.pos.web.dto.ZReportDTO;
 import com.jewelry.pos.service.ReceiptService;
 import com.jewelry.pos.service.LabelService;
@@ -29,7 +30,7 @@ public class ReportController {
     @GetMapping("/transactions")
     @Operation(summary = "Get recent transactions for reports screen")
     @PreAuthorize("hasAuthority('PRODUCT_MANAGE')")
-    public ResponseEntity<?> getRecentTransactions() {
+    public ResponseEntity<java.util.List<RecentTransactionDTO>> getRecentTransactions() {
         return ResponseEntity.ok(zReportService.getRecentTransactions());
     }
 

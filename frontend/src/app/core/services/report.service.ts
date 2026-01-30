@@ -10,7 +10,7 @@ export interface ZReport {
 }
 
 export interface Transaction {
-  id: number;
+  id: string;
   date: string;
   type: string;
   amount: number;

@@ -1,5 +1,6 @@
 package com.jewelry.pos.web.dto;
 
+import com.jewelry.pos.domain.entity.PurityEnum;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -8,7 +9,7 @@ import java.math.BigDecimal;
 public record OldGoldRequestDTO(
 
         @NotBlank(message = "Karat type is required (e.g., KARAT_21)")
-        String karat,
+        PurityEnum purity,
 
         @NotNull(message = "Weight is required")
         @Positive(message = "Weight must be greater than zero")
@@ -21,5 +22,7 @@ public record OldGoldRequestDTO(
         String description, // Optional
 
         @NotBlank(message = "Customer National ID is required for security regulations")
-        String customerNationalId
+        String customerNationalId,
+
+        String customerPhoneNumber
 ) {}

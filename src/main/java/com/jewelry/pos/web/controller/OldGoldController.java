@@ -27,11 +27,19 @@ public class OldGoldController {
         return ResponseEntity.ok().build();
     }
 
+    // توريد دهب لشخص او مصنع
     @PostMapping("/purify")
     @PreAuthorize("hasAuthority('PRODUCT_MANAGE')")
     @Operation(summary = "Purify Scrap (Sell to Factory)")
     public ResponseEntity<Void> purifyScrap(@RequestBody PurificationRequestDTO request) {
         oldGoldService.processPurification(request);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/scrap-inventory")
+    @PreAuthorize("hasAuthority('SALE_EXECUTE')")
+    @Operation(summary = "Get current scrap inventory by karat")
+    public ResponseEntity<?> getScrapInventory() {
+        return ResponseEntity.ok(oldGoldService.getScrapInventory());
     }
 }

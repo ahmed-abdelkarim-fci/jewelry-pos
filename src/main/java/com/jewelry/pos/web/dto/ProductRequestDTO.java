@@ -1,6 +1,7 @@
 package com.jewelry.pos.web.dto;
 
-import com.jewelry.pos.domain.entity.Purity;
+import com.jewelry.pos.domain.entity.JewelryTypeEnum;
+import com.jewelry.pos.domain.entity.PurityEnum;
 import jakarta.validation.constraints.*;
 
 import java.math.BigDecimal;
@@ -15,7 +16,10 @@ public record ProductRequestDTO(
         String modelName,
 
         @NotNull(message = "Purity is required")
-        Purity purity,
+        PurityEnum purityEnum,
+
+        @NotNull(message = "Jewelry type is required")
+        JewelryTypeEnum type,
 
         @NotNull(message = "Weight is required")
         @Positive(message = "Weight must be positive")
@@ -26,6 +30,8 @@ public record ProductRequestDTO(
         @PositiveOrZero(message = "Making charge cannot be negative")
         @Digits(integer = 6, fraction = 2, message = "Making charge format invalid (max 2 decimals)")
         BigDecimal makingCharge,
+
+        String description,
 
         @NotNull(message = "Cost Price is required for profit calculation")
         @PositiveOrZero(message = "Cost Price cannot be negative")

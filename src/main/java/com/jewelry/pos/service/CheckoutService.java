@@ -76,7 +76,7 @@ public class CheckoutService {
                     .orElseThrow(() -> new IllegalArgumentException("Product not found: " + barcode));
 
             // A. Inventory Check
-            if (product.getStatus() == ProductStatus.SOLD) {
+            if (product.getStatus() == ProductStatusEnum.SOLD) {
                 throw new IllegalStateException("Item '" + product.getModelName() + "' (" + barcode + ") is ALREADY SOLD!");
             }
 
@@ -98,7 +98,7 @@ public class CheckoutService {
             totalCartAmount = totalCartAmount.add(itemTotal);
 
             // F. Mark Product as SOLD
-            product.setStatus(ProductStatus.SOLD);
+            product.setStatus(ProductStatusEnum.SOLD);
             productRepository.save(product);
         }
 

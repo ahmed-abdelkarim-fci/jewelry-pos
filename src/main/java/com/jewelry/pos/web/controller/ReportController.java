@@ -26,6 +26,13 @@ public class ReportController {
     private final ReceiptService receiptService;
     private final LabelService labelService;
 
+    @GetMapping("/transactions")
+    @Operation(summary = "Get recent transactions for reports screen")
+    @PreAuthorize("hasAuthority('PRODUCT_MANAGE')")
+    public ResponseEntity<?> getRecentTransactions() {
+        return ResponseEntity.ok(zReportService.getRecentTransactions());
+    }
+
     @GetMapping("/z-report")
     @Operation(summary = "Get End of Day Report (Revenue & Weight)")
     // CHECK: P2 (PRODUCT_MANAGE) required.

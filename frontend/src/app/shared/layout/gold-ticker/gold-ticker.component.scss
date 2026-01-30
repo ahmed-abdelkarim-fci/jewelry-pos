@@ -1,0 +1,41 @@
+.ticker-container {
+  flex: 1;
+  overflow: hidden;
+  background-color: var(--accent-gold);
+  color: var(--primary-bg);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  max-width: 600px;
+}
+
+.ticker-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+  
+  strong {
+    font-weight: 700;
+  }
+}
+
+.separator {
+  margin: 0 8px;
+  opacity: 0.5;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

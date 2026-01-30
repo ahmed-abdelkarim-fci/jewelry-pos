@@ -39,4 +39,10 @@ public class ZReportService {
 
         return new ZReportDTO(date, sales.size(), totalRevenue, totalWeight);
     }
+
+    @Transactional(readOnly = true)
+    public List<Sale> getRecentTransactions() {
+        LocalDateTime thirtyDaysAgo = LocalDateTime.now().minusDays(30);
+        return saleRepository.findSalesBetween(thirtyDaysAgo, LocalDateTime.now());
+    }
 }

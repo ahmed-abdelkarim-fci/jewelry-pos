@@ -1,7 +1,8 @@
 package com.jewelry.pos.service;
 
 import com.jewelry.pos.domain.entity.Product;
-import com.jewelry.pos.domain.entity.Purity;
+import com.jewelry.pos.domain.entity.JewelryTypeEnum;
+import com.jewelry.pos.domain.entity.PurityEnum;
 import com.jewelry.pos.domain.repository.ProductRepository;
 import com.jewelry.pos.web.dto.ProductRequestDTO;
 import com.jewelry.pos.web.mapper.ProductMapper;
@@ -29,7 +30,14 @@ class InventoryServiceTest {
     @Test
     void createProduct_ShouldThrowError_IfBarcodeExists() {
         ProductRequestDTO dto = new ProductRequestDTO(
-            "123", "Ring", Purity.K21, BigDecimal.TEN, BigDecimal.ONE
+            "123",
+            "Ring",
+            PurityEnum.K21,
+            JewelryTypeEnum.RING,
+            BigDecimal.TEN,
+            BigDecimal.ONE,
+            null,
+            BigDecimal.ZERO
         );
 
         when(productRepository.findByBarcode("123")).thenReturn(Optional.of(new Product()));
@@ -40,7 +48,14 @@ class InventoryServiceTest {
     @Test
     void createProduct_ShouldSave_IfNew() {
         ProductRequestDTO dto = new ProductRequestDTO(
-            "NEW-123", "Ring", Purity.K21, BigDecimal.TEN, BigDecimal.ONE
+            "NEW-123",
+            "Ring",
+            PurityEnum.K21,
+            JewelryTypeEnum.RING,
+            BigDecimal.TEN,
+            BigDecimal.ONE,
+            null,
+            BigDecimal.ZERO
         );
 
         when(productRepository.findByBarcode("NEW-123")).thenReturn(Optional.empty());

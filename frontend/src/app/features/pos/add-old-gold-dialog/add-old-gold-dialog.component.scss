@@ -1,0 +1,33 @@
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  mat-icon {
+    color: var(--accent-gold);
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 0;
+  min-width: 400px;
+}
+
+.total-value {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  border-left: 4px solid var(--warning);
+  font-size: 1.2rem;
+  
+  span {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}

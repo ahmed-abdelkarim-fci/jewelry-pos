@@ -2,6 +2,7 @@ package com.jewelry.pos.domain.entity;
 
 import io.hypersistence.utils.hibernate.id.Tsid;
 import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -24,7 +25,8 @@ public class OldGoldPurchase extends Auditable {
     private LocalDateTime transactionDate = LocalDateTime.now();
 
     @Column(nullable = false, length = 10)
-    private String karat; // e.g., 'KARAT_21'
+    @Convert(converter = PurityEnumKaratConverter.class)
+    private PurityEnum purity; // e.g., 'KARAT_21'
 
     @Column(nullable = false, precision = 10, scale = 3)
     private BigDecimal weight;
@@ -40,6 +42,8 @@ public class OldGoldPurchase extends Auditable {
 
     @Column(length = 50)
     private String customerNationalId;
+
+    private String customerPhoneNumber;
 
     private String description;
 }

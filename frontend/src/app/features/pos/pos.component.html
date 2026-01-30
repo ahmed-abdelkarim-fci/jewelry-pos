@@ -1,0 +1,166 @@
+<div class="pos-container">
+  <div class="pos-header">
+    <h1><mat-icon>point_of_sale</mat-icon> POS TERMINAL</h1>
+  </div>
+
+  <div class="pos-split">
+    <div class="scanner-panel">
+      <mat-card class="scanner-card">
+        <h2>Scan Barcode</h2>
+        <mat-form-field appearance="outline" class="barcode-input">
+          <mat-label>Barcode</mat-label>
+          <input matInput 
+                 #barcodeInput
+                 [(ngModel)]="barcode"
+                 (keyup.enter)="onBarcodeSubmit()"
+                 placeholder="Scan or type barcode..."
+                 autocomplete="off">
+          <mat-icon matPrefix>qr_code_scanner</mat-icon>
+        </mat-form-field>
+      </mat-card>
+
+      @if (lastScannedProduct) {
+        <mat-card class="product-preview">
+          <h3>Last Scanned Item</h3>
+          <div class="product-details">
+            <div class="product-image">
+              <mat-icon>diamond</mat-icon>
+            </div>
+            <div class="product-info">
+              <h4>{{ lastScannedProduct.modelName }}</h4>
+              <p><strong>Purity:</strong> {{ lastScannedProduct.purityEnum }}</p>
+              <p><strong>Weight:</strong> {{ lastScannedProduct.grossWeight }}g</p>
+              <p class="price">{{ formatCurrency(lastScannedProduct.estimatedPrice) }} EGP</p>
+            </div>
+          </div>
+        </mat-card>
+      }
+    </div>
+
+    <div class="cart-panel">
+      <mat-card class="cart-card">
+        <h2>Cart</h2>
+        
+        @if (cartItems.length > 0) {
+          <table mat-table [dataSource]="cartItems" class="cart-table">
+            <ng-container matColumnDef="model">
+              <th mat-header-cell *matHeaderCellDef>Product</th>
+              <td mat-cell *matCellDef="let item">{{ item.modelName }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef>Weight</th>
+              <td mat-cell *matCellDef="let item">{{ item.grossWeight }}g</td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+              <th mat-header-cell *matHeaderCellDef>Price</th>
+              <td mat-cell *matCellDef="let item">
+                <span class="gold-text">{{ formatCurrency(item.estimatedPrice) }} EGP</span>
+              </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef>Remove</th>
+              <td mat-cell *matCellDef="let item">
+                <button mat-icon-button color="warn" (click)="removeFromCart(item)">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        } @else {
+          <div class="empty-cart">
+            <mat-icon>shopping_cart</mat-icon>
+            <p>Cart is empty. Scan items to begin.</p>
+          </div>
+        }
+
+        <div class="customer-info-section">
+          <h3><mat-icon>person</mat-icon> Customer Information</h3>
+          <div class="customer-fields">
+            <mat-form-field appearance="outline" class="customer-field">
+              <mat-label>Customer Name</mat-label>
+              <input matInput 
+                     [(ngModel)]="customerName" 
+                     placeholder="Enter customer name"
+                     required>
+              <mat-icon matPrefix>person</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="customer-field">
+              <mat-label>Customer Phone</mat-label>
+              <input matInput 
+                     [(ngModel)]="customerPhone" 
+                     placeholder="Enter phone number"
+                     required>
+              <mat-icon matPrefix>phone</mat-icon>
+            </mat-form-field>
+          </div>
+
+          <div class="gold-rate-display">
+            <mat-icon>paid</mat-icon>
+            <span><strong>Current Gold Rate:</strong> {{ currentGoldRate }} EGP/gram</span>
+          </div>
+        </div>
+
+        <div class="trade-in-section">
+          <div class="section-header">
+            <h3>Trade-In</h3>
+            <button mat-raised-button color="primary" (click)="openAddOldGoldDialog()">
+              <mat-icon>add</mat-icon> Add Old Gold
+            </button>
+          </div>
+
+          @if (oldGoldItems.length > 0) {
+            <div class="old-gold-list">
+              @for (item of oldGoldItems; track item) {
+                <div class="old-gold-item">
+                  <div class="old-gold-info">
+                    <strong>{{ item.purity }} - {{ item.weight }}g</strong>
+                    <small>ID: {{ item.customerNationalId }}</small>
+                  </div>
+                  <div class="old-gold-value">
+                    <span class="warning-text">- {{ formatCurrency(item.weight * item.buyRate) }} EGP</span>
+                    <button mat-icon-button color="warn" (click)="removeOldGold(item)">
+                      <mat-icon>close</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="cart-footer">
+          <div class="total-row">
+            <span>Subtotal:</span>
+            <span>{{ formatCurrency(getSubtotal()) }} EGP</span>
+          </div>
+          @if (oldGoldItems.length > 0) {
+            <div class="total-row warning-text">
+              <span>Less Old Gold:</span>
+              <span>- {{ formatCurrency(getOldGoldTotal()) }} EGP</span>
+            </div>
+          }
+          <div class="total-row net-total">
+            <span>NET TO PAY:</span>
+            <span class="success-text">{{ formatCurrency(getNetTotal()) }} EGP</span>
+          </div>
+
+          <div class="action-buttons">
+            <button mat-raised-button color="primary" (click)="checkout()" [disabled]="cartItems.length === 0">
+              <mat-icon>check_circle</mat-icon> Checkout & Print
+            </button>
+            <button mat-button color="warn" (click)="clearCart()">
+              <mat-icon>cancel</mat-icon> Cancel
+            </button>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

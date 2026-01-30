@@ -57,6 +57,8 @@ public class SalesManagementService {
                 sale.getId(),
                 sale.getTransactionDate(),
                 sale.getTotalAmount(),
+                sale.getOldGoldTotalValue(),
+                sale.getNetCashPaid(),
                 sale.getCreatedBy(),
                 sale.getCustomerName(),
                 sale.getCustomerPhone(),

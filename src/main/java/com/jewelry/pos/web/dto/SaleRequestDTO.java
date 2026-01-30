@@ -17,7 +17,6 @@ public record SaleRequestDTO(
         @NotEmpty(message = "customer name cannot be empty")
         String customerName,
 
-        @NotEmpty(message = "customer phone cannot be empty")
         String customerPhone,
 
         List<OldGoldRequestDTO> tradeInItems

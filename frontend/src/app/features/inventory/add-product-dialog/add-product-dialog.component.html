@@ -1,0 +1,87 @@
+<h2 mat-dialog-title>
+  <mat-icon>{{ isEditMode ? 'edit' : 'add' }}</mat-icon>
+  {{ isEditMode ? 'Edit Product' : 'Add New Product' }}
+</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="productForm">
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Barcode</mat-label>
+        <input matInput formControlName="barcode">
+        <mat-icon matPrefix>qr_code</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Model Name</mat-label>
+        <input matInput formControlName="modelName">
+        <mat-icon matPrefix>label</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Purity</mat-label>
+        <mat-select formControlName="purityEnum">
+          @for (purity of purities; track purity) {
+            <mat-option [value]="purity">{{ purity }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Jewelry Type</mat-label>
+        <mat-select formControlName="type">
+          @for (type of types; track type) {
+            <mat-option [value]="type">{{ type }}</mat-option>
+          }
+        </mat-select>
+        <mat-icon matPrefix>category</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Gross Weight (grams)</mat-label>
+        <input matInput type="number" formControlName="grossWeight" step="0.001">
+        <mat-icon matPrefix>scale</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Making Charge (EGP)</mat-label>
+        <input matInput type="number" formControlName="makingCharge">
+        <mat-icon matPrefix>build</mat-icon>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Description (Optional)</mat-label>
+      <textarea matInput 
+                formControlName="description" 
+                rows="3"
+                placeholder="Enter product description..."></textarea>
+      <mat-icon matPrefix>description</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Cost Price (EGP)</mat-label>
+      <input matInput 
+             [type]="showCostPrice ? 'number' : 'password'" 
+             formControlName="costPrice">
+      <mat-icon matPrefix>lock</mat-icon>
+      <button mat-icon-button 
+              matSuffix 
+              type="button"
+              (click)="showCostPrice = !showCostPrice">
+        <mat-icon>{{ showCostPrice ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!productForm.valid">
+    {{ isEditMode ? 'Update' : 'Add' }} Product
+  </button>
+</mat-dialog-actions>

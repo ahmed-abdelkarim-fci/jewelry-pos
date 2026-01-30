@@ -1,0 +1,73 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <div class="logo-container">
+      <mat-icon class="logo-icon">diamond</mat-icon>
+      <h2 class="logo-text">AL MOHAMADIA</h2>
+    </div>
+    
+    <mat-nav-list>
+      @for (item of getFilteredMenuItems(); track item.route) {
+        <a mat-list-item 
+           [routerLink]="item.route" 
+           [class.active]="isActive(item.route)"
+           class="nav-item">
+          <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+          <span matListItemTitle>{{ getArabicLabel(item.label) }}</span>
+        </a>
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar class="top-toolbar">
+      <app-gold-ticker></app-gold-ticker>
+      
+      <span class="spacer"></span>
+      
+      <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
+        <mat-icon [matBadge]="3" matBadgeColor="warn">notifications</mat-icon>
+      </button>
+      
+      <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
+        <mat-icon>account_circle</mat-icon>
+        <span class="username">{{ username }}</span>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="content-wrapper scrollbar-custom">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>person</mat-icon>
+    <span>Profile</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>settings</mat-icon>
+    <span>Settings</span>
+  </button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>
+
+<mat-menu #notificationMenu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>info</mat-icon>
+    <span>Low inventory alert</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>update</mat-icon>
+    <span>Gold rates updated</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>receipt</mat-icon>
+    <span>New sale completed</span>
+  </button>
+</mat-menu>

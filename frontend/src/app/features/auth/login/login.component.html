@@ -1,0 +1,41 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <div class="logo-section">
+      <mat-icon class="logo-icon">diamond</mat-icon>
+      <h1>AL MOHAMADIA</h1>
+      <p class="subtitle">نظام نقاط البيع للمجوهرات</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>اسم المستخدم</mat-label>
+        <input matInput formControlName="username" autocomplete="username">
+        <mat-icon matPrefix>person</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>كلمة المرور</mat-label>
+        <input matInput 
+               [type]="hidePassword ? 'password' : 'text'" 
+               formControlName="password"
+               autocomplete="current-password">
+        <mat-icon matPrefix>lock</mat-icon>
+        <button mat-icon-button 
+                matSuffix 
+                type="button"
+                (click)="hidePassword = !hidePassword">
+          <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button mat-raised-button 
+              color="primary" 
+              type="submit" 
+              [disabled]="!loginForm.valid || loading"
+              class="login-button">
+        {{ loading ? 'تسجيل الدخول...' : 'تسجيل الدخول' }}
+        {{ loading ? 'Logging in...' : 'Login' }}
+      </button>
+    </form>
+  </mat-card>
+</div>

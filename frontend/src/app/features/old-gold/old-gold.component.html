@@ -1,0 +1,150 @@
+<div class="old-gold-container">
+  <div class="old-gold-header">
+    <h1><mat-icon>sell</mat-icon> OLD GOLD & PURIFICATION</h1>
+    <p class="subtitle">Manage old gold purchases and factory purification</p>
+  </div>
+
+  <mat-card>
+    <mat-tab-group>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>shopping_bag</mat-icon>
+          BUY CASH
+        </ng-template>
+        
+        <div class="tab-content">
+          <form [formGroup]="buyCashForm" (ngSubmit)="onBuyCash()">
+            <div class="form-grid">
+              <mat-form-field appearance="outline">
+                <mat-label>Karat</mat-label>
+                <mat-select formControlName="purity">
+                  @for (karat of purities; track karat) {
+                    <mat-option [value]="karat">{{ karat }}</mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Weight (grams)</mat-label>
+                <input matInput type="number" formControlName="weight" step="0.1">
+                <mat-icon matPrefix>scale</mat-icon>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Buy Rate (EGP/gram)</mat-label>
+                <input matInput type="number" formControlName="buyRate">
+                <mat-icon matPrefix>attach_money</mat-icon>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>National ID</mat-label>
+                <input matInput formControlName="customerNationalId" maxlength="14">
+                <mat-icon matPrefix>badge</mat-icon>
+                @if (buyCashForm.get('customerNationalId')?.hasError('pattern')) {
+                  <mat-error>National ID must be 14 digits</mat-error>
+                }
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Phone (Optional)</mat-label>
+                <input matInput formControlName="customerPhoneNumber" maxlength="15">
+                <mat-icon matPrefix>phone</mat-icon>
+              </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description" rows="3"></textarea>
+            </mat-form-field>
+
+            @if (buyCashForm.get('weight')?.value && buyCashForm.get('buyRate')?.value) {
+              <div class="total-display expense">
+                <span>Total Amount:</span>
+                <span class="warning-text">{{ formatCurrency(getBuyCashTotal()) }} EGP</span>
+              </div>
+            }
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="!buyCashForm.valid">
+              <mat-icon>add_shopping_cart</mat-icon>
+              Pay Cash & Add
+            </button>
+          </form>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>factory</mat-icon>
+          PURIFICATION
+        </ng-template>
+        
+        <div class="tab-content">
+          <div class="inventory-header">
+            <h3>Available Scrap Inventory</h3>
+            <div class="inventory-items">
+              @for (item of scrapInventory; track item.karat) {
+                <div class="inventory-item">
+                  <strong>{{ item.karat }}:</strong>
+                  <span class="gold-text">{{ item.availableWeight }}g</span>
+                </div>
+              }
+            </div>
+          </div>
+
+          <form [formGroup]="purificationForm" (ngSubmit)="onPurify()">
+            <div class="form-grid">
+              <mat-form-field appearance="outline">
+                <mat-label>Karat</mat-label>
+                <mat-select formControlName="purity">
+                  @for (karat of purities; track karat) {
+                    <mat-option [value]="karat">
+                      {{ karat }} ({{ getAvailableWeight(karat) }}g available)
+                    </mat-option>
+                  }
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Weight to Sell (grams)</mat-label>
+                <input matInput type="number" formControlName="weightToSell" step="0.1">
+                <mat-icon matPrefix>scale</mat-icon>
+                @if (purificationForm.get('weightToSell')?.value > getAvailableWeight(purificationForm.get('purity')?.value)) {
+                  <mat-error>Exceeds available weight</mat-error>
+                }
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Cash Received (EGP)</mat-label>
+                <input matInput type="number" formControlName="cashReceived">
+                <mat-icon matPrefix>attach_money</mat-icon>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Factory Name</mat-label>
+                <input matInput formControlName="factoryName">
+                <mat-icon matPrefix>business</mat-icon>
+              </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description" rows="3"></textarea>
+            </mat-form-field>
+
+            @if (purificationForm.get('cashReceived')?.value) {
+              <div class="total-display income">
+                <span>Total Income:</span>
+                <span class="success-text">{{ formatCurrency(getPurificationTotal()) }} EGP</span>
+              </div>
+            }
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="!purificationForm.valid">
+              <mat-icon>send</mat-icon>
+              Send to Factory
+            </button>
+          </form>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

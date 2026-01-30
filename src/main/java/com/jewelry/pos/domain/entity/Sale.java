@@ -18,7 +18,9 @@ public class Sale extends Auditable {
     @Id @Tsid @Column(length = 26)
     private String id;
 
+    @Column(nullable = false)
     private String customerName;
+
     private String customerPhone;
 
     @Column(nullable = false, updatable = false)

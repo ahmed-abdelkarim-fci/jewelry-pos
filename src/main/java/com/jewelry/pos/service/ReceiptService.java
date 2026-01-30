@@ -132,7 +132,7 @@ public class ReceiptService {
 
             for (SaleItem item : sale.getItems()) {
                 // --- FIX IS HERE: Added .name() ---
-                String purity = (item.getProduct().getPurity() != null) ? item.getProduct().getPurity().name() : "UNKNOWN";
+                String purity = (item.getProduct().getPurityEnum() != null) ? item.getProduct().getPurityEnum().name() : "UNKNOWN";
                 BigDecimal weight = item.getWeightSnapshot();
                 weightByKarat.merge(purity, weight, BigDecimal::add);
             }

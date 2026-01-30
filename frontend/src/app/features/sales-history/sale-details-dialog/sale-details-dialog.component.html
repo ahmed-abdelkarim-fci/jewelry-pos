@@ -1,0 +1,85 @@
+<h2 mat-dialog-title>
+  <mat-icon>receipt</mat-icon>
+  Sale Details
+</h2>
+
+<mat-dialog-content>
+  <div class="sale-details">
+    <div class="detail-section">
+      <h3>Transaction Information</h3>
+      <div class="detail-row">
+        <span class="label">Sale ID:</span>
+        <code>{{ sale.id }}</code>
+      </div>
+      <div class="detail-row">
+        <span class="label">Date & Time:</span>
+        <span>{{ formatDateTime(sale.date) }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Processed By:</span>
+        <span>{{ sale.createdBy }}</span>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="detail-section">
+      <h3>Customer Information</h3>
+      <div class="detail-row">
+        <span class="label">Name:</span>
+        <span><strong>{{ sale.customerName }}</strong></span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Phone:</span>
+        <span>{{ sale.customerPhone }}</span>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="detail-section">
+      <h3>Items Sold</h3>
+      <div class="items-list">
+        @for (item of sale.items; track item) {
+          <div class="item-card">
+            <div class="item-info">
+              <strong>{{ item.productName }}</strong>
+              <small>Weight: {{ item.weight }}g</small>
+            </div>
+            <div class="item-price">
+              {{ formatCurrency(item.priceSnapshot) }} EGP
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="detail-section">
+      <h3>Payment Summary</h3>
+      <div class="detail-row">
+        <span class="label">Subtotal:</span>
+        <span class="amount">{{ formatCurrency(sale.totalAmount) }} EGP</span>
+      </div>
+      @if (sale.oldGoldTotalValue > 0) {
+        <div class="detail-row warning">
+          <span class="label">Less Old Gold:</span>
+          <span class="amount">- {{ formatCurrency(sale.oldGoldTotalValue) }} EGP</span>
+        </div>
+      }
+      <div class="detail-row total">
+        <span class="label"><strong>Net Cash Paid:</strong></span>
+        <span class="amount success"><strong>{{ formatCurrency(sale.netCashPaid) }} EGP</strong></span>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Close</button>
+  <button mat-raised-button color="primary" (click)="downloadReceipt()" [disabled]="downloading">
+    <mat-icon>{{ downloading ? 'hourglass_empty' : 'download' }}</mat-icon> 
+    {{ downloading ? 'Downloading...' : 'Download Receipt' }}
+  </button>
+</mat-dialog-actions>

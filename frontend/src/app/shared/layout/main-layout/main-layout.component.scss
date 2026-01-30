@@ -1,0 +1,117 @@
+.sidenav-container {
+  height: 100vh;
+  background-color: var(--primary-bg);
+}
+
+.sidenav {
+  width: 250px;
+  background-color: var(--secondary-bg);
+  border-right: 2px solid var(--border-color);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  border-bottom: 2px solid var(--border-color);
+  gap: 10px;
+}
+
+.logo-icon {
+  color: var(--accent-gold);
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.logo-text {
+  color: var(--accent-gold);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.nav-item {
+  margin: 8px 12px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+  }
+  
+  &.active {
+    background-color: var(--accent-gold);
+    color: var(--primary-bg);
+    font-weight: 600;
+    
+    mat-icon {
+      color: var(--primary-bg);
+    }
+  }
+  
+  mat-icon {
+    color: var(--text-secondary);
+  }
+  
+  &.active mat-icon,
+  &:hover mat-icon {
+    color: inherit;
+  }
+}
+
+.top-toolbar {
+  background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--card-bg) 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.user-button {
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  .username {
+    color: var(--accent-gold);
+    font-weight: 600;
+  }
+}
+
+.content-wrapper {
+  padding: 24px;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  background-color: var(--primary-bg);
+}
+
+::ng-deep .mat-mdc-menu-panel {
+  background-color: var(--secondary-bg) !important;
+  
+  .mat-mdc-menu-item {
+    color: var(--text-primary);
+    
+    &:hover {
+      background-color: var(--card-bg) !important;
+    }
+    
+    mat-icon {
+      color: var(--accent-gold);
+    }
+  }
+}
+
+::ng-deep .mat-divider {
+  border-top-color: var(--border-color);
+}

@@ -8,6 +8,8 @@ public record SaleResponseDTO(
     String id,
     LocalDateTime date,
     BigDecimal totalAmount,
+    BigDecimal oldGoldTotalValue,
+    BigDecimal netCashPaid,
     String createdBy,
     String customerName,
     String customerPhone,

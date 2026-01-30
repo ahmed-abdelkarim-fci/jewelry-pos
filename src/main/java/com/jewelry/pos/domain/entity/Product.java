@@ -19,24 +19,34 @@ public class Product extends Auditable {
     @Column(nullable = false, unique = true)
     private String barcode;
 
+    @Column(nullable = false)
     private String modelName;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private Purity purity;
+    private PurityEnum purityEnum; // العيار
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private JewelryTypeEnum type;
 
     @Column(precision = 10, scale = 3)
-    private BigDecimal grossWeight;
+    private BigDecimal grossWeight; // الوزن
 
-    @Column(precision = 10, scale = 2)
-    private BigDecimal makingCharge;
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal makingCharge; // المصنعيه
+
+    private String description;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ProductStatusEnum status = ProductStatusEnum.AVAILABLE;
+
+    // السعر اثناء الشراء التلفة الكلية و العماله
+    @Column(nullable = false)
+    private BigDecimal costPrice; // Cost of acquisition (Gold + Labor)
 
     @Version
     private Integer version;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private ProductStatus status = ProductStatus.AVAILABLE;
-
-    @Column(nullable = false)
-    private BigDecimal costPrice; // Cost of acquisition (Gold + Labor)
 }

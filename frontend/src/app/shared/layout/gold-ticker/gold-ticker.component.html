@@ -1,0 +1,15 @@
+<div class="ticker-container">
+  <div class="ticker-content">
+    @if (goldRates && goldRates.length > 0) {
+      @for (rate of goldRates; track rate.karat) {
+        <span class="ticker-item">
+          <strong>{{ getKaratLabel(rate.karat) }}:</strong> 
+          {{ formatPrice(rate.sellRate) }} جنيه
+          <span class="separator">|</span>
+        </span>
+      }
+    } @else {
+      <span class="ticker-item">جاري تحميل أسعار الذهب...</span>
+    }
+  </div>
+</div>

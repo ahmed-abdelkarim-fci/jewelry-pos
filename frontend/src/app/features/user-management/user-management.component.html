@@ -1,0 +1,95 @@
+<div class="user-management-container">
+  <div class="header">
+    <div>
+      <h1><mat-icon>manage_accounts</mat-icon> USER MANAGEMENT</h1>
+      <p class="subtitle">Create, edit, and manage system users</p>
+    </div>
+
+    <div class="actions">
+      <button mat-button (click)="seedData()">
+        <mat-icon>playlist_add</mat-icon> Seed Data
+      </button>
+      <button mat-button (click)="triggerBackup()">
+        <mat-icon>backup</mat-icon> Backup DB
+      </button>
+      <button mat-raised-button color="primary" (click)="openCreateUser()">
+        <mat-icon>person_add</mat-icon> Add User
+      </button>
+    </div>
+  </div>
+
+  <mat-card>
+    @if (loading) {
+      <div class="loading">Loading users...</div>
+    } @else {
+      <div class="table-container">
+        <table mat-table [dataSource]="users">
+          <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef>Username</th>
+            <td mat-cell *matCellDef="let u"><strong>{{ u.username }}</strong></td>
+          </ng-container>
+
+          <ng-container matColumnDef="fullName">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let u">{{ u.firstName }} {{ u.lastName }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="roles">
+            <th mat-header-cell *matHeaderCellDef>Roles</th>
+            <td mat-cell *matCellDef="let u">
+              <div class="roles">
+                @for (r of u.roles; track r) {
+                  <mat-chip>{{ roleLabel(r) }}</mat-chip>
+                }
+              </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="enabled">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let u">
+              <mat-chip [class]="u.enabled ? 'chip-enabled' : 'chip-disabled'">
+                {{ u.enabled ? 'Enabled' : 'Disabled' }}
+              </mat-chip>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="createdDate">
+            <th mat-header-cell *matHeaderCellDef>Created</th>
+            <td mat-cell *matCellDef="let u">{{ formatDateTime(u.createdDate) }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let u">
+              <button mat-icon-button color="primary" (click)="openEditUser(u)">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="deleteUser(u)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        @if (users.length === 0) {
+          <div class="empty">
+            <mat-icon>inbox</mat-icon>
+            <p>No users found</p>
+          </div>
+        }
+      </div>
+
+      <mat-paginator
+        [length]="totalElements"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 20, 50]"
+        (page)="onPageChange($event)"
+        showFirstLastButtons>
+      </mat-paginator>
+    }
+  </mat-card>
+</div>

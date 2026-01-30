@@ -14,6 +14,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -33,7 +34,13 @@ class PosControllerTest {
     @Test
     @WithMockUser(roles = "USER")
     void checkout_ShouldReturnCreated_WhenValid() throws Exception {
-        SaleRequestDTO request = new SaleRequestDTO("12345", new BigDecimal("3500.00"));
+        SaleRequestDTO request = new SaleRequestDTO(
+                List.of("12345"),
+                new BigDecimal("3500.00"),
+                "Test Customer",
+                "1234567890",
+                null
+        );
 
         mockMvc.perform(post("/api/pos/checkout")
                         .with(csrf()) // Now available because of spring-security-test
@@ -46,7 +53,13 @@ class PosControllerTest {
     @WithMockUser(roles = "USER")
     void checkout_ShouldReturnBadRequest_WhenRateIsNegative() throws Exception {
         // Invalid Rate: -100
-        SaleRequestDTO request = new SaleRequestDTO("12345", new BigDecimal("-100.00"));
+        SaleRequestDTO request = new SaleRequestDTO(
+                List.of("12345"),
+                new BigDecimal("-100.00"),
+                "Test Customer",
+                null,
+                null
+        );
 
         mockMvc.perform(post("/api/pos/checkout")
                         .with(csrf())

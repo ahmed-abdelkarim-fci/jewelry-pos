@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.util.ReflectionTestUtils;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,7 +37,13 @@ class CheckoutServiceTest {
         mockProduct.setGrossWeight(new BigDecimal("10.000")); // 10g
         mockProduct.setMakingCharge(new BigDecimal("100.00")); // Flat fee
 
-        SaleRequestDTO request = new SaleRequestDTO("12345", new BigDecimal("3000.00")); // Rate = 3000
+        SaleRequestDTO request = new SaleRequestDTO(
+                List.of("12345"),
+                new BigDecimal("3000.00"),
+                "Test Customer",
+                "1234567890",
+                null
+        );
 
         when(productRepository.findByBarcode("12345")).thenReturn(Optional.of(mockProduct));
         when(saleRepository.save(any(Sale.class))).thenAnswer(i -> {
@@ -82,7 +89,13 @@ class CheckoutServiceTest {
         doReturn(mockSale).when(spyService).executeFinancialTransaction(any());
 
         // 3. Execute the method on the SPY
-        spyService.processSale(new SaleRequestDTO("123", BigDecimal.TEN));
+        spyService.processSale(new SaleRequestDTO(
+                List.of("123"),
+                BigDecimal.TEN,
+                "Test Customer",
+                null,
+                null
+        ));
 
         // 4. Verify Hardware was called
         verify(hardwareService, times(1)).openCashDrawer();

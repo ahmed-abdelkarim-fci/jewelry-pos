@@ -1,6 +1,6 @@
 package com.jewelry.pos.domain.entity;
 
-public enum ProductStatus {
+public enum ProductStatusEnum {
     AVAILABLE,
     SOLD,
     RESERVED

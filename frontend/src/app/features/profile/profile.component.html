@@ -1,0 +1,54 @@
+<div class="profile-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>person</mat-icon>
+        {{ 'profile.title' | t }}
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      @if (loading) {
+        <p>{{ 'profile.loading' | t }}</p>
+      } @else if (error) {
+        <p>{{ 'profile.error' | t }}</p>
+        <button mat-raised-button color="primary" (click)="load()">{{ 'common.update' | t }}</button>
+      } @else {
+        <div class="row">
+          <strong>{{ 'profile.username' | t }}:</strong>
+          <span>{{ user?.username }}</span>
+        </div>
+
+        <div class="row">
+          <strong>{{ 'profile.fullName' | t }}:</strong>
+          <span>{{ user?.fullName || '-' }}</span>
+        </div>
+
+        <div class="row">
+          <strong>{{ 'profile.roles' | t }}:</strong>
+          <span>{{ getRolesLabel() }}</span>
+        </div>
+
+        <div class="row">
+          <strong>{{ 'profile.enabled' | t }}:</strong>
+          <span>{{ user?.enabled === true ? 'Yes' : (user?.enabled === false ? 'No' : '-') }}</span>
+        </div>
+
+        <div class="row">
+          <strong>{{ 'profile.createdBy' | t }}:</strong>
+          <span>{{ user?.createdBy || '-' }}</span>
+        </div>
+
+        <div class="row">
+          <strong>{{ 'profile.createdDate' | t }}:</strong>
+          <span>{{ formatDateTime(user?.createdDate) }}</span>
+        </div>
+
+        <div class="row">
+          <strong>{{ 'profile.status' | t }}:</strong>
+          <span>{{ user?.status }}</span>
+        </div>
+      }
+    </mat-card-content>
+  </mat-card>
+</div>

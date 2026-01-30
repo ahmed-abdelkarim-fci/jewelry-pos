@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -78,17 +79,18 @@ public class InventoryService {
                 .collect(Collectors.toList());
     }
     
-    public List<ProductLiteDTO> searchProductsWithFilters(
+    public Page<ProductLiteDTO> searchProductsWithFilters(
             String query,
             com.jewelry.pos.domain.entity.PurityEnum purity,
             com.jewelry.pos.domain.entity.JewelryTypeEnum type,
             java.math.BigDecimal minWeight,
-            java.math.BigDecimal maxWeight) {
-        
-        return productRepository.searchProductsWithFilters(query, purity, type, minWeight, maxWeight)
-                .stream()
-                .map(productMapper::toLiteDTO)
-                .collect(Collectors.toList());
+            java.math.BigDecimal maxWeight,
+            LocalDateTime createdFrom,
+            LocalDateTime createdTo,
+            Pageable pageable) {
+
+        return productRepository.searchProductsWithFilters(query, purity, type, minWeight, maxWeight, createdFrom, createdTo, pageable)
+                .map(productMapper::toLiteDTO);
     }
 
 

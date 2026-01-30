@@ -3,11 +3,14 @@ import com.jewelry.pos.domain.entity.JewelryTypeEnum;
 import com.jewelry.pos.domain.entity.Product;
 import com.jewelry.pos.domain.entity.ProductStatusEnum;
 import com.jewelry.pos.domain.entity.PurityEnum;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,15 +33,20 @@ public interface ProductRepository extends JpaRepository<Product, String> {
             "AND (:type IS NULL OR p.type = :type) " +
             "AND (:minWeight IS NULL OR p.grossWeight >= :minWeight) " +
             "AND (:maxWeight IS NULL OR p.grossWeight <= :maxWeight) " +
+            "AND (:createdFrom IS NULL OR p.createdDate >= :createdFrom) " +
+            "AND (:createdTo IS NULL OR p.createdDate <= :createdTo) " +
             "ORDER BY " +
             "CASE WHEN p.barcode LIKE CONCAT('%', :query, '%') THEN 1 " +
             "     WHEN LOWER(p.modelName) LIKE LOWER(CONCAT('%', :query, '%')) THEN 2 " +
             "     ELSE 3 END, p.modelName")
-    List<Product> searchProductsWithFilters(
+    Page<Product> searchProductsWithFilters(
         @Param("query") String query,
         @Param("purity") PurityEnum purity,
         @Param("type") JewelryTypeEnum type,
         @Param("minWeight") BigDecimal minWeight,
-        @Param("maxWeight") BigDecimal maxWeight
+        @Param("maxWeight") BigDecimal maxWeight,
+        @Param("createdFrom") LocalDateTime createdFrom,
+        @Param("createdTo") LocalDateTime createdTo,
+        Pageable pageable
     );
 }

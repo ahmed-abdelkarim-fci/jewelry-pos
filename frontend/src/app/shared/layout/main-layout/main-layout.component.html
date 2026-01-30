@@ -25,7 +25,10 @@
       <span class="spacer"></span>
       
       <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
-        <mat-icon [matBadge]="3" matBadgeColor="warn">notifications</mat-icon>
+        <mat-icon
+          [matBadge]="(unreadCount$ | async) ?? 0"
+          [matBadgeHidden]="((unreadCount$ | async) ?? 0) === 0"
+          matBadgeColor="warn">notifications</mat-icon>
       </button>
       
       <button mat-button [matMenuTriggerFor]="userMenu" class="user-button">
@@ -42,11 +45,11 @@
 </mat-sidenav-container>
 
 <mat-menu #userMenu="matMenu">
-  <button mat-menu-item>
+  <button mat-menu-item (click)="openProfile()">
     <mat-icon>person</mat-icon>
     <span>{{ 'menu.profile' | t }}</span>
   </button>
-  <button mat-menu-item>
+  <button mat-menu-item (click)="openSettings()">
     <mat-icon>settings</mat-icon>
     <span>{{ 'menu.settings' | t }}</span>
   </button>
@@ -58,16 +61,24 @@
 </mat-menu>
 
 <mat-menu #notificationMenu="matMenu">
-  <button mat-menu-item>
-    <mat-icon>info</mat-icon>
-    <span>{{ 'notifications.lowInventory' | t }}</span>
+  <button mat-menu-item (click)="markAllNotificationsRead()">
+    <mat-icon>done_all</mat-icon>
+    <span>{{ 'common.update' | t }}</span>
   </button>
-  <button mat-menu-item>
-    <mat-icon>update</mat-icon>
-    <span>{{ 'notifications.goldUpdated' | t }}</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>receipt</mat-icon>
-    <span>{{ 'notifications.saleCompleted' | t }}</span>
-  </button>
+
+  <mat-divider></mat-divider>
+
+  @for (n of ((notifications$ | async) ?? []); track n.id) {
+    <button mat-menu-item (click)="onNotificationClick(n)">
+      <mat-icon>{{ n.read ? 'notifications' : 'notifications_active' }}</mat-icon>
+      <span>{{ n.messageKey | t }}</span>
+    </button>
+  }
+
+  @if (((notifications$ | async) ?? []).length === 0) {
+    <button mat-menu-item disabled>
+      <mat-icon>inbox</mat-icon>
+      <span>-</span>
+    </button>
+  }
 </mat-menu>

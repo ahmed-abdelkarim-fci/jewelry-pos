@@ -73,7 +73,14 @@ public class AuthController {
                         .collect(Collectors.toSet());
                 
                 return ResponseEntity.ok(Map.of(
+                    "id", user.getId(),
                     "username", user.getUsername(),
+                    "firstName", user.getFirstName(),
+                    "lastName", user.getLastName(),
+                    "fullName", user.getFullName(),
+                    "enabled", user.isEnabled(),
+                    "createdBy", user.getCreatedBy(),
+                    "createdDate", user.getCreatedDate(),
                     "roles", roles,
                     "status", "Authenticated"
                 ));

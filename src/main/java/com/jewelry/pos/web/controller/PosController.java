@@ -7,6 +7,7 @@ import com.jewelry.pos.web.dto.ProductLiteDTO;
 import com.jewelry.pos.web.dto.SaleRequestDTO;
 import com.jewelry.pos.web.dto.SaleResponseDTO;
 import com.jewelry.pos.web.mapper.ProductMapper;
+import com.jewelry.pos.domain.entity.ProductStatusEnum;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -30,7 +31,7 @@ import java.time.LocalDate;
 public class PosController {
 
     private final CheckoutService checkoutService;
-    private final SalesManagementService salesManagementService; // <--- Inject New Service
+    private final SalesManagementService salesManagementService; 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
 
@@ -40,6 +41,7 @@ public class PosController {
     @PreAuthorize("hasAuthority('SALE_EXECUTE')")
     public ResponseEntity<ProductLiteDTO> scanItem(@PathVariable String barcode) {
         return productRepository.findByBarcode(barcode)
+                .filter(p -> p.getStatus() == ProductStatusEnum.AVAILABLE)
                 .map(productMapper::toLiteDTO)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());

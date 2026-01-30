@@ -11,6 +11,16 @@ export interface OldGoldPurchaseRequest {
   description?: string;
 }
 
+export interface ScrapPurification {
+  id: string;
+  transactionDate: string;
+  purity: string;
+  weightOut: number;
+  cashReceived: number;
+  factoryName?: string;
+  createdBy?: string;
+}
+
 export interface PurificationRequest {
   purity: string;
   weightToSell: number;
@@ -19,8 +29,8 @@ export interface PurificationRequest {
 }
 
 export interface ScrapInventory {
-  karat: string;
-  availableWeight: number;
+  purity: string;
+  totalWeight: number;
 }
 
 export interface OldGoldPurchase {
@@ -69,5 +79,13 @@ export class OldGoldService {
       .set('size', size.toString())
       .set('sort', 'transactionDate,desc');
     return this.http.get<PageResponse<OldGoldPurchase>>(`${this.API_URL}/purchases`, { params });
+  }
+
+  getAllPurifications(page: number = 0, size: number = 20): Observable<PageResponse<ScrapPurification>> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('size', size.toString())
+      .set('sort', 'transactionDate,desc');
+    return this.http.get<PageResponse<ScrapPurification>>(`${this.API_URL}/purifications`, { params });
   }
 }

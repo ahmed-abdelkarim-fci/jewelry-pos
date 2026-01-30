@@ -82,10 +82,10 @@
           <div class="inventory-header">
             <h3>{{ 'oldGold.availableScrap' | t }}</h3>
             <div class="inventory-items">
-              @for (item of scrapInventory; track item.karat) {
+              @for (item of scrapInventory; track item.purity) {
                 <div class="inventory-item">
-                  <strong>{{ item.karat }}:</strong>
-                  <span class="gold-text">{{ item.availableWeight }}g</span>
+                  <strong>{{ item.purity }}:</strong>
+                  <span class="gold-text">{{ item.totalWeight }}g</span>
                 </div>
               }
             </div>
@@ -209,6 +209,70 @@
               [pageSize]="pageSize"
               [pageSizeOptions]="[10, 20, 50]"
               (page)="onPageChange($event)"
+              showFirstLastButtons>
+            </mat-paginator>
+          }
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>history_toggle_off</mat-icon>
+          {{ 'oldGold.tab.purificationHistory' | t }}
+        </ng-template>
+
+        <div class="tab-content">
+          @if (loadingPurifications) {
+            <div class="loading-container">
+              <p>{{ 'oldGold.loadingPurifications' | t }}</p>
+            </div>
+          } @else {
+            <div class="table-container">
+              <table mat-table [dataSource]="purifications">
+                <ng-container matColumnDef="transactionDate">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.date' | t }}</th>
+                  <td mat-cell *matCellDef="let p">{{ formatDateTime(p.transactionDate) }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="purity">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.purity' | t }}</th>
+                  <td mat-cell *matCellDef="let p">{{ p.purity }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="weightOut">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.weightOut' | t }}</th>
+                  <td mat-cell *matCellDef="let p">{{ p.weightOut }}g</td>
+                </ng-container>
+
+                <ng-container matColumnDef="cashReceived">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.cashReceived' | t }}</th>
+                  <td mat-cell *matCellDef="let p">
+                    <span class="success-text">{{ formatCurrency(p.cashReceived) }} {{ 'unit.egp' | t }}</span>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="factoryName">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.factoryName' | t }}</th>
+                  <td mat-cell *matCellDef="let p">{{ p.factoryName || '-' }}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="purificationColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: purificationColumns;"></tr>
+              </table>
+
+              @if (purifications.length === 0) {
+                <div class="empty-state">
+                  <mat-icon>inbox</mat-icon>
+                  <p>{{ 'oldGold.noPurifications' | t }}</p>
+                </div>
+              }
+            </div>
+
+            <mat-paginator
+              [length]="purificationTotalElements"
+              [pageSize]="purificationPageSize"
+              [pageSizeOptions]="[10, 20, 50]"
+              (page)="onPurificationPageChange($event)"
               showFirstLastButtons>
             </mat-paginator>
           }

@@ -69,15 +69,22 @@ export class InventoryService {
     purity?: string,
     type?: string,
     minWeight?: number,
-    maxWeight?: number
-  ): Observable<Product[]> {
+    maxWeight?: number,
+    createdFrom?: string,
+    createdTo?: string,
+    page: number = 0,
+    size: number = 20
+  ): Observable<PageResponse<Product>> {
     let params = new HttpParams();
     if (query) params = params.set('query', query);
     if (purity) params = params.set('purity', purity);
     if (type) params = params.set('type', type);
     if (minWeight !== undefined) params = params.set('minWeight', minWeight.toString());
     if (maxWeight !== undefined) params = params.set('maxWeight', maxWeight.toString());
-    return this.http.get<Product[]>(`${this.API_URL}/search/advanced`, { params });
+    if (createdFrom) params = params.set('createdFrom', createdFrom);
+    if (createdTo) params = params.set('createdTo', createdTo);
+    params = params.set('page', page.toString()).set('size', size.toString());
+    return this.http.get<PageResponse<Product>>(`${this.API_URL}/search/advanced`, { params });
   }
 
   createProduct(product: ProductRequest): Observable<void> {

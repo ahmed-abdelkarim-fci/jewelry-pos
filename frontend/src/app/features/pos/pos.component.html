@@ -43,6 +43,11 @@
         
         @if (cartItems.length > 0) {
           <table mat-table [dataSource]="cartItems" class="cart-table">
+            <ng-container matColumnDef="barcode">
+              <th mat-header-cell *matHeaderCellDef>{{ 'pos.table.barcode' | t }}</th>
+              <td mat-cell *matCellDef="let item"><code>{{ item.barcode }}</code></td>
+            </ng-container>
+
             <ng-container matColumnDef="model">
               <th mat-header-cell *matHeaderCellDef>{{ 'pos.table.product' | t }}</th>
               <td mat-cell *matCellDef="let item">{{ item.modelName }}</td>
@@ -51,6 +56,11 @@
             <ng-container matColumnDef="weight">
               <th mat-header-cell *matHeaderCellDef>{{ 'pos.table.weight' | t }}</th>
               <td mat-cell *matCellDef="let item">{{ item.grossWeight }}g</td>
+            </ng-container>
+
+            <ng-container matColumnDef="qty">
+              <th mat-header-cell *matHeaderCellDef>{{ 'pos.table.qty' | t }}</th>
+              <td mat-cell *matCellDef="let item">{{ item.quantity }}</td>
             </ng-container>
 
             <ng-container matColumnDef="price">
@@ -147,8 +157,13 @@
             </div>
           }
           <div class="total-row net-total">
-            <span>{{ 'pos.netToPay' | t }}:</span>
-            <span class="success-text">{{ formatCurrency(getNetTotal()) }} {{ 'unit.egp' | t }}</span>
+            @if (getNetTotal() >= 0) {
+              <span>{{ 'pos.netToPay' | t }}:</span>
+              <span class="success-text">{{ formatCurrency(getNetTotal()) }} {{ 'unit.egp' | t }}</span>
+            } @else {
+              <span>{{ 'pos.changeDue' | t }}:</span>
+              <span class="success-text">{{ formatCurrency(getChangeDue()) }} {{ 'unit.egp' | t }}</span>
+            }
           </div>
 
           <div class="action-buttons">

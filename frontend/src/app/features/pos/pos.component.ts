@@ -51,7 +51,7 @@ export class PosComponent implements OnInit, AfterViewInit {
   cartItems: CartItem[] = [];
   oldGoldItems: OldGoldItem[] = [];
   lastScannedProduct?: Product;
-  displayedColumns = ['model', 'weight', 'price', 'actions'];
+  displayedColumns = ['barcode', 'model', 'weight', 'qty', 'price', 'actions'];
   
   // Customer information
   customerName = '';
@@ -102,7 +102,8 @@ export class PosComponent implements OnInit, AfterViewInit {
   addToCart(product: Product): void {
     const existingItem = this.cartItems.find(item => item.id === product.id);
     if (existingItem) {
-      existingItem.quantity++;
+      this.snackBar.open(this.i18n.t('pos.error.duplicateItem'), this.i18n.t('common.close'), { duration: 3000 });
+      return;
     } else {
       this.cartItems.push({ ...product, quantity: 1 });
     }
@@ -144,6 +145,11 @@ export class PosComponent implements OnInit, AfterViewInit {
 
   getNetTotal(): number {
     return this.getSubtotal() - this.getOldGoldTotal();
+  }
+
+  getChangeDue(): number {
+    const net = this.getNetTotal();
+    return net < 0 ? Math.abs(net) : 0;
   }
 
   checkout(): void {

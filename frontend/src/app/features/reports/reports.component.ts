@@ -54,7 +54,7 @@ export class ReportsComponent implements OnInit {
 
   loadZReport(): void {
     this.loadingZReport = true;
-    const dateStr = this.zReportDate ? this.zReportDate.toISOString().split('T')[0] : undefined;
+    const dateStr = this.zReportDate ? this.formatLocalDate(this.zReportDate) : undefined;
     this.reportService.getZReport(dateStr).subscribe({
       next: (report) => {
         this.zReport = report;
@@ -98,5 +98,12 @@ export class ReportsComponent implements OnInit {
       hour: '2-digit',
       minute: '2-digit'
     });
+  }
+
+  private formatLocalDate(date: Date): string {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
   }
 }

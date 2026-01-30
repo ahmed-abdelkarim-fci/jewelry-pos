@@ -64,6 +64,8 @@ export class InventoryComponent implements OnInit {
   selectedType: string | null = null;
   minWeight: number | null = null;
   maxWeight: number | null = null;
+  createdFrom: string | null = null;
+  createdTo: string | null = null;
   
   purities = ['K24', 'K21', 'K18'];
   types = [
@@ -90,18 +92,25 @@ export class InventoryComponent implements OnInit {
     this.loading = true;
 
     if (this.searching) {
+      const createdFrom = this.toIsoLocalDateTime(this.createdFrom);
+      const createdTo = this.toIsoLocalDateTime(this.createdTo);
+
       // Use advanced search with filters
       this.inventoryService.searchProductsAdvanced(
         this.searchQuery.trim() || undefined,
         this.selectedPurity || undefined,
         this.selectedType || undefined,
         this.minWeight || undefined,
-        this.maxWeight || undefined
+        this.maxWeight || undefined,
+        createdFrom || undefined,
+        createdTo || undefined,
+        page,
+        this.pageSize
       ).subscribe({
-        next: (products) => {
-          this.products = products;
-          this.totalElements = products.length;
-          this.currentPage = 0;
+        next: (response) => {
+          this.products = response.content;
+          this.totalElements = response.totalElements;
+          this.currentPage = response.number;
           this.loading = false;
         },
         error: () => {
@@ -131,7 +140,9 @@ export class InventoryComponent implements OnInit {
                      this.selectedPurity !== null || 
                      this.selectedType !== null || 
                      this.minWeight !== null || 
-                     this.maxWeight !== null;
+                     this.maxWeight !== null ||
+                     this.createdFrom !== null ||
+                     this.createdTo !== null;
     this.loadProducts(0);
   }
 
@@ -141,6 +152,8 @@ export class InventoryComponent implements OnInit {
     this.selectedType = null;
     this.minWeight = null;
     this.maxWeight = null;
+    this.createdFrom = null;
+    this.createdTo = null;
     this.searching = false;
     this.loadProducts(0);
   }
@@ -216,5 +229,21 @@ export class InventoryComponent implements OnInit {
   formatCurrency(value: number): string {
     const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
     return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+  }
+
+  getEstimatedPriceTooltip(): string {
+    return this.i18n.t('inventory.tooltip.estPriceFormula');
+  }
+
+  private toIsoLocalDateTime(value: string | null): string | null {
+    if (!value) return null;
+
+    // HTML datetime-local typically returns: YYYY-MM-DDTHH:mm (no seconds)
+    // Spring ISO.DATE_TIME parsing is more reliable with seconds included.
+    if (/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/.test(value)) {
+      return `${value}:00`;
+    }
+
+    return value;
   }
 }

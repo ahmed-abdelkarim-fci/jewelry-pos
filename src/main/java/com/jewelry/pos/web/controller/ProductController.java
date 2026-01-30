@@ -15,8 +15,10 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -89,12 +91,15 @@ public class ProductController {
     @GetMapping("/search/advanced")
     @Operation(summary = "Advanced search with filters and ranking")
     @PreAuthorize("hasAuthority('SALE_EXECUTE')")
-    public ResponseEntity<List<ProductLiteDTO>> searchProductsAdvanced(
+    public ResponseEntity<Page<ProductLiteDTO>> searchProductsAdvanced(
             @RequestParam(required = false) String query,
             @RequestParam(required = false) com.jewelry.pos.domain.entity.PurityEnum purity,
             @RequestParam(required = false) com.jewelry.pos.domain.entity.JewelryTypeEnum type,
             @RequestParam(required = false) java.math.BigDecimal minWeight,
-            @RequestParam(required = false) java.math.BigDecimal maxWeight) {
-        return ResponseEntity.ok(inventoryService.searchProductsWithFilters(query, purity, type, minWeight, maxWeight));
+            @RequestParam(required = false) java.math.BigDecimal maxWeight,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdFrom,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime createdTo,
+            @PageableDefault(size = 20) Pageable pageable) {
+        return ResponseEntity.ok(inventoryService.searchProductsWithFilters(query, purity, type, minWeight, maxWeight, createdFrom, createdTo, pageable));
     }
 }

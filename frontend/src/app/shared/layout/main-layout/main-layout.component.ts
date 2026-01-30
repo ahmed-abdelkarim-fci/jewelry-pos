@@ -8,9 +8,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { GoldTickerComponent } from '../gold-ticker/gold-ticker.component';
 import { AuthService } from '../../../core/services/auth.service';
+import { I18nService } from '../../../core/services/i18n.service';
+import { NotificationService, AppNotification } from '../../../core/services/notification.service';
 import { TPipe } from '../../pipes/t.pipe';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-main-layout',
@@ -26,6 +30,7 @@ import { TPipe } from '../../pipes/t.pipe';
     MatToolbarModule,
     MatMenuModule,
     MatBadgeModule,
+    MatSnackBarModule,
     GoldTickerComponent,
     TPipe
   ],
@@ -35,6 +40,12 @@ import { TPipe } from '../../pipes/t.pipe';
 export class MainLayoutComponent implements OnInit {
   authService = inject(AuthService);
   router = inject(Router);
+  private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
+  private notificationService = inject(NotificationService);
+
+  notifications$ = this.notificationService.notifications$;
+  unreadCount$ = this.notifications$.pipe(map(items => items.filter(n => !n.read).length));
   
   username: string = '';
   role: string = '';
@@ -53,6 +64,64 @@ export class MainLayoutComponent implements OnInit {
   ngOnInit(): void {
     this.username = this.authService.getUsername() || 'User';
     this.role = this.authService.getRole() || 'ROLE_USER';
+
+    this.scheduleDailyZReportReminder();
+  }
+
+  private scheduleDailyZReportReminder(): void {
+    const now = new Date();
+    const next = new Date(now);
+    next.setHours(14, 0, 0, 0);
+
+    if (now.getTime() >= next.getTime()) {
+      next.setDate(next.getDate() + 1);
+    }
+
+    const ms = next.getTime() - now.getTime();
+    window.setTimeout(() => {
+      this.fireZReportReminder();
+      window.setInterval(() => this.fireZReportReminder(), 24 * 60 * 60 * 1000);
+    }, ms);
+  }
+
+  private fireZReportReminder(): void {
+    const todayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    const id = `z-report-${todayKey}`;
+
+    const notification: AppNotification = {
+      id,
+      type: 'REMINDER',
+      messageKey: 'notifications.zReportReminder',
+      actionLabelKey: 'notifications.openReports',
+      actionRoute: '/reports',
+      createdAt: new Date().toISOString(),
+      read: false
+    };
+
+    this.notificationService.add(notification);
+
+    const snack = this.snackBar.open(
+      this.i18n.t(notification.messageKey),
+      this.i18n.t(notification.actionLabelKey ?? 'notifications.openReports'),
+      { duration: 15000 }
+    );
+    snack.onAction().subscribe(() => {
+      this.notificationService.markRead(notification.id);
+      if (notification.actionRoute) {
+        this.router.navigate([notification.actionRoute]);
+      }
+    });
+  }
+
+  onNotificationClick(n: AppNotification): void {
+    this.notificationService.markRead(n.id);
+    if (n.actionRoute) {
+      this.router.navigate([n.actionRoute]);
+    }
+  }
+
+  markAllNotificationsRead(): void {
+    this.notificationService.markAllRead();
   }
 
   getFilteredMenuItems() {
@@ -61,6 +130,14 @@ export class MainLayoutComponent implements OnInit {
 
   isActive(route: string): boolean {
     return this.router.url === route;
+  }
+
+  openProfile(): void {
+    this.router.navigate(['/profile']);
+  }
+
+  openSettings(): void {
+    this.router.navigate(['/settings']);
   }
 
   logout(): void {

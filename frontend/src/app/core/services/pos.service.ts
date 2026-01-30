@@ -58,7 +58,7 @@ export class PosService {
   private readonly API_URL = '/api/sales';
 
   getProductByBarcode(barcode: string): Observable<Product> {
-    return this.http.get<Product>(`/api/products/barcode/${barcode}`);
+    return this.http.post<Product>(`/api/pos/scan/${barcode}`, {});
   }
 
   createSale(saleRequest: SaleRequest): Observable<void> {

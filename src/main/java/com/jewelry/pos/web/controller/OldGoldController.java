@@ -51,4 +51,13 @@ public class OldGoldController {
             org.springframework.data.domain.Pageable pageable) {
         return ResponseEntity.ok(oldGoldService.getAllPurchases(pageable));
     }
+
+    @GetMapping("/purifications")
+    @PreAuthorize("hasAuthority('PRODUCT_MANAGE')")
+    @Operation(summary = "Get all scrap purifications with pagination")
+    public ResponseEntity<?> getAllPurifications(
+            @org.springframework.data.web.PageableDefault(size = 20, sort = "transactionDate", direction = org.springframework.data.domain.Sort.Direction.DESC)
+            org.springframework.data.domain.Pageable pageable) {
+        return ResponseEntity.ok(oldGoldService.getAllPurifications(pageable));
+    }
 }

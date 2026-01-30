@@ -107,4 +107,10 @@ public class OldGoldService {
     public org.springframework.data.domain.Page<OldGoldPurchase> getAllPurchases(org.springframework.data.domain.Pageable pageable) {
         return purchaseRepository.findAll(pageable);
     }
+
+    // Get all scrap purifications with pagination
+    @Transactional(readOnly = true)
+    public org.springframework.data.domain.Page<ScrapPurification> getAllPurifications(org.springframework.data.domain.Pageable pageable) {
+        return purificationRepository.findAll(pageable);
+    }
 }

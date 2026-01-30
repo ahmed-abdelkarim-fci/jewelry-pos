@@ -14,6 +14,19 @@ export interface LoginResponse {
   role: string;
 }
 
+export interface CurrentUserInfo {
+  id?: string;
+  username: string;
+  firstName?: string;
+  lastName?: string;
+  fullName?: string;
+  enabled?: boolean;
+  createdBy?: string;
+  createdDate?: string;
+  roles: string[];
+  status: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -30,6 +43,10 @@ export class AuthService {
         localStorage.setItem('role', response.role);
       })
     );
+  }
+
+  getCurrentUser(): Observable<CurrentUserInfo> {
+    return this.http.get<CurrentUserInfo>(`${this.API_URL}/me`);
   }
 
   logout(): void {

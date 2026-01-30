@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
-import { OldGoldService, ScrapInventory, OldGoldPurchase } from '../../core/services/old-gold.service';
+import { OldGoldService, ScrapInventory, OldGoldPurchase, ScrapPurification } from '../../core/services/old-gold.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { TPipe } from '../../shared/pipes/t.pipe';
 
@@ -53,6 +53,14 @@ export class OldGoldComponent implements OnInit {
   currentPage = 0;
   loadingPurchases = false;
 
+  // Purification history
+  purifications: ScrapPurification[] = [];
+  purificationColumns = ['transactionDate', 'purity', 'weightOut', 'cashReceived', 'factoryName'];
+  purificationTotalElements = 0;
+  purificationPageSize = 20;
+  purificationCurrentPage = 0;
+  loadingPurifications = false;
+
   buyCashForm: FormGroup = this.fb.group({
     purity: ['', Validators.required],
     weight: ['', [Validators.required, Validators.min(0.1)]],
@@ -73,6 +81,7 @@ export class OldGoldComponent implements OnInit {
   ngOnInit(): void {
     this.loadScrapInventory();
     this.loadPurchases();
+    this.loadPurifications();
   }
 
   loadScrapInventory(): void {
@@ -87,8 +96,8 @@ export class OldGoldComponent implements OnInit {
   }
 
   getAvailableWeight(karat: string): number {
-    const item = this.scrapInventory.find(s => s.karat === karat);
-    return item?.availableWeight || 0;
+    const item = this.scrapInventory.find(s => s.purity === karat);
+    return item?.totalWeight || 0;
   }
   
   loadPurchases(page: number = 0): void {
@@ -110,6 +119,27 @@ export class OldGoldComponent implements OnInit {
   onPageChange(event: PageEvent): void {
     this.pageSize = event.pageSize;
     this.loadPurchases(event.pageIndex);
+  }
+
+  loadPurifications(page: number = 0): void {
+    this.loadingPurifications = true;
+    this.oldGoldService.getAllPurifications(page, this.purificationPageSize).subscribe({
+      next: (response) => {
+        this.purifications = response.content;
+        this.purificationTotalElements = response.totalElements;
+        this.purificationCurrentPage = response.number;
+        this.loadingPurifications = false;
+      },
+      error: () => {
+        this.snackBar.open(this.i18n.t('oldGold.loadPurificationsError'), this.i18n.t('common.close'), { duration: 3000 });
+        this.loadingPurifications = false;
+      }
+    });
+  }
+
+  onPurificationPageChange(event: PageEvent): void {
+    this.purificationPageSize = event.pageSize;
+    this.loadPurifications(event.pageIndex);
   }
 
   formatDateTime(value: string): string {

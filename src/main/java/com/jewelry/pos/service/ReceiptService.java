@@ -38,15 +38,19 @@ public class ReceiptService {
 
             // Header
             Font titleFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18);
-            Paragraph title = new Paragraph("JEWELRY SHOP RECEIPT", titleFont);
+            Paragraph title = new Paragraph("AL MOHAMADIA", titleFont);
             title.setAlignment(Element.ALIGN_CENTER);
             document.add(title);
+            Paragraph subTitle = new Paragraph("JEWELRY SHOP RECEIPT", FontFactory.getFont(FontFactory.HELVETICA, 12));
+            subTitle.setAlignment(Element.ALIGN_CENTER);
+            document.add(subTitle);
             document.add(new Paragraph(" "));
 
             // Info
             document.add(new Paragraph("Bill #: " + sale.getId()));
             document.add(new Paragraph("Date: " + sale.getTransactionDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"))));
             document.add(new Paragraph("Customer: " + (sale.getCustomerName() != null ? sale.getCustomerName() : "Walk-in")));
+            document.add(new Paragraph("Phone: " + (sale.getCustomerPhone() != null ? sale.getCustomerPhone() : "-")));
             document.add(new Paragraph(" "));
 
             // Items Table
@@ -83,7 +87,12 @@ public class ReceiptService {
                 line.setBorder(Rectangle.BOTTOM);
                 totalsTable.addCell(line);
 
-                addTotalRow(totalsTable, "NET TO PAY:", sale.getNetCashPaid() + " EGP", true);
+                BigDecimal net = sale.getNetCashPaid() != null ? sale.getNetCashPaid() : BigDecimal.ZERO;
+                if (net.compareTo(BigDecimal.ZERO) >= 0) {
+                    addTotalRow(totalsTable, "NET TO PAY:", net + " EGP", true);
+                } else {
+                    addTotalRow(totalsTable, "CHANGE DUE:", net.abs() + " EGP", true);
+                }
             } else {
                 addTotalRow(totalsTable, "TOTAL:", sale.getTotalAmount() + " EGP", true);
             }

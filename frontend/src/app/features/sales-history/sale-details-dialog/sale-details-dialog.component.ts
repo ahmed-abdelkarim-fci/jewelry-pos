@@ -7,6 +7,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { Sale } from '../../../core/services/sales.service';
 import { ReportService } from '../../../core/services/report.service';
+import { I18nService } from '../../../core/services/i18n.service';
+import { TPipe } from '../../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-sale-details-dialog',
@@ -17,7 +19,8 @@ import { ReportService } from '../../../core/services/report.service';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TPipe
   ],
   templateUrl: './sale-details-dialog.component.html',
   styleUrls: ['./sale-details-dialog.component.scss']
@@ -25,6 +28,7 @@ import { ReportService } from '../../../core/services/report.service';
 export class SaleDetailsDialogComponent {
   private reportService = inject(ReportService);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
   downloading = false;
 
   constructor(
@@ -33,11 +37,13 @@ export class SaleDetailsDialogComponent {
   ) {}
 
   formatCurrency(value: number): string {
-    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 
   formatDateTime(dateStr: string): string {
-    return new Date(dateStr).toLocaleString('en-US', {
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return new Date(dateStr).toLocaleString(locale, {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -57,11 +63,11 @@ export class SaleDetailsDialogComponent {
         link.click();
         window.URL.revokeObjectURL(url);
         this.downloading = false;
-        this.snackBar.open('Receipt downloaded successfully', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('saleDetails.receiptOk'), this.i18n.t('common.close'), { duration: 3000 });
       },
       error: () => {
         this.downloading = false;
-        this.snackBar.open('Error downloading receipt', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('saleDetails.receiptError'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }

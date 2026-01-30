@@ -15,6 +15,8 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SalesService, Sale } from '../../core/services/sales.service';
 import { SaleDetailsDialogComponent } from './sale-details-dialog/sale-details-dialog.component';
+import { I18nService } from '../../core/services/i18n.service';
+import { TPipe } from '../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-sales-history',
@@ -33,7 +35,8 @@ import { SaleDetailsDialogComponent } from './sale-details-dialog/sale-details-d
     MatDialogModule,
     MatSnackBarModule,
     MatPaginatorModule,
-    MatTooltipModule
+    MatTooltipModule,
+    TPipe
   ],
   templateUrl: './sales-history.component.html',
   styleUrls: ['./sales-history.component.scss']
@@ -42,6 +45,7 @@ export class SalesHistoryComponent implements OnInit {
   private salesService = inject(SalesService);
   private dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
 
   sales: Sale[] = [];
   displayedColumns = ['id', 'date', 'customerName', 'customerPhone', 'totalAmount', 'netCashPaid', 'createdBy', 'actions'];
@@ -79,7 +83,7 @@ export class SalesHistoryComponent implements OnInit {
         this.loading = false;
       },
       error: () => {
-        this.snackBar.open('Error loading sales', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('sales.loadError'), this.i18n.t('common.close'), { duration: 3000 });
         this.loading = false;
       }
     });
@@ -112,21 +116,22 @@ export class SalesHistoryComponent implements OnInit {
   }
 
   voidSale(sale: Sale): void {
-    if (confirm(`Are you sure you want to void sale ${sale.id}? This action cannot be undone.`)) {
+    if (confirm(this.i18n.t('sales.confirmVoid', { id: sale.id }))) {
       this.salesService.voidSale(sale.id).subscribe({
         next: () => {
-          this.snackBar.open('Sale voided successfully', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('sales.voidSuccess'), this.i18n.t('common.close'), { duration: 3000 });
           this.loadSales();
         },
         error: () => {
-          this.snackBar.open('Error voiding sale', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('sales.voidError'), this.i18n.t('common.close'), { duration: 3000 });
         }
       });
     }
   }
 
   formatCurrency(value: number): string {
-    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 
   formatDate(date: Date): string {
@@ -134,7 +139,8 @@ export class SalesHistoryComponent implements OnInit {
   }
 
   formatDateTime(dateStr: string): string {
-    return new Date(dateStr).toLocaleString('en-US', {
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return new Date(dateStr).toLocaleString(locale, {
       year: 'numeric',
       month: 'short',
       day: 'numeric',

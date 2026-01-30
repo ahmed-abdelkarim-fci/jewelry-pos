@@ -1,52 +1,43 @@
 <h2 mat-dialog-title>
   <mat-icon>{{ isEditMode ? 'edit' : 'person_add' }}</mat-icon>
-  {{ isEditMode ? 'Edit User' : 'Create User' }}
+  {{ isEditMode ? ('users.dialog.editTitle' | t) : ('users.dialog.createTitle' | t) }}
 </h2>
 
 <mat-dialog-content>
   <form [formGroup]="form">
     <div class="row">
       <mat-form-field appearance="outline">
-        <mat-label>First Name</mat-label>
+        <mat-label>{{ 'users.dialog.firstName' | t }}</mat-label>
         <input matInput formControlName="firstName">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Last Name</mat-label>
+        <mat-label>{{ 'users.dialog.lastName' | t }}</mat-label>
         <input matInput formControlName="lastName">
       </mat-form-field>
     </div>
 
     <div class="row">
       <mat-form-field appearance="outline">
-        <mat-label>Username</mat-label>
+        <mat-label>{{ 'users.dialog.username' | t }}</mat-label>
         <input matInput formControlName="username">
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password" [placeholder]="isEditMode ? 'Leave blank to keep' : ''">
+        <mat-label>{{ 'users.dialog.password' | t }}</mat-label>
+        <input matInput type="password" formControlName="password" [placeholder]="isEditMode ? ('users.dialog.passwordHint' | t) : ''">
       </mat-form-field>
     </div>
 
-    <mat-form-field appearance="outline" class="full">
-      <mat-label>Roles</mat-label>
-      <mat-select formControlName="roles" multiple>
-        @for (r of roleOptions; track r) {
-          <mat-option [value]="r">{{ r }}</mat-option>
-        }
-      </mat-select>
-    </mat-form-field>
-
     @if (isEditMode) {
-      <mat-checkbox formControlName="enabled">Enabled</mat-checkbox>
+      <mat-checkbox formControlName="enabled">{{ 'users.dialog.enabled' | t }}</mat-checkbox>
     }
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button (click)="cancel()">{{ 'common.cancel' | t }}</button>
   <button mat-raised-button color="primary" (click)="save()" [disabled]="form.invalid || saving">
-    {{ saving ? 'Saving...' : 'Save' }}
+    {{ saving ? ('users.dialog.saving' | t) : ('users.dialog.save' | t) }}
   </button>
 </mat-dialog-actions>

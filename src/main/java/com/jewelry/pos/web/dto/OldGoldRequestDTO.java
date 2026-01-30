@@ -9,20 +9,20 @@ import java.math.BigDecimal;
 
 public record OldGoldRequestDTO(
 
-        @NotBlank(message = "Karat type is required (e.g., KARAT_21)")
+        @NotBlank(message = "{validation.oldGold.purity.required}")
         KaratEnum purity,
 
-        @NotNull(message = "Weight is required")
-        @Positive(message = "Weight must be greater than zero")
+        @NotNull(message = "{validation.oldGold.weight.required}")
+        @Positive(message = "{validation.oldGold.weight.positive}")
         BigDecimal weight,
 
-        @NotNull(message = "Buy Rate is required")
-        @Positive(message = "Buy Rate must be greater than zero")
+        @NotNull(message = "{validation.oldGold.buyRate.required}")
+        @Positive(message = "{validation.oldGold.buyRate.positive}")
         BigDecimal buyRate, // Price per gram
 
         String description, // Optional
 
-        @NotBlank(message = "Customer National ID is required for security regulations")
+        @NotBlank(message = "{validation.oldGold.nationalId.required}")
         String customerNationalId,
 
         String customerPhoneNumber

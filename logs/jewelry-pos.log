@@ -1989,3 +1989,1345 @@ io.jsonwebtoken.ExpiredJwtException: JWT expired 609299723 milliseconds ago at 2
 2026-01-30 02:18:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
 2026-01-30 02:19:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
 2026-01-30 02:19:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:20:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:20:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:20:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:20:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:20:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:20:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:20:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:20:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:35 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:35 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:21:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:22:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:22:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:22:22 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:22:22 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:22:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:22:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:23:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:23:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:24:12 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:24:12 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:24:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:24:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:24:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:24:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:24:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:24:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:24:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:24:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:24:54 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:24:54 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:22 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:22 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:25:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:25:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:26:04 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:26:04 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:26:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:26:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:26:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:26:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:26:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:26:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:27:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:27:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:27:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:27:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:27:30 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:27:30 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:28:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:28:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:28:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:28:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:28:44 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:28:44 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:28:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:28:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:28:53 INFO  c.j.pos.service.CheckoutService - Financial Transaction Persisted: Sale ID 0PAVSMYBXA8QA | Total: 7002.000 | Old Gold: 0 | Net Paid: 7002.000
+2026-01-30 02:28:53 INFO  c.j.pos.service.CheckoutService - Attempting hardware trigger for Sale 0PAVSMYBXA8QA
+2026-01-30 02:28:53 INFO  c.j.pos.service.StubHardwareService - [SIMULATION] Drawer Opened (KA-CHING!)
+2026-01-30 02:29:04 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:29:04 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:29:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:29:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:29:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:29:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:29:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:29:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:29:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:29:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:29:49 INFO  c.j.pos.service.CheckoutService - Financial Transaction Persisted: Sale ID 0PAVSVT19A8VM | Total: 7002.000 | Old Gold: 0 | Net Paid: 7002.000
+2026-01-30 02:29:49 INFO  c.j.pos.service.CheckoutService - Attempting hardware trigger for Sale 0PAVSVT19A8VM
+2026-01-30 02:29:49 INFO  c.j.pos.service.StubHardwareService - [SIMULATION] Drawer Opened (KA-CHING!)
+2026-01-30 02:29:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:29:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:29:59 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:29:59 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:30:00 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:30:00 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:30:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:30:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:30:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:30:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:30:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:30:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:31:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:31:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:31:36 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:31:36 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:32:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:32:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:33:01 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:33:01 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:33:06 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:33:06 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:33:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:33:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:34:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:34:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:34:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:34:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:34:57 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.jewelry.pos.domain.entity.PurityEnum` from String "KARAT_21": not one of the values accepted for Enum class: [K18, K24, K21]]
+2026-01-30 02:35:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:35:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:35:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:35:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:35:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:35:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:35:26 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:35:26 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:36:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:36:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:37:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:37:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:37:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:37:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:37:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:37:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:37:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:37:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:37:30 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:37:30 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:38:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:38:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:39:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:39:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:39:25 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:25 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:25 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:25 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:25 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:25 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:25 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:28 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:32 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:32 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:39:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:40:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:40:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:41:29 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-30 02:41:29 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-30 02:41:29 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 02:41:29 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-30 02:41:29 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-30 02:42:15 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 02:42:16 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 24844 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 02:42:16 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 02:42:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 02:42:20 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 128 ms. Found 10 JPA repository interfaces.
+2026-01-30 02:42:22 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 02:42:22 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 02:42:22 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 02:42:22 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 02:42:22 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 02:42:22 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6806 ms
+2026-01-30 02:42:23 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-30 02:42:24 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-01-30 02:42:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-30 02:42:24 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-01-30 02:42:24 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-01-30 02:42:24 INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.052s)
+2026-01-30 02:42:24 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": 1
+2026-01-30 02:42:24 INFO  o.f.core.internal.command.DbMigrate - Schema "PUBLIC" is up to date. No migration necessary.
+2026-01-30 02:42:25 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 02:42:25 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-30 02:42:25 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-30 02:42:25 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-30 02:42:26 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-30 02:42:28 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-30 02:42:28 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 02:42:29 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-30 02:42:33 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-30 02:42:33 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-30 02:42:34 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 02:42:35 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-01-30 02:42:36 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-01-30 02:42:36 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-30 02:42:36 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-30 02:42:36 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 21.52 seconds (process running for 22.837)
+2026-01-30 02:42:41 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 02:42:41 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-30 02:42:41 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-01-30 02:42:41 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:42:41 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:42:41 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:42:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:42:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:42:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:42:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:42:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:42:45 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:42:45 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:42:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:55 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:55 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:42:58 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:42:58 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:43:01 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:43:01 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:43:01 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:43:01 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:43:01 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:43:04 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 02:43:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:43:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:43:59 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:43:59 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:43:59 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:43:59 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:43:59 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2026-01-30 02:43:59 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2026-01-30 02:44:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:44:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:44:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:44:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:44:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:44:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:44:09 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Ignoring exception, response committed already: org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)
+2026-01-30 02:44:09 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Document nesting depth (1001) exceeds the maximum allowed (1000, from `StreamWriteConstraints.getMaxNestingDepth()`)]
+2026-01-30 02:44:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:44:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:45:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:45:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:46:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:46:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:47:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:47:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:50:22 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-30 02:50:22 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-30 02:50:22 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 02:50:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-30 02:50:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-30 02:50:27 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 02:50:27 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 17852 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 02:50:27 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 02:50:31 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 02:50:31 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 133 ms. Found 10 JPA repository interfaces.
+2026-01-30 02:50:33 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 02:50:33 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 02:50:33 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 02:50:33 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 02:50:33 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 02:50:33 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5262 ms
+2026-01-30 02:50:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-30 02:50:34 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-01-30 02:50:34 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-30 02:50:34 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-01-30 02:50:34 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-01-30 02:50:35 INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.058s)
+2026-01-30 02:50:35 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": 1
+2026-01-30 02:50:35 INFO  o.f.core.internal.command.DbMigrate - Schema "PUBLIC" is up to date. No migration necessary.
+2026-01-30 02:50:35 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 02:50:35 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-30 02:50:35 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-30 02:50:35 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-30 02:50:36 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-30 02:50:38 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-30 02:50:38 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 02:50:39 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-30 02:50:42 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-30 02:50:42 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-30 02:50:42 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 02:50:43 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-01-30 02:50:44 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-01-30 02:50:44 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-30 02:50:44 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-30 02:50:44 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 17.207 seconds (process running for 17.775)
+2026-01-30 02:50:47 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 02:50:47 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-30 02:50:47 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-01-30 02:50:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:50:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:50:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:50:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:50:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:50:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:50:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:50:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:50:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:50:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:50:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:50:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:51:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:51:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:52:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:52:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:16 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:53:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:54:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:54:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:55:10 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:55:10 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:55:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:55:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:55:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:55:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:55:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:55:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:55:42 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.jewelry.pos.domain.entity.PurityEnum` from String "KARAT_21": not one of the values accepted for Enum class: [K18, K24, K21]]
+2026-01-30 02:55:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:55:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:55:51 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.jewelry.pos.domain.entity.PurityEnum` from String "KARAT_21": not one of the values accepted for Enum class: [K18, K24, K21]]
+2026-01-30 02:56:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:56:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:56:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:56:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:56:31 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.jewelry.pos.domain.entity.PurityEnum` from String "KARAT_21": not one of the values accepted for Enum class: [K18, K24, K21]]
+2026-01-30 02:56:36 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:56:36 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:56:36 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.jewelry.pos.domain.entity.PurityEnum` from String "KARAT_21": not one of the values accepted for Enum class: [K18, K24, K21]]
+2026-01-30 02:57:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 02:57:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 02:57:53 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-30 02:57:53 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-30 02:57:53 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 02:57:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-30 02:57:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-30 03:01:21 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 03:01:21 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 18736 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 03:01:21 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 03:01:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 03:01:24 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131 ms. Found 10 JPA repository interfaces.
+2026-01-30 03:01:26 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 03:01:26 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 03:01:26 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 03:01:26 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 03:01:26 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 03:01:26 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5159 ms
+2026-01-30 03:01:27 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-30 03:01:28 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-01-30 03:01:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-30 03:01:28 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-01-30 03:01:28 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-01-30 03:01:28 INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.041s)
+2026-01-30 03:01:28 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": 1
+2026-01-30 03:01:28 INFO  o.f.core.internal.command.DbMigrate - Schema "PUBLIC" is up to date. No migration necessary.
+2026-01-30 03:01:28 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 03:01:28 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-30 03:01:28 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-30 03:01:28 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-30 03:01:29 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-30 03:01:31 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-30 03:01:31 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 03:01:31 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-30 03:01:35 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-30 03:01:35 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-30 03:01:35 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 03:01:36 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-01-30 03:01:37 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-01-30 03:01:37 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-30 03:01:37 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-30 03:01:37 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 17.058 seconds (process running for 19.074)
+2026-01-30 03:01:46 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:46 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:46 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:46 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:46 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 03:01:46 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-30 03:01:46 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-01-30 03:01:46 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:49 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:52 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:01:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:01:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:01:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:01:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:02:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:02:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:02:25 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.jewelry.pos.domain.entity.PurityEnum` from String "KARAT_21": not one of the values accepted for Enum class: [K18, K24, K21]]
+2026-01-30 03:02:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:02:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:02:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:02:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:02:57 WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.jewelry.pos.domain.entity.PurityEnum` from String "KARAT_21": not one of the values accepted for Enum class: [K18, K24, K21]]
+2026-01-30 03:03:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:03:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:04:24 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-30 03:04:24 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-30 03:04:24 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 03:04:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-30 03:04:24 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-30 03:05:14 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 03:05:14 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 20360 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 03:05:14 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 03:05:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 03:05:17 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 187 ms. Found 10 JPA repository interfaces.
+2026-01-30 03:05:20 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 03:05:20 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 03:05:20 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 03:05:20 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 03:05:20 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 03:05:20 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6149 ms
+2026-01-30 03:05:21 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-30 03:05:22 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-01-30 03:05:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-30 03:05:22 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-01-30 03:05:22 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-01-30 03:05:22 INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.054s)
+2026-01-30 03:05:22 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": 1
+2026-01-30 03:05:22 INFO  o.f.core.internal.command.DbMigrate - Schema "PUBLIC" is up to date. No migration necessary.
+2026-01-30 03:05:22 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 03:05:22 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-30 03:05:23 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-30 03:05:23 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-30 03:05:23 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-30 03:05:25 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-30 03:05:25 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 03:05:26 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-30 03:05:29 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-30 03:05:29 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-30 03:05:29 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 03:05:30 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-01-30 03:05:31 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-01-30 03:05:31 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-30 03:05:31 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-30 03:05:31 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 18.346 seconds (process running for 19.228)
+2026-01-30 03:05:39 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 03:05:39 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-30 03:05:39 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-01-30 03:05:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:05:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:05:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:05:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:05:52 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:05:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:05:54 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:05:54 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:04 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:04 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:04 WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-01-30 03:06:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:46 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:46 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:06:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:07:33 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:07:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:07:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:08:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:08:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:09:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:09:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:10:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:10:40 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:10:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:10:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:05 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:05 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:06 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:06 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:52 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:52 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:54 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:54 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:11:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:11:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:12:01 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:12:01 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:12:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:12:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:12:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:12:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:13:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:13:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:14:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:14:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:11 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:15:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:15:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:16:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:16:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:17:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:17:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:18:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:18:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:19:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:19:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:20:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:20:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:20:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-01-30 03:20:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 8390 EGP
+2026-01-30 03:21:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:21:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:21:29 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:29 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:29 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:29 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:29 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:29 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:29 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:36 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:41 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:41 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:21:41 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:22:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:22:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:23:40 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:23:40 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:23:40 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:23:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:23:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:24:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:24:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:24:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:24:32 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:25:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:25:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:26:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:26:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:26:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:26:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:27:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:27:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:27:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:27:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:28:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:28:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:28:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:28:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:29:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:29:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:29:43 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:29:43 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:29:43 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:29:51 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:30:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:30:07 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:30:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:30:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:30:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:30:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:30:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:30:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:30:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:30:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:31:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:31:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:32:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:32:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:33:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:33:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:34:48 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:34:48 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:35:01 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:35:14 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:35:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:35:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-01-30 03:35:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 8390 EGP
+2026-01-30 03:35:47 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:35:47 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:35:47 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:35:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:35:57 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:36:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:36:14 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:36:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:36:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:36:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 03:36:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 03:36:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:36:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:36:50 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:20 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:22 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:22 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: ahmed
+2026-01-30 03:37:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: ahmed
+2026-01-30 03:37:43 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-30 03:37:43 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-30 03:37:43 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 03:37:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-30 03:37:43 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-30 10:53:04 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 10:53:04 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 13468 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 10:53:04 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 10:53:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 10:53:07 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 10 JPA repository interfaces.
+2026-01-30 10:53:08 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 10:53:08 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 10:53:08 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 10:53:08 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 10:53:08 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 10:53:08 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4287 ms
+2026-01-30 10:53:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-30 10:53:09 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-01-30 10:53:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-30 10:53:09 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-01-30 10:53:10 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-01-30 10:53:10 INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.043s)
+2026-01-30 10:53:10 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": 1
+2026-01-30 10:53:10 INFO  o.f.core.internal.command.DbMigrate - Schema "PUBLIC" is up to date. No migration necessary.
+2026-01-30 10:53:10 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 10:53:10 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-30 10:53:10 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-30 10:53:10 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-30 10:53:11 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-30 10:53:12 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-30 10:53:12 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 10:53:13 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-30 10:53:15 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-30 10:53:15 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-30 10:53:16 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 10:53:17 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-01-30 10:53:17 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-01-30 10:53:17 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-30 10:53:17 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-30 10:53:17 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 14.282 seconds (process running for 22.749)
+2026-01-30 10:53:20 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-01-30 10:53:20 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-01-30 10:53:21 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 8390 EGP
+2026-01-30 10:53:21 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 8390 EGP
+2026-01-30 11:08:17 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-01-30 11:08:18 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 8390 EGP
+2026-01-30 11:08:41 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-30 11:08:41 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-30 11:08:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 11:08:41 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-30 11:08:41 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-01-30 11:54:29 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 11:54:29 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 18828 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 11:54:29 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 11:54:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 11:54:33 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151 ms. Found 10 JPA repository interfaces.
+2026-01-30 11:54:35 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 11:54:35 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 11:54:35 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 11:54:35 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 11:54:35 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 11:54:35 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6480 ms
+2026-01-30 11:54:36 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-30 11:54:37 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-01-30 11:54:37 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-30 11:54:37 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-01-30 11:54:37 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-01-30 11:54:37 INFO  o.f.c.i.s.JdbcTableSchemaHistory - Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-01-30 11:54:37 INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.031s)
+2026-01-30 11:54:37 INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-01-30 11:54:37 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": << Empty Schema >>
+2026-01-30 11:54:37 INFO  o.f.core.internal.command.DbMigrate - Migrating schema "PUBLIC" to version "1 - create initial schema"
+2026-01-30 11:54:37 INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "PUBLIC", now at version v1 (execution time 00:00.127s)
+2026-01-30 11:54:37 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 11:54:38 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-30 11:54:38 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-30 11:54:38 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-30 11:54:39 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-30 11:54:41 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-30 11:54:41 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 11:54:42 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-30 11:54:46 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-30 11:54:46 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-30 11:54:46 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 11:54:47 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-01-30 11:54:48 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-01-30 11:54:48 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-30 11:54:48 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-30 11:54:48 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 21.253 seconds (process running for 22.493)
+2026-01-30 11:55:24 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:24 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:24 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:24 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:24 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:24 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 11:55:24 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-30 11:55:24 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2026-01-30 11:55:24 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:31 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:33 INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1966 ms
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:37 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:40 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:41 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:51 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:51 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:51 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:55:56 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:56:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:56:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:56:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:57:02 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:59:18 WARN  c.j.p.s.JwtAuthenticationFilter - No Authorization header found or invalid format
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 11:59:46 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 11:59:46 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:00:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:00:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:00:13 WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-01-30 12:00:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:00:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:00:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:00:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:00:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:00:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:00:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:00:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:00 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:00 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:00 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:00 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:02 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:02 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:01:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:01:27 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:02:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:02:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:03:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:03:18 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:03:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:03:31 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:03:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:03:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:03:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:03:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:03:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:03:53 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:04:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:04:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:04:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:04:23 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:04:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:04:43 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:04:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:04:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:05:39 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 12:05:39 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 21384 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 12:05:39 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 12:05:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 12:05:42 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 190 ms. Found 10 JPA repository interfaces.
+2026-01-30 12:05:45 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 12:05:45 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 12:05:45 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 12:05:45 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 12:05:46 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 12:05:46 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6732 ms
+2026-01-30 12:06:11 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-30 12:06:11 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 12972 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-01-30 12:06:11 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-01-30 12:06:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-30 12:06:14 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 159 ms. Found 10 JPA repository interfaces.
+2026-01-30 12:06:16 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-30 12:06:16 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-30 12:06:16 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-30 12:06:16 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-01-30 12:06:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-30 12:06:17 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5629 ms
+2026-01-30 12:06:17 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-30 12:06:22 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-01-30 12:06:22 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-30 12:06:22 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-01-30 12:06:22 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-01-30 12:06:22 INFO  o.f.core.internal.command.DbValidate - Successfully validated 1 migration (execution time 00:00.049s)
+2026-01-30 12:06:22 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": 1
+2026-01-30 12:06:22 INFO  o.f.core.internal.command.DbMigrate - Schema "PUBLIC" is up to date. No migration necessary.
+2026-01-30 12:06:23 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 12:06:23 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-01-30 12:06:23 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-30 12:06:23 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-30 12:06:24 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-30 12:06:26 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-30 12:06:26 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 12:06:28 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-30 12:06:31 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-30 12:06:31 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-01-30 12:06:32 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 12:06:33 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-01-30 12:06:34 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-01-30 12:06:34 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-30 12:06:34 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-30 12:06:34 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 24.887 seconds (process running for 26.126)
+2026-01-30 12:07:29 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 12:07:29 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-30 12:07:29 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-01-30 12:07:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:07:30 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:07:30 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:07:30 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:07:30 WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-01-30 12:07:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:07:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:07:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:07:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:08 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:13 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:21 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:28 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:28 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:39 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:45 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:45 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:08:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:08:51 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:09:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:09:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:09:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:09:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:09:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:09:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 12:10:12 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 12:10:12 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:16:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:16:10 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:16:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:16:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:16:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:16:24 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:36 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-01-30 13:16:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:16:37 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-01-30 13:16:37 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7920 EGP
+2026-01-30 13:17:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-01-30 13:17:09 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin

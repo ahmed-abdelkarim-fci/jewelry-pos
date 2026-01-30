@@ -1,19 +1,24 @@
 <h2 mat-dialog-title>
   <mat-icon>{{ isEditMode ? 'edit' : 'add' }}</mat-icon>
-  {{ isEditMode ? 'Edit Product' : 'Add New Product' }}
+  {{ isEditMode ? ('product.editTitle' | t) : ('product.addTitle' | t) }}
 </h2>
 
 <mat-dialog-content>
   <form [formGroup]="productForm">
     <div class="form-row">
       <mat-form-field appearance="outline">
-        <mat-label>Barcode</mat-label>
-        <input matInput formControlName="barcode">
+        <mat-label>{{ 'product.barcode' | t }}</mat-label>
+        <input matInput formControlName="barcode" [placeholder]="'product.barcodePlaceholder' | t">
         <mat-icon matPrefix>qr_code</mat-icon>
+        @if (isEditMode) {
+          <mat-hint>{{ 'product.barcodeDisabled' | t }}</mat-hint>
+        } @else {
+          <mat-hint>{{ 'product.barcodeHint' | t }}</mat-hint>
+        }
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Model Name</mat-label>
+        <mat-label>{{ 'product.modelName' | t }}</mat-label>
         <input matInput formControlName="modelName">
         <mat-icon matPrefix>label</mat-icon>
       </mat-form-field>
@@ -21,7 +26,7 @@
 
     <div class="form-row">
       <mat-form-field appearance="outline">
-        <mat-label>Purity</mat-label>
+        <mat-label>{{ 'product.purity' | t }}</mat-label>
         <mat-select formControlName="purityEnum">
           @for (purity of purities; track purity) {
             <mat-option [value]="purity">{{ purity }}</mat-option>
@@ -30,10 +35,10 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Jewelry Type</mat-label>
+        <mat-label>{{ 'product.type' | t }}</mat-label>
         <mat-select formControlName="type">
           @for (type of types; track type) {
-            <mat-option [value]="type">{{ type }}</mat-option>
+            <mat-option [value]="type">{{ getTypeLabel(type) }}</mat-option>
           }
         </mat-select>
         <mat-icon matPrefix>category</mat-icon>
@@ -42,29 +47,29 @@
 
     <div class="form-row">
       <mat-form-field appearance="outline">
-        <mat-label>Gross Weight (grams)</mat-label>
+        <mat-label>{{ 'product.grossWeight' | t }}</mat-label>
         <input matInput type="number" formControlName="grossWeight" step="0.001">
         <mat-icon matPrefix>scale</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>Making Charge (EGP)</mat-label>
+        <mat-label>{{ 'product.makingCharge' | t }}</mat-label>
         <input matInput type="number" formControlName="makingCharge">
         <mat-icon matPrefix>build</mat-icon>
       </mat-form-field>
     </div>
 
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Description (Optional)</mat-label>
+      <mat-label>{{ 'product.description' | t }}</mat-label>
       <textarea matInput 
                 formControlName="description" 
                 rows="3"
-                placeholder="Enter product description..."></textarea>
+                [placeholder]="'product.descriptionPlaceholder' | t"></textarea>
       <mat-icon matPrefix>description</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Cost Price (EGP)</mat-label>
+      <mat-label>{{ 'product.costPrice' | t }}</mat-label>
       <input matInput 
              [type]="showCostPrice ? 'number' : 'password'" 
              formControlName="costPrice">
@@ -80,8 +85,8 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onCancel()">{{ 'common.cancel' | t }}</button>
   <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!productForm.valid">
-    {{ isEditMode ? 'Update' : 'Add' }} Product
+    {{ isEditMode ? ('common.update' | t) : ('common.add' | t) }}
   </button>
 </mat-dialog-actions>

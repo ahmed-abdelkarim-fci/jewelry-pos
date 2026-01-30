@@ -10,6 +10,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { UserService, User } from '../../../core/services/user.service';
+import { I18nService } from '../../../core/services/i18n.service';
+import { TPipe } from '../../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-user-dialog',
@@ -24,7 +26,8 @@ import { UserService, User } from '../../../core/services/user.service';
     MatIconModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TPipe
   ],
   templateUrl: './user-dialog.component.html',
   styleUrls: ['./user-dialog.component.scss']
@@ -34,11 +37,10 @@ export class UserDialogComponent {
   private userService = inject(UserService);
   private snackBar = inject(MatSnackBar);
   private dialogRef = inject(MatDialogRef<UserDialogComponent>);
+  private i18n = inject(I18nService);
 
   isEditMode = false;
   saving = false;
-
-  roleOptions = ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER', 'CASHIER', 'ROLE_USER'];
 
   form: FormGroup;
 
@@ -50,8 +52,7 @@ export class UserDialogComponent {
       lastName: [data?.lastName || '', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
       username: [{ value: data?.username || '', disabled: this.isEditMode }, [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern(/^[a-zA-Z0-9_]*$/)]],
       password: ['', this.isEditMode ? [] : [Validators.required, Validators.minLength(6)]],
-      enabled: [data?.enabled ?? true],
-      roles: [data?.roles || [], [Validators.required]]
+      enabled: [data?.enabled ?? true]
     });
   }
 
@@ -64,18 +65,18 @@ export class UserDialogComponent {
         firstName: this.form.get('firstName')?.value,
         lastName: this.form.get('lastName')?.value,
         enabled: this.form.get('enabled')?.value,
-        roles: this.form.get('roles')?.value
+        roles: this.data.roles // Keep existing roles on update
       };
 
       this.userService.updateUser(this.data.id, payload).subscribe({
         next: () => {
           this.saving = false;
-          this.snackBar.open('User updated', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('users.updated'), this.i18n.t('common.close'), { duration: 3000 });
           this.dialogRef.close(true);
         },
         error: () => {
           this.saving = false;
-          this.snackBar.open('Error updating user', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('users.updateError'), this.i18n.t('common.close'), { duration: 3000 });
         }
       });
       return;
@@ -86,18 +87,18 @@ export class UserDialogComponent {
       lastName: this.form.get('lastName')?.value,
       username: this.form.get('username')?.value,
       password: this.form.get('password')?.value,
-      roles: this.form.get('roles')?.value
+      roles: ['ROLE_USER'] // Default role for new users
     };
 
     this.userService.createUser(payload).subscribe({
       next: () => {
         this.saving = false;
-        this.snackBar.open('User created', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('users.created'), this.i18n.t('common.close'), { duration: 3000 });
         this.dialogRef.close(true);
       },
       error: () => {
         this.saving = false;
-        this.snackBar.open('Error creating user', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('users.createError'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }

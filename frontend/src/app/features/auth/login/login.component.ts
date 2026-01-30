@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { AuthService } from '../../../core/services/auth.service';
+import { I18nService } from '../../../core/services/i18n.service';
+import { TPipe } from '../../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,8 @@ import { AuthService } from '../../../core/services/auth.service';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TPipe
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
@@ -31,6 +34,7 @@ export class LoginComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
 
   loginForm: FormGroup = this.fb.group({
     username: ['', Validators.required],
@@ -49,7 +53,7 @@ export class LoginComponent {
         },
         error: (error) => {
           this.loading = false;
-          this.snackBar.open('Invalid credentials', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('login.invalidCredentials'), this.i18n.t('common.close'), { duration: 3000 });
         }
       });
     }

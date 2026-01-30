@@ -7,34 +7,33 @@ import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 
 public record ProductRequestDTO(
-        @NotBlank(message = "Barcode is required")
-        @Pattern(regexp = "^[A-Za-z0-9-]+$", message = "Barcode contains invalid characters")
+//        @Pattern(regexp = "^[A-Za-z0-9-]+$", message = "{validation.product.barcode.invalid}")
         String barcode,
 
-        @NotBlank(message = "Model name is required")
-        @Size(max = 100, message = "Model name too long")
+        @NotBlank(message = "{validation.product.modelName.required}")
+        @Size(max = 100, message = "{validation.product.modelName.size}")
         String modelName,
 
-        @NotNull(message = "Purity is required")
+        @NotNull(message = "{validation.product.purity.required}")
         PurityEnum purityEnum,
 
-        @NotNull(message = "Jewelry type is required")
+        @NotNull(message = "{validation.product.type.required}")
         JewelryTypeEnum type,
 
-        @NotNull(message = "Weight is required")
-        @Positive(message = "Weight must be positive")
-        @Digits(integer = 5, fraction = 3, message = "Weight format invalid (max 3 decimals)")
+        @NotNull(message = "{validation.product.weight.required}")
+        @Positive(message = "{validation.product.weight.positive}")
+        @Digits(integer = 5, fraction = 3, message = "{validation.product.weight.digits}")
         BigDecimal grossWeight,
 
-        @NotNull(message = "Making charge is required")
-        @PositiveOrZero(message = "Making charge cannot be negative")
-        @Digits(integer = 6, fraction = 2, message = "Making charge format invalid (max 2 decimals)")
+        @NotNull(message = "{validation.product.makingCharge.required}")
+        @PositiveOrZero(message = "{validation.product.makingCharge.nonNegative}")
+        @Digits(integer = 6, fraction = 2, message = "{validation.product.makingCharge.digits}")
         BigDecimal makingCharge,
 
         String description,
 
-        @NotNull(message = "Cost Price is required for profit calculation")
-        @PositiveOrZero(message = "Cost Price cannot be negative")
+        @NotNull(message = "{validation.product.costPrice.required}")
+        @PositiveOrZero(message = "{validation.product.costPrice.nonNegative}")
         BigDecimal costPrice
 ) {
 }

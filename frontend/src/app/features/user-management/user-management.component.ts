@@ -10,6 +10,8 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
 import { UserService, User } from '../../core/services/user.service';
 import { UserDialogComponent } from './user-dialog/user-dialog.component';
+import { I18nService } from '../../core/services/i18n.service';
+import { TPipe } from '../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-user-management',
@@ -23,7 +25,8 @@ import { UserDialogComponent } from './user-dialog/user-dialog.component';
     MatDialogModule,
     MatSnackBarModule,
     MatPaginatorModule,
-    MatChipsModule
+    MatChipsModule,
+    TPipe
   ],
   templateUrl: './user-management.component.html',
   styleUrls: ['./user-management.component.scss']
@@ -32,6 +35,7 @@ export class UserManagementComponent implements OnInit {
   private userService = inject(UserService);
   private dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
 
   users: User[] = [];
   displayedColumns = ['username', 'fullName', 'roles', 'enabled', 'createdDate', 'actions'];
@@ -54,7 +58,7 @@ export class UserManagementComponent implements OnInit {
         this.loading = false;
       },
       error: () => {
-        this.snackBar.open('Error loading users', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('users.loadError'), this.i18n.t('common.close'), { duration: 3000 });
         this.loading = false;
       }
     });
@@ -93,28 +97,28 @@ export class UserManagementComponent implements OnInit {
   }
 
   deleteUser(user: User): void {
-    if (confirm(`Delete user ${user.username}?`)) {
+    if (confirm(this.i18n.t('users.confirmDelete', { username: user.username }))) {
       this.userService.deleteUser(user.id).subscribe({
         next: () => {
-          this.snackBar.open('User deleted', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('users.deleted'), this.i18n.t('common.close'), { duration: 3000 });
           this.loadUsers();
         },
         error: () => {
-          this.snackBar.open('Error deleting user', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('users.deleteError'), this.i18n.t('common.close'), { duration: 3000 });
         }
       });
     }
   }
 
   seedData(): void {
-    if (confirm('Seed initial users and roles?')) {
+    if (confirm(this.i18n.t('users.seedConfirm'))) {
       this.userService.seedData().subscribe({
         next: () => {
-          this.snackBar.open('Seed completed', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('users.seedOk'), this.i18n.t('common.close'), { duration: 3000 });
           this.loadUsers();
         },
         error: () => {
-          this.snackBar.open('Seed failed', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('users.seedFail'), this.i18n.t('common.close'), { duration: 3000 });
         }
       });
     }
@@ -123,16 +127,17 @@ export class UserManagementComponent implements OnInit {
   triggerBackup(): void {
     this.userService.triggerBackup().subscribe({
       next: (msg) => {
-        this.snackBar.open(msg, 'Close', { duration: 5000 });
+        this.snackBar.open(msg, this.i18n.t('common.close'), { duration: 5000 });
       },
       error: () => {
-        this.snackBar.open('Backup failed', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('users.backupFail'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
 
   formatDateTime(dateStr: string): string {
-    return new Date(dateStr).toLocaleString('en-US', {
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return new Date(dateStr).toLocaleString(locale, {
       year: 'numeric',
       month: 'short',
       day: 'numeric',

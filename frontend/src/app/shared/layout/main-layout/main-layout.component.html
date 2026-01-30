@@ -12,7 +12,7 @@
            [class.active]="isActive(item.route)"
            class="nav-item">
           <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
-          <span matListItemTitle>{{ getArabicLabel(item.label) }}</span>
+          <span matListItemTitle>{{ item.labelKey | t }}</span>
         </a>
       }
     </mat-nav-list>
@@ -44,30 +44,30 @@
 <mat-menu #userMenu="matMenu">
   <button mat-menu-item>
     <mat-icon>person</mat-icon>
-    <span>Profile</span>
+    <span>{{ 'menu.profile' | t }}</span>
   </button>
   <button mat-menu-item>
     <mat-icon>settings</mat-icon>
-    <span>Settings</span>
+    <span>{{ 'menu.settings' | t }}</span>
   </button>
   <mat-divider></mat-divider>
   <button mat-menu-item (click)="logout()">
     <mat-icon>logout</mat-icon>
-    <span>Logout</span>
+    <span>{{ 'menu.logout' | t }}</span>
   </button>
 </mat-menu>
 
 <mat-menu #notificationMenu="matMenu">
   <button mat-menu-item>
     <mat-icon>info</mat-icon>
-    <span>Low inventory alert</span>
+    <span>{{ 'notifications.lowInventory' | t }}</span>
   </button>
   <button mat-menu-item>
     <mat-icon>update</mat-icon>
-    <span>Gold rates updated</span>
+    <span>{{ 'notifications.goldUpdated' | t }}</span>
   </button>
   <button mat-menu-item>
     <mat-icon>receipt</mat-icon>
-    <span>New sale completed</span>
+    <span>{{ 'notifications.saleCompleted' | t }}</span>
   </button>
 </mat-menu>

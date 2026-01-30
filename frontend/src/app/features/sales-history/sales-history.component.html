@@ -1,24 +1,24 @@
 <div class="sales-history-container">
   <div class="sales-header">
     <div>
-      <h1><mat-icon>receipt_long</mat-icon> SALES HISTORY</h1>
-      <p class="subtitle">View and manage all sales transactions</p>
+      <h1><mat-icon>receipt_long</mat-icon> {{ 'sales.title' | t }}</h1>
+      <p class="subtitle">{{ 'sales.subtitle' | t }}</p>
     </div>
   </div>
 
   <mat-card class="filters-card">
     <div class="filters-row">
       <mat-form-field appearance="outline" class="search-field">
-        <mat-label>Search</mat-label>
+        <mat-label>{{ 'sales.search' | t }}</mat-label>
         <input matInput 
                [(ngModel)]="searchQuery" 
                (keyup.enter)="onSearch()"
-               placeholder="Search by ID, customer name, or phone...">
+               [placeholder]="'sales.searchPlaceholder' | t">
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>From Date</mat-label>
+        <mat-label>{{ 'sales.fromDate' | t }}</mat-label>
         <input matInput 
                [matDatepicker]="fromPicker" 
                [(ngModel)]="fromDate"
@@ -28,7 +28,7 @@
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>To Date</mat-label>
+        <mat-label>{{ 'sales.toDate' | t }}</mat-label>
         <input matInput 
                [matDatepicker]="toPicker" 
                [(ngModel)]="toDate"
@@ -38,11 +38,11 @@
       </mat-form-field>
 
       <button mat-raised-button color="primary" (click)="onSearch()">
-        <mat-icon>search</mat-icon> Search
+        <mat-icon>search</mat-icon> {{ 'sales.searchBtn' | t }}
       </button>
 
       <button mat-button (click)="clearFilters()">
-        <mat-icon>clear</mat-icon> Clear
+        <mat-icon>clear</mat-icon> {{ 'sales.clear' | t }}
       </button>
     </div>
   </mat-card>
@@ -50,61 +50,61 @@
   <mat-card>
     @if (loading) {
       <div class="loading-container">
-        <p>Loading sales...</p>
+        <p>{{ 'sales.loading' | t }}</p>
       </div>
     } @else {
       <div class="table-container">
         <table mat-table [dataSource]="sales">
           <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>Sale ID</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.saleId' | t }}</th>
             <td mat-cell *matCellDef="let sale">
               <code>{{ sale.id.substring(0, 8) }}...</code>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.date' | t }}</th>
             <td mat-cell *matCellDef="let sale">{{ formatDateTime(sale.date) }}</td>
           </ng-container>
 
           <ng-container matColumnDef="customerName">
-            <th mat-header-cell *matHeaderCellDef>Customer</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.customer' | t }}</th>
             <td mat-cell *matCellDef="let sale">
               <strong>{{ sale.customerName }}</strong>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="customerPhone">
-            <th mat-header-cell *matHeaderCellDef>Phone</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.phone' | t }}</th>
             <td mat-cell *matCellDef="let sale">{{ sale.customerPhone }}</td>
           </ng-container>
 
           <ng-container matColumnDef="totalAmount">
-            <th mat-header-cell *matHeaderCellDef>Total</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.total' | t }}</th>
             <td mat-cell *matCellDef="let sale">
-              <span class="gold-text">{{ formatCurrency(sale.totalAmount) }} EGP</span>
+              <span class="gold-text">{{ formatCurrency(sale.totalAmount) }} {{ 'unit.egp' | t }}</span>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="netCashPaid">
-            <th mat-header-cell *matHeaderCellDef>Net Paid</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.netPaid' | t }}</th>
             <td mat-cell *matCellDef="let sale">
-              <span class="success-text">{{ formatCurrency(sale.netCashPaid) }} EGP</span>
+              <span class="success-text">{{ formatCurrency(sale.netCashPaid) }} {{ 'unit.egp' | t }}</span>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="createdBy">
-            <th mat-header-cell *matHeaderCellDef>Cashier</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.cashier' | t }}</th>
             <td mat-cell *matCellDef="let sale">{{ sale.createdBy }}</td>
           </ng-container>
 
           <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'sales.table.actions' | t }}</th>
             <td mat-cell *matCellDef="let sale">
-              <button mat-icon-button color="primary" (click)="viewSaleDetails(sale)" matTooltip="View Details">
+              <button mat-icon-button color="primary" (click)="viewSaleDetails(sale)" [matTooltip]="'sales.tooltip.details' | t">
                 <mat-icon>visibility</mat-icon>
               </button>
-              <button mat-icon-button color="warn" (click)="voidSale(sale)" matTooltip="Void Sale">
+              <button mat-icon-button color="warn" (click)="voidSale(sale)" [matTooltip]="'sales.tooltip.void' | t">
                 <mat-icon>cancel</mat-icon>
               </button>
             </td>
@@ -117,7 +117,7 @@
         @if (sales.length === 0) {
           <div class="no-data">
             <mat-icon>inbox</mat-icon>
-            <p>No sales found</p>
+            <p>{{ 'sales.noData' | t }}</p>
           </div>
         }
       </div>

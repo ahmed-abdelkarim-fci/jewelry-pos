@@ -12,6 +12,8 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { PosService, Product, OldGoldItem } from '../../core/services/pos.service';
 import { GoldRateService, GoldRate } from '../../core/services/gold-rate.service';
 import { AddOldGoldDialogComponent } from './add-old-gold-dialog/add-old-gold-dialog.component';
+import { I18nService } from '../../core/services/i18n.service';
+import { TPipe } from '../../shared/pipes/t.pipe';
 
 interface CartItem extends Product {
   quantity: number;
@@ -30,7 +32,8 @@ interface CartItem extends Product {
     MatIconModule,
     MatTableModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    TPipe
   ],
   templateUrl: './pos.component.html',
   styleUrls: ['./pos.component.scss']
@@ -42,6 +45,7 @@ export class PosComponent implements OnInit, AfterViewInit {
   private goldRateService = inject(GoldRateService);
   private dialog = inject(MatDialog);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
 
   barcode = '';
   cartItems: CartItem[] = [];
@@ -89,7 +93,7 @@ export class PosComponent implements OnInit, AfterViewInit {
         this.barcodeInput.nativeElement.focus();
       },
       error: () => {
-        this.snackBar.open('Product not found', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('pos.error.productNotFound'), this.i18n.t('common.close'), { duration: 3000 });
         this.barcode = '';
       }
     });
@@ -144,18 +148,18 @@ export class PosComponent implements OnInit, AfterViewInit {
 
   checkout(): void {
     if (this.cartItems.length === 0) {
-      this.snackBar.open('Cart is empty', 'Close', { duration: 3000 });
+      this.snackBar.open(this.i18n.t('pos.error.cartEmpty'), this.i18n.t('common.close'), { duration: 3000 });
       return;
     }
 
     // Validate customer information
     if (!this.customerName) {
-      this.snackBar.open('Please enter customer name', 'Close', { duration: 3000 });
+      this.snackBar.open(this.i18n.t('pos.error.customerName'), this.i18n.t('common.close'), { duration: 3000 });
       return;
     }
 
     if (!this.currentGoldRate || this.currentGoldRate <= 0) {
-      this.snackBar.open('Gold rate is not set. Please configure gold rates in Settings.', 'Close', { duration: 4000 });
+      this.snackBar.open(this.i18n.t('pos.error.goldRateMissing'), this.i18n.t('common.close'), { duration: 4000 });
       return;
     }
 
@@ -170,12 +174,12 @@ export class PosComponent implements OnInit, AfterViewInit {
 
     this.posService.createSale(saleRequest).subscribe({
       next: () => {
-        this.snackBar.open('Sale completed successfully!', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('pos.saleSuccess'), this.i18n.t('common.close'), { duration: 3000 });
         this.clearCart();
       },
       error: (error) => {
         console.error('Sale error:', error);
-        this.snackBar.open('Error processing sale', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('pos.saleError'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
@@ -190,6 +194,7 @@ export class PosComponent implements OnInit, AfterViewInit {
   }
 
   formatCurrency(value: number): string {
-    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 }

@@ -3,18 +3,18 @@
     <div class="logo-section">
       <mat-icon class="logo-icon">diamond</mat-icon>
       <h1>AL MOHAMADIA</h1>
-      <p class="subtitle">نظام نقاط البيع للمجوهرات</p>
+      <p class="subtitle">{{ 'login.subtitle' | t }}</p>
     </div>
 
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <mat-form-field appearance="outline">
-        <mat-label>اسم المستخدم</mat-label>
+        <mat-label>{{ 'login.username' | t }}</mat-label>
         <input matInput formControlName="username" autocomplete="username">
         <mat-icon matPrefix>person</mat-icon>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
-        <mat-label>كلمة المرور</mat-label>
+        <mat-label>{{ 'login.password' | t }}</mat-label>
         <input matInput 
                [type]="hidePassword ? 'password' : 'text'" 
                formControlName="password"
@@ -33,8 +33,7 @@
               type="submit" 
               [disabled]="!loginForm.valid || loading"
               class="login-button">
-        {{ loading ? 'تسجيل الدخول...' : 'تسجيل الدخول' }}
-        {{ loading ? 'Logging in...' : 'Login' }}
+        {{ loading ? ('login.loggingIn' | t) : ('login.login' | t) }}
       </button>
     </form>
   </mat-card>

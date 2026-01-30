@@ -42,4 +42,13 @@ public class OldGoldController {
     public ResponseEntity<?> getScrapInventory() {
         return ResponseEntity.ok(oldGoldService.getScrapInventory());
     }
+    
+    @GetMapping("/purchases")
+    @PreAuthorize("hasAuthority('SALE_EXECUTE')")
+    @Operation(summary = "Get all old gold purchases with pagination")
+    public ResponseEntity<?> getAllPurchases(
+            @org.springframework.data.web.PageableDefault(size = 20, sort = "transactionDate", direction = org.springframework.data.domain.Sort.Direction.DESC) 
+            org.springframework.data.domain.Pageable pageable) {
+        return ResponseEntity.ok(oldGoldService.getAllPurchases(pageable));
+    }
 }

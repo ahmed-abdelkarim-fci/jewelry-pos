@@ -10,6 +10,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatBadgeModule } from '@angular/material/badge';
 import { GoldTickerComponent } from '../gold-ticker/gold-ticker.component';
 import { AuthService } from '../../../core/services/auth.service';
+import { TPipe } from '../../pipes/t.pipe';
 
 @Component({
   selector: 'app-main-layout',
@@ -25,7 +26,8 @@ import { AuthService } from '../../../core/services/auth.service';
     MatToolbarModule,
     MatMenuModule,
     MatBadgeModule,
-    GoldTickerComponent
+    GoldTickerComponent,
+    TPipe
   ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.scss']
@@ -38,14 +40,14 @@ export class MainLayoutComponent implements OnInit {
   role: string = '';
   
   menuItems = [
-    { icon: 'dashboard', label: 'Dashboard', route: '/dashboard', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
-    { icon: 'point_of_sale', label: 'POS', route: '/pos', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'ROLE_USER', 'CASHIER', 'MANAGER'] },
-    { icon: 'inventory_2', label: 'Inventory', route: '/inventory', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
-    { icon: 'sell', label: 'Old Gold', route: '/old-gold', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
-    { icon: 'receipt_long', label: 'Sales History', route: '/sales-history', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
-    { icon: 'assessment', label: 'Reports', route: '/reports', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
-    { icon: 'manage_accounts', label: 'Users', route: '/users', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'] },
-    { icon: 'settings', label: 'Settings', route: '/settings', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] }
+    { icon: 'dashboard', labelKey: 'nav.dashboard', route: '/dashboard', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
+    { icon: 'point_of_sale', labelKey: 'nav.pos', route: '/pos', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'ROLE_USER', 'CASHIER', 'MANAGER'] },
+    { icon: 'inventory_2', labelKey: 'nav.inventory', route: '/inventory', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
+    { icon: 'sell', labelKey: 'nav.oldGold', route: '/old-gold', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
+    { icon: 'receipt_long', labelKey: 'nav.salesHistory', route: '/sales-history', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
+    { icon: 'assessment', labelKey: 'nav.reports', route: '/reports', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] },
+    { icon: 'manage_accounts', labelKey: 'nav.users', route: '/users', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN'] },
+    { icon: 'settings', labelKey: 'nav.settings', route: '/settings', roles: ['ROLE_SUPER_ADMIN', 'ROLE_ADMIN', 'MANAGER'] }
   ];
 
   ngOnInit(): void {
@@ -59,20 +61,6 @@ export class MainLayoutComponent implements OnInit {
 
   isActive(route: string): boolean {
     return this.router.url === route;
-  }
-
-  getArabicLabel(englishLabel: string): string {
-    const translations: { [key: string]: string } = {
-      'Dashboard': 'لوحة التحكم',
-      'POS': 'نقطة البيع',
-      'Inventory': 'المخزون',
-      'Old Gold': 'الذهب القديم',
-      'Sales History': 'سجل المبيعات',
-      'Reports': 'التقارير',
-      'Users': 'المستخدمين',
-      'Settings': 'الإعدادات'
-    };
-    return translations[englishLabel] || englishLabel;
   }
 
   logout(): void {

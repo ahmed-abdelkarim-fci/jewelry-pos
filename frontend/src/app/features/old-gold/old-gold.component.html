@@ -1,7 +1,7 @@
 <div class="old-gold-container">
   <div class="old-gold-header">
-    <h1><mat-icon>sell</mat-icon> OLD GOLD & PURIFICATION</h1>
-    <p class="subtitle">Manage old gold purchases and factory purification</p>
+    <h1><mat-icon>sell</mat-icon> {{ 'oldGold.title' | t }}</h1>
+    <p class="subtitle">{{ 'oldGold.subtitle' | t }}</p>
   </div>
 
   <mat-card>
@@ -9,14 +9,14 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon>shopping_bag</mat-icon>
-          BUY CASH
+          {{ 'oldGold.tab.buyCash' | t }}
         </ng-template>
         
         <div class="tab-content">
           <form [formGroup]="buyCashForm" (ngSubmit)="onBuyCash()">
             <div class="form-grid">
               <mat-form-field appearance="outline">
-                <mat-label>Karat</mat-label>
+                <mat-label>{{ 'oldGold.karat' | t }}</mat-label>
                 <mat-select formControlName="purity">
                   @for (karat of purities; track karat) {
                     <mat-option [value]="karat">{{ karat }}</mat-option>
@@ -25,48 +25,48 @@
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>Weight (grams)</mat-label>
+                <mat-label>{{ 'oldGold.weight' | t }}</mat-label>
                 <input matInput type="number" formControlName="weight" step="0.1">
                 <mat-icon matPrefix>scale</mat-icon>
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>Buy Rate (EGP/gram)</mat-label>
+                <mat-label>{{ 'oldGold.buyRate' | t }}</mat-label>
                 <input matInput type="number" formControlName="buyRate">
                 <mat-icon matPrefix>attach_money</mat-icon>
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>National ID</mat-label>
+                <mat-label>{{ 'oldGold.nationalId' | t }}</mat-label>
                 <input matInput formControlName="customerNationalId" maxlength="14">
                 <mat-icon matPrefix>badge</mat-icon>
                 @if (buyCashForm.get('customerNationalId')?.hasError('pattern')) {
-                  <mat-error>National ID must be 14 digits</mat-error>
+                  <mat-error>{{ 'oldGold.nationalIdError' | t }}</mat-error>
                 }
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>Phone (Optional)</mat-label>
+                <mat-label>{{ 'oldGold.phoneOptional' | t }}</mat-label>
                 <input matInput formControlName="customerPhoneNumber" maxlength="15">
                 <mat-icon matPrefix>phone</mat-icon>
               </mat-form-field>
             </div>
 
             <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Description</mat-label>
+              <mat-label>{{ 'oldGold.description' | t }}</mat-label>
               <textarea matInput formControlName="description" rows="3"></textarea>
             </mat-form-field>
 
             @if (buyCashForm.get('weight')?.value && buyCashForm.get('buyRate')?.value) {
               <div class="total-display expense">
-                <span>Total Amount:</span>
+                <span>{{ 'oldGold.totalAmount' | t }}</span>
                 <span class="warning-text">{{ formatCurrency(getBuyCashTotal()) }} EGP</span>
               </div>
             }
 
             <button mat-raised-button color="primary" type="submit" [disabled]="!buyCashForm.valid">
               <mat-icon>add_shopping_cart</mat-icon>
-              Pay Cash & Add
+              {{ 'oldGold.payAdd' | t }}
             </button>
           </form>
         </div>
@@ -75,12 +75,12 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon>factory</mat-icon>
-          PURIFICATION
+          {{ 'oldGold.tab.purification' | t }}
         </ng-template>
         
         <div class="tab-content">
           <div class="inventory-header">
-            <h3>Available Scrap Inventory</h3>
+            <h3>{{ 'oldGold.availableScrap' | t }}</h3>
             <div class="inventory-items">
               @for (item of scrapInventory; track item.karat) {
                 <div class="inventory-item">
@@ -94,55 +94,124 @@
           <form [formGroup]="purificationForm" (ngSubmit)="onPurify()">
             <div class="form-grid">
               <mat-form-field appearance="outline">
-                <mat-label>Karat</mat-label>
+                <mat-label>{{ 'oldGold.karat' | t }}</mat-label>
                 <mat-select formControlName="purity">
                   @for (karat of purities; track karat) {
                     <mat-option [value]="karat">
-                      {{ karat }} ({{ getAvailableWeight(karat) }}g available)
+                      {{ karat }} ({{ getAvailableWeight(karat) }}g {{ 'oldGold.available' | t }})
                     </mat-option>
                   }
                 </mat-select>
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>Weight to Sell (grams)</mat-label>
+                <mat-label>{{ 'oldGold.weightToSell' | t }}</mat-label>
                 <input matInput type="number" formControlName="weightToSell" step="0.1">
                 <mat-icon matPrefix>scale</mat-icon>
                 @if (purificationForm.get('weightToSell')?.value > getAvailableWeight(purificationForm.get('purity')?.value)) {
-                  <mat-error>Exceeds available weight</mat-error>
+                  <mat-error>{{ 'oldGold.exceeds' | t }}</mat-error>
                 }
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>Cash Received (EGP)</mat-label>
+                <mat-label>{{ 'oldGold.cashReceived' | t }}</mat-label>
                 <input matInput type="number" formControlName="cashReceived">
                 <mat-icon matPrefix>attach_money</mat-icon>
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>Factory Name</mat-label>
+                <mat-label>{{ 'oldGold.factoryName' | t }}</mat-label>
                 <input matInput formControlName="factoryName">
                 <mat-icon matPrefix>business</mat-icon>
               </mat-form-field>
             </div>
 
             <mat-form-field appearance="outline" class="full-width">
-              <mat-label>Description</mat-label>
+              <mat-label>{{ 'oldGold.description' | t }}</mat-label>
               <textarea matInput formControlName="description" rows="3"></textarea>
             </mat-form-field>
 
             @if (purificationForm.get('cashReceived')?.value) {
               <div class="total-display income">
-                <span>Total Income:</span>
+                <span>{{ 'oldGold.totalIncome' | t }}</span>
                 <span class="success-text">{{ formatCurrency(getPurificationTotal()) }} EGP</span>
               </div>
             }
 
             <button mat-raised-button color="primary" type="submit" [disabled]="!purificationForm.valid">
               <mat-icon>send</mat-icon>
-              Send to Factory
+              {{ 'oldGold.send' | t }}
             </button>
           </form>
+        </div>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon>history</mat-icon>
+          {{ 'oldGold.tab.history' | t }}
+        </ng-template>
+        
+        <div class="tab-content">
+          @if (loadingPurchases) {
+            <div class="loading-container">
+              <p>{{ 'oldGold.loadingHistory' | t }}</p>
+            </div>
+          } @else {
+            <div class="table-container">
+              <table mat-table [dataSource]="purchases">
+                <ng-container matColumnDef="transactionDate">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.date' | t }}</th>
+                  <td mat-cell *matCellDef="let purchase">{{ formatDateTime(purchase.transactionDate) }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="purity">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.purity' | t }}</th>
+                  <td mat-cell *matCellDef="let purchase">{{ purchase.purity }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="weight">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.weight' | t }}</th>
+                  <td mat-cell *matCellDef="let purchase">{{ purchase.weight }}g</td>
+                </ng-container>
+
+                <ng-container matColumnDef="buyRate">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.buyRate' | t }}</th>
+                  <td mat-cell *matCellDef="let purchase">{{ formatCurrency(purchase.buyRate) }} {{ 'unit.egpPerGramShort' | t }}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="totalValue">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.totalValue' | t }}</th>
+                  <td mat-cell *matCellDef="let purchase">
+                    <span class="warning-text">{{ formatCurrency(purchase.totalValue) }} {{ 'unit.egp' | t }}</span>
+                  </td>
+                </ng-container>
+
+                <ng-container matColumnDef="customerNationalId">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.nationalId' | t }}</th>
+                  <td mat-cell *matCellDef="let purchase">{{ purchase.customerNationalId || '-' }}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+
+              @if (purchases.length === 0) {
+                <div class="empty-state">
+                  <mat-icon>inbox</mat-icon>
+                  <p>{{ 'oldGold.noPurchases' | t }}</p>
+                </div>
+              }
+            </div>
+
+            <mat-paginator
+              [length]="totalElements"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="[10, 20, 50]"
+              (page)="onPageChange($event)"
+              showFirstLastButtons>
+            </mat-paginator>
+          }
         </div>
       </mat-tab>
     </mat-tab-group>

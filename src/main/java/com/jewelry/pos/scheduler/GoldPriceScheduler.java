@@ -28,8 +28,8 @@ public class GoldPriceScheduler {
     // ✅ CORRECTED URL (Tested & Valid)
     private static final String SCRAPE_URL = "https://egypt.gold-price-today.com/";
 
-    // Run every 15 minutes
-    @Scheduled(fixedRate = 900000)
+    // Run every 5 minutes
+    @Scheduled(fixedRate = 300000)
     public void fetchGoldPrice() {
         if (!configService.isGoldAutoUpdateEnabled()) {
             return;

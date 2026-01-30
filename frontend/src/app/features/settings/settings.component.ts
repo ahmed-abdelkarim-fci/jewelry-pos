@@ -12,6 +12,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { GoldRateService, GoldRate, PageResponse } from '../../core/services/gold-rate.service';
 import { ConfigService } from '../../core/services/config.service';
+import { I18nService } from '../../core/services/i18n.service';
+import { TPipe } from '../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-settings',
@@ -27,7 +29,8 @@ import { ConfigService } from '../../core/services/config.service';
     MatSnackBarModule,
     MatSlideToggleModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    TPipe
   ],
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss']
@@ -37,6 +40,7 @@ export class SettingsComponent implements OnInit {
   private goldRateService = inject(GoldRateService);
   private configService = inject(ConfigService);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
 
   goldRateForm!: FormGroup;
   saving = false;
@@ -78,7 +82,7 @@ export class SettingsComponent implements OnInit {
       },
       error: () => {
         this.loadingHistory = false;
-        this.snackBar.open('Error loading rate history', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('settings.errorHistory'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
@@ -97,7 +101,7 @@ export class SettingsComponent implements OnInit {
         this.goldAutoUpdateEnabled = !!res.enabled;
       },
       error: () => {
-        this.snackBar.open('Failed to load Gold Auto-Update status', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('settings.errorLoadAutoUpdate'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
 
@@ -108,7 +112,7 @@ export class SettingsComponent implements OnInit {
       },
       error: () => {
         this.loadingConfig = false;
-        this.snackBar.open('Failed to load Hardware status', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('settings.errorLoadHardware'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
@@ -118,11 +122,11 @@ export class SettingsComponent implements OnInit {
     this.goldAutoUpdateEnabled = enabled;
     this.configService.setGoldAutoUpdateStatus(enabled).subscribe({
       next: () => {
-        this.snackBar.open('Gold Auto-Update setting updated', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('settings.updatedAutoUpdate'), this.i18n.t('common.close'), { duration: 3000 });
       },
       error: () => {
         this.goldAutoUpdateEnabled = prev;
-        this.snackBar.open('Failed to update Gold Auto-Update setting', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('settings.failedAutoUpdate'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
@@ -132,11 +136,11 @@ export class SettingsComponent implements OnInit {
     this.hardwareEnabled = enabled;
     this.configService.setHardwareStatus(enabled).subscribe({
       next: () => {
-        this.snackBar.open('Hardware setting updated', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('settings.updatedHardware'), this.i18n.t('common.close'), { duration: 3000 });
       },
       error: () => {
         this.hardwareEnabled = prev;
-        this.snackBar.open('Failed to update Hardware setting', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('settings.failedHardware'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
@@ -196,7 +200,7 @@ export class SettingsComponent implements OnInit {
       next: () => {
         this.saving = false;
         this.lastUpdated = new Date();
-        this.snackBar.open('Gold rates updated successfully!', 'Close', {
+        this.snackBar.open(this.i18n.t('settings.goldUpdated'), this.i18n.t('common.close'), {
           duration: 3000,
           horizontalPosition: 'end',
           verticalPosition: 'top'
@@ -205,7 +209,7 @@ export class SettingsComponent implements OnInit {
       error: (error: any) => {
         this.saving = false;
         console.error('Error updating gold rates:', error);
-        this.snackBar.open('Failed to update gold rates', 'Close', {
+        this.snackBar.open(this.i18n.t('settings.goldUpdateFailed'), this.i18n.t('common.close'), {
           duration: 3000,
           horizontalPosition: 'end',
           verticalPosition: 'top'
@@ -215,7 +219,8 @@ export class SettingsComponent implements OnInit {
   }
 
   formatDate(dateStr: string): string {
-    return new Date(dateStr).toLocaleDateString('en-US', {
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return new Date(dateStr).toLocaleDateString(locale, {
       year: 'numeric',
       month: 'short',
       day: 'numeric'

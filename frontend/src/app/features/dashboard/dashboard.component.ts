@@ -11,6 +11,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DashboardService, DashboardData, DashboardStatsDTO, SalesTrendDTO, TopProductDTO, UserPerformanceDTO } from '../../core/services/dashboard.service';
+import { I18nService } from '../../core/services/i18n.service';
+import { TPipe } from '../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,13 +28,15 @@ import { DashboardService, DashboardData, DashboardStatsDTO, SalesTrendDTO, TopP
     MatButtonModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    TPipe
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
   private dashboardService = inject(DashboardService);
+  private i18n = inject(I18nService);
   
   dashboardData?: DashboardData;
   loading = true;
@@ -129,11 +133,13 @@ export class DashboardComponent implements OnInit {
 
   formatCurrency(value: number | undefined): string {
     if (!value && value !== 0) return '0';
-    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 
   formatDateLabel(dateStr: string): string {
-    return new Date(dateStr).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return new Date(dateStr).toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
   }
 
   getScrapPercentage(weight: number | undefined, maxWeight: number = 500): number {

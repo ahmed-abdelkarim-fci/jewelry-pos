@@ -7,6 +7,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { I18nService } from '../../../core/services/i18n.service';
+import { TPipe } from '../../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-add-old-gold-dialog',
@@ -19,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    TPipe
   ],
   templateUrl: './add-old-gold-dialog.component.html',
   styleUrls: ['./add-old-gold-dialog.component.scss']
@@ -27,6 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
 export class AddOldGoldDialogComponent {
   private fb = inject(FormBuilder);
   private dialogRef = inject(MatDialogRef<AddOldGoldDialogComponent>);
+  private i18n = inject(I18nService);
 
   purities = ['KARAT_24', 'KARAT_21', 'KARAT_18'];
 
@@ -43,6 +47,11 @@ export class AddOldGoldDialogComponent {
     const weight = this.oldGoldForm.get('weight')?.value || 0;
     const buyRate = this.oldGoldForm.get('buyRate')?.value || 0;
     return weight * buyRate;
+  }
+
+  formatCurrency(value: number): string {
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 
   onSubmit(): void {

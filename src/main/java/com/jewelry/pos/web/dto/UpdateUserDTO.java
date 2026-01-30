@@ -4,10 +4,10 @@ import jakarta.validation.constraints.Size;
 import java.util.Set;
 
 public record UpdateUserDTO(
-        @Size(min = 2, max = 50, message = "First name must be between 2 and 50 characters")
+        @Size(min = 2, max = 50, message = "{validation.user.firstName.update.size}")
         String firstName,
 
-        @Size(min = 2, max = 50, message = "Last name must be between 2 and 50 characters")
+        @Size(min = 2, max = 50, message = "{validation.user.lastName.update.size}")
         String lastName,
 
         Boolean enabled,

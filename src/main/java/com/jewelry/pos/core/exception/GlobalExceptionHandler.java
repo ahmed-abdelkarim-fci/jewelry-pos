@@ -3,28 +3,39 @@ package com.jewelry.pos.web.advice;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.http.ResponseEntity;
+import org.springframework.context.MessageSource;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.context.i18n.LocaleContextHolder;
 
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
-
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
+    private final MessageSource messageSource;
+
+    public GlobalExceptionHandler(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
+
+    private String msg(String key, String defaultMessage) {
+        return messageSource.getMessage(key, null, defaultMessage, LocaleContextHolder.getLocale());
+    }
 
     // 1. Handle Validation Errors (e.g., Missing fields, negative numbers)
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ProblemDetail> handleValidationErrors(MethodArgumentNotValidException ex) {
         ProblemDetail problem = ProblemDetail.forStatusAndDetail(
                 HttpStatus.BAD_REQUEST,
-                "Validation failed for one or more fields."
+                msg("error.validationFailed.detail", "Validation failed for one or more fields.")
         );
         problem.setType(URI.create("errors/validation-failed"));
-        problem.setTitle("Validation Error");
+        problem.setTitle(msg("error.validationFailed.title", "Validation Error"));
 
         // Collect field-specific errors
         Map<String, String> fieldErrors = new HashMap<>();
@@ -43,7 +54,7 @@ public class GlobalExceptionHandler {
                 HttpStatus.CONFLICT,
                 ex.getMessage()
         );
-        problem.setTitle("Operation Failed");
+        problem.setTitle(msg("error.operationFailed.title", "Operation Failed"));
         return ResponseEntity.status(HttpStatus.CONFLICT).body(problem);
     }
 
@@ -52,9 +63,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ProblemDetail> handleAccessDenied(AccessDeniedException ex) {
         ProblemDetail problem = ProblemDetail.forStatusAndDetail(
                 HttpStatus.FORBIDDEN,
-                "You do not have permission to perform this action."
+                msg("error.accessDenied.detail", "You do not have permission to perform this action.")
         );
-        problem.setTitle("Access Denied");
+        problem.setTitle(msg("error.accessDenied.title", "Access Denied"));
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(problem);
     }
 
@@ -65,7 +76,7 @@ public class GlobalExceptionHandler {
                 HttpStatus.NOT_FOUND,
                 ex.getMessage()
         );
-        problem.setTitle("Resource Not Found");
+        problem.setTitle(msg("error.resourceNotFound.title", "Resource Not Found"));
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problem);
     }
 }

@@ -8,18 +8,18 @@ import java.math.BigDecimal;
 
 public record PurificationRequestDTO(
 
-        @NotNull(message = "Karat is required (e.g., KARAT_21)")
+        @NotNull(message = "{validation.purification.purity.required}")
         String purity,
 
-        @NotNull(message = "Weight to sell is required")
-        @Positive(message = "Weight must be greater than zero")
+        @NotNull(message = "{validation.purification.weight.required}")
+        @Positive(message = "{validation.purification.weight.positive}")
         BigDecimal weightToSell,
 
-        @NotNull(message = "Cash received is required")
-        @Positive(message = "Cash received cannot be negative")
+        @NotNull(message = "{validation.purification.cash.required}")
+        @Positive(message = "{validation.purification.cash.positive}")
         BigDecimal cashReceived,
 
         //شخص عادي ممكن اسم
-        @jakarta.validation.constraints.NotBlank(message = "Factory Name is required for auditing")
+        @jakarta.validation.constraints.NotBlank(message = "{validation.purification.factoryName.required}")
         String factoryName
 ) {}

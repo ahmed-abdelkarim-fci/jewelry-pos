@@ -7,23 +7,23 @@ import jakarta.validation.constraints.Size;
 import java.util.Set;
 
 public record CreateUserDTO(
-        @NotBlank(message = "First name is required")
-        @Size(min = 2, max = 50, message = "First name must be between 2 and 50 characters")
+        @NotBlank(message = "{validation.user.firstName.required}")
+        @Size(min = 2, max = 50, message = "{validation.user.firstName.size}")
         String firstName,
 
-        @NotBlank(message = "Last name is required")
-        @Size(min = 2, max = 50, message = "Last name must be between 2 and 50 characters")
+        @NotBlank(message = "{validation.user.lastName.required}")
+        @Size(min = 2, max = 50, message = "{validation.user.lastName.size}")
         String lastName,
 
-        @NotBlank(message = "Username is required")
-        @Size(min = 3, max = 20, message = "Username must be between 3 and 20 characters")
-        @Pattern(regexp = "^[a-zA-Z0-9_]*$", message = "Username can only contain letters, numbers, and underscores")
+        @NotBlank(message = "{validation.user.username.required}")
+        @Size(min = 3, max = 20, message = "{validation.user.username.size}")
+        @Pattern(regexp = "^[a-zA-Z0-9_]*$", message = "{validation.user.username.pattern}")
         String username,
 
-        @NotBlank(message = "Password is required")
-        @Size(min = 6, max = 100, message = "Password must be at least 6 characters")
+        @NotBlank(message = "{validation.user.password.required}")
+        @Size(min = 6, max = 100, message = "{validation.user.password.size}")
         String password,
 
-        @NotEmpty(message = "At least one role is required")
+        @NotEmpty(message = "{validation.user.roles.required}")
         Set<String> roles
 ) {}

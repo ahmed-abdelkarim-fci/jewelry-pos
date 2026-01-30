@@ -85,4 +85,16 @@ public class ProductController {
     public ResponseEntity<List<ProductLiteDTO>> searchProducts(@RequestParam String query) {
         return ResponseEntity.ok(inventoryService.searchProducts(query));
     }
+    
+    @GetMapping("/search/advanced")
+    @Operation(summary = "Advanced search with filters and ranking")
+    @PreAuthorize("hasAuthority('SALE_EXECUTE')")
+    public ResponseEntity<List<ProductLiteDTO>> searchProductsAdvanced(
+            @RequestParam(required = false) String query,
+            @RequestParam(required = false) com.jewelry.pos.domain.entity.PurityEnum purity,
+            @RequestParam(required = false) com.jewelry.pos.domain.entity.JewelryTypeEnum type,
+            @RequestParam(required = false) java.math.BigDecimal minWeight,
+            @RequestParam(required = false) java.math.BigDecimal maxWeight) {
+        return ResponseEntity.ok(inventoryService.searchProductsWithFilters(query, purity, type, minWeight, maxWeight));
+    }
 }

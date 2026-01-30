@@ -11,6 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ReportService, Transaction, ZReport } from '../../core/services/report.service';
+import { I18nService } from '../../core/services/i18n.service';
+import { TPipe } from '../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-reports',
@@ -26,7 +28,8 @@ import { ReportService, Transaction, ZReport } from '../../core/services/report.
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    TPipe
   ],
   templateUrl: './reports.component.html',
   styleUrls: ['./reports.component.scss']
@@ -34,6 +37,7 @@ import { ReportService, Transaction, ZReport } from '../../core/services/report.
 export class ReportsComponent implements OnInit {
   private reportService = inject(ReportService);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
 
   transactions: Transaction[] = [];
   displayedColumns = ['id', 'date', 'type', 'amount', 'description'];
@@ -58,7 +62,7 @@ export class ReportsComponent implements OnInit {
       },
       error: () => {
         this.loadingZReport = false;
-        this.snackBar.open('Error loading Z-Report', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('reports.z.error'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
@@ -70,7 +74,7 @@ export class ReportsComponent implements OnInit {
         this.loading = false;
       },
       error: () => {
-        this.snackBar.open('Error loading transactions', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('reports.tx.error'), this.i18n.t('common.close'), { duration: 3000 });
         this.loading = false;
       }
     });
@@ -81,11 +85,13 @@ export class ReportsComponent implements OnInit {
   }
 
   formatCurrency(value: number): string {
-    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 
   formatDate(date: string): string {
-    return new Date(date).toLocaleString('en-US', {
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return new Date(date).toLocaleString(locale, {
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',

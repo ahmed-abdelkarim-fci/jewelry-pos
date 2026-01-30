@@ -1,28 +1,60 @@
 <div class="inventory-container">
   <div class="inventory-header">
     <div>
-      <h1><mat-icon>inventory_2</mat-icon> INVENTORY MANAGER</h1>
-      <p class="subtitle">Manage your jewelry products</p>
+      <h1><mat-icon>inventory_2</mat-icon> {{ 'inventory.title' | t }}</h1>
+      <p class="subtitle">{{ 'inventory.subtitle' | t }}</p>
     </div>
     <button mat-raised-button color="primary" (click)="openAddProductDialog()">
-      <mat-icon>add</mat-icon> Add Product
+      <mat-icon>add</mat-icon> {{ 'inventory.addProduct' | t }}
     </button>
   </div>
 
   <mat-card class="search-card">
     <div class="search-row">
       <mat-form-field appearance="outline" class="search-field">
-        <mat-label>Search products</mat-label>
-        <input matInput [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" placeholder="Barcode, model name, type...">
+        <mat-label>{{ 'inventory.search' | t }}</mat-label>
+        <input matInput [(ngModel)]="searchQuery" (keyup.enter)="onSearch()" [placeholder]="'inventory.searchPlaceholder' | t">
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
 
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'inventory.filter.purity' | t }}</mat-label>
+        <mat-select [(ngModel)]="selectedPurity">
+          <mat-option [value]="null">{{ 'inventory.filter.all' | t }}</mat-option>
+          @for (purity of purities; track purity) {
+            <mat-option [value]="purity">{{ purity }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>{{ 'inventory.filter.type' | t }}</mat-label>
+        <mat-select [(ngModel)]="selectedType">
+          <mat-option [value]="null">{{ 'inventory.filter.all' | t }}</mat-option>
+          @for (type of types; track type) {
+            <mat-option [value]="type">{{ getTypeLabel(type) }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="weight-field">
+        <mat-label>{{ 'inventory.filter.minWeight' | t }}</mat-label>
+        <input matInput type="number" [(ngModel)]="minWeight" step="0.1">
+        <span matSuffix>g</span>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="weight-field">
+        <mat-label>{{ 'inventory.filter.maxWeight' | t }}</mat-label>
+        <input matInput type="number" [(ngModel)]="maxWeight" step="0.1">
+        <span matSuffix>g</span>
+      </mat-form-field>
+
       <button mat-raised-button color="primary" (click)="onSearch()">
-        <mat-icon>search</mat-icon> Search
+        <mat-icon>search</mat-icon> {{ 'inventory.searchBtn' | t }}
       </button>
 
       <button mat-button (click)="clearSearch()" [disabled]="!searching">
-        <mat-icon>clear</mat-icon> Clear
+        <mat-icon>clear</mat-icon> {{ 'inventory.clear' | t }}
       </button>
     </div>
   </mat-card>
@@ -30,47 +62,47 @@
   <mat-card>
     @if (loading) {
       <div class="loading-container">
-        <p>Loading products...</p>
+        <p>{{ 'inventory.loading' | t }}</p>
       </div>
     } @else {
       <div class="table-container scrollbar-custom">
         <table mat-table [dataSource]="products">
           <ng-container matColumnDef="barcode">
-            <th mat-header-cell *matHeaderCellDef>Barcode</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.barcode' | t }}</th>
             <td mat-cell *matCellDef="let product">{{ product.barcode }}</td>
           </ng-container>
 
           <ng-container matColumnDef="modelName">
-            <th mat-header-cell *matHeaderCellDef>Model</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.model' | t }}</th>
             <td mat-cell *matCellDef="let product">
               <strong>{{ product.modelName }}</strong>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.type' | t }}</th>
             <td mat-cell *matCellDef="let product">{{ product.type }}</td>
           </ng-container>
 
           <ng-container matColumnDef="purityEnum">
-            <th mat-header-cell *matHeaderCellDef>Purity</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.purity' | t }}</th>
             <td mat-cell *matCellDef="let product">{{ product.purityEnum }}</td>
           </ng-container>
 
           <ng-container matColumnDef="grossWeight">
-            <th mat-header-cell *matHeaderCellDef>Weight</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.weight' | t }}</th>
             <td mat-cell *matCellDef="let product">{{ product.grossWeight }}g</td>
           </ng-container>
 
           <ng-container matColumnDef="estimatedPrice">
-            <th mat-header-cell *matHeaderCellDef>Est. Price</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.estPrice' | t }}</th>
             <td mat-cell *matCellDef="let product">
-              <span class="gold-text">{{ formatCurrency(product.estimatedPrice) }} EGP</span>
+              <span class="gold-text">{{ formatCurrency(product.estimatedPrice) }} {{ 'unit.egp' | t }}</span>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.status' | t }}</th>
             <td mat-cell *matCellDef="let product">
               <mat-chip [class]="'status-' + product.status.toLowerCase()">
                 {{ product.status }}
@@ -79,15 +111,15 @@
           </ng-container>
 
           <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'inventory.table.actions' | t }}</th>
             <td mat-cell *matCellDef="let product">
-              <button mat-icon-button color="accent" (click)="printLabel(product)" matTooltip="Print Label">
+              <button mat-icon-button color="accent" (click)="printLabel(product)" [matTooltip]="'inventory.tooltip.print' | t">
                 <mat-icon>label</mat-icon>
               </button>
-              <button mat-icon-button color="primary" (click)="openEditDialog(product)" matTooltip="Edit">
+              <button mat-icon-button color="primary" (click)="openEditDialog(product)" [matTooltip]="'inventory.tooltip.edit' | t">
                 <mat-icon>edit</mat-icon>
               </button>
-              <button mat-icon-button color="warn" (click)="deleteProduct(product)" matTooltip="Delete">
+              <button mat-icon-button color="warn" (click)="deleteProduct(product)" [matTooltip]="'inventory.tooltip.delete' | t">
                 <mat-icon>delete</mat-icon>
               </button>
             </td>
@@ -101,9 +133,9 @@
           <div class="empty-state">
             <mat-icon>inbox</mat-icon>
             @if (searching) {
-              <p>No products match your search.</p>
+              <p>{{ 'inventory.empty.search' | t }}</p>
             } @else {
-              <p>No products found.</p>
+              <p>{{ 'inventory.empty' | t }}</p>
             }
           </div>
         }

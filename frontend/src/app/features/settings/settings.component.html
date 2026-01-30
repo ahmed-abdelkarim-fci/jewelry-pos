@@ -1,7 +1,7 @@
 <div class="settings-container">
   <div class="settings-header">
-    <h1><mat-icon>settings</mat-icon> الإعدادات</h1>
-    <p class="subtitle">تكوين تفضيلات النظام</p>
+    <h1><mat-icon>settings</mat-icon> {{ 'settings.title' | t }}</h1>
+    <p class="subtitle">{{ 'settings.subtitle' | t }}</p>
   </div>
 
   <div class="settings-grid">
@@ -10,44 +10,44 @@
       <mat-card-header>
         <mat-card-title>
           <mat-icon>currency_exchange</mat-icon>
-          إدارة أسعار الذهب
+          {{ 'settings.gold.title' | t }}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <form [formGroup]="goldRateForm" (ngSubmit)="updateGoldRates()">
           <div class="rate-grid">
             <mat-form-field appearance="outline">
-              <mat-label>سعر شراء عيار 24 (جنيه/جرام)</mat-label>
+              <mat-label>{{ 'settings.gold.k24Buy' | t }}</mat-label>
               <input matInput type="number" formControlName="karat24Buy" step="0.01">
               <mat-icon matPrefix>attach_money</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>سعر بيع عيار 24 (جنيه/جرام)</mat-label>
+              <mat-label>{{ 'settings.gold.k24Sell' | t }}</mat-label>
               <input matInput type="number" formControlName="karat24Sell" step="0.01">
               <mat-icon matPrefix>sell</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>سعر شراء عيار 21 (جنيه/جرام)</mat-label>
+              <mat-label>{{ 'settings.gold.k21Buy' | t }}</mat-label>
               <input matInput type="number" formControlName="karat21Buy" step="0.01">
               <mat-icon matPrefix>attach_money</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>سعر بيع عيار 21 (جنيه/جرام)</mat-label>
+              <mat-label>{{ 'settings.gold.k21Sell' | t }}</mat-label>
               <input matInput type="number" formControlName="karat21Sell" step="0.01">
               <mat-icon matPrefix>sell</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>سعر شراء عيار 18 (جنيه/جرام)</mat-label>
+              <mat-label>{{ 'settings.gold.k18Buy' | t }}</mat-label>
               <input matInput type="number" formControlName="karat18Buy" step="0.01">
               <mat-icon matPrefix>attach_money</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
-              <mat-label>سعر بيع عيار 18 (جنيه/جرام)</mat-label>
+              <mat-label>{{ 'settings.gold.k18Sell' | t }}</mat-label>
               <input matInput type="number" formControlName="karat18Sell" step="0.01">
               <mat-icon matPrefix>sell</mat-icon>
             </mat-form-field>
@@ -56,7 +56,7 @@
           <div class="form-actions">
             <button mat-raised-button color="primary" type="submit" [disabled]="goldRateForm.invalid || saving">
               <mat-icon>save</mat-icon>
-              {{ saving ? 'جاري الحفظ...' : 'تحديث أسعار الذهب' }}
+              {{ saving ? ('settings.gold.saving' | t) : ('settings.gold.save' | t) }}
             </button>
           </div>
         </form>
@@ -64,7 +64,7 @@
         @if (lastUpdated) {
           <div class="last-updated">
             <mat-icon>schedule</mat-icon>
-            آخر تحديث: {{ lastUpdated | date:'medium' }}
+            {{ 'settings.gold.lastUpdated' | t }} {{ lastUpdated | date:'medium' }}
           </div>
         }
       </mat-card-content>
@@ -75,41 +75,41 @@
       <mat-card-header>
         <mat-card-title>
           <mat-icon>history</mat-icon>
-          Gold Rate History
+          {{ 'settings.history.title' | t }}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <button mat-stroked-button (click)="toggleHistory()" class="toggle-history-btn">
           <mat-icon>{{ showHistory ? 'expand_less' : 'expand_more' }}</mat-icon>
-          {{ showHistory ? 'Hide History' : 'Show History' }}
+          {{ showHistory ? ('settings.history.hide' | t) : ('settings.history.show' | t) }}
         </button>
 
         @if (showHistory) {
           @if (loadingHistory) {
             <div class="loading-container">
-              <p>Loading history...</p>
+              <p>{{ 'settings.history.loading' | t }}</p>
             </div>
           } @else if (rateHistory.length > 0) {
             <div class="table-container">
               <table mat-table [dataSource]="rateHistory">
                 <ng-container matColumnDef="effectiveDate">
-                  <th mat-header-cell *matHeaderCellDef>Date</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'settings.history.date' | t }}</th>
                   <td mat-cell *matCellDef="let rate">{{ formatDate(rate.effectiveDate) }}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="rate24k">
-                  <th mat-header-cell *matHeaderCellDef>24K Rate</th>
-                  <td mat-cell *matCellDef="let rate">{{ rate.rate24k }} EGP/g</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'settings.history.rate24' | t }}</th>
+                  <td mat-cell *matCellDef="let rate">{{ rate.rate24k }} {{ 'unit.egpPerGramShort' | t }}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="rate21k">
-                  <th mat-header-cell *matHeaderCellDef>21K Rate</th>
-                  <td mat-cell *matCellDef="let rate">{{ rate.rate21k }} EGP/g</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'settings.history.rate21' | t }}</th>
+                  <td mat-cell *matCellDef="let rate">{{ rate.rate21k }} {{ 'unit.egpPerGramShort' | t }}</td>
                 </ng-container>
 
                 <ng-container matColumnDef="rate18k">
-                  <th mat-header-cell *matHeaderCellDef>18K Rate</th>
-                  <td mat-cell *matCellDef="let rate">{{ rate.rate18k }} EGP/g</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'settings.history.rate18' | t }}</th>
+                  <td mat-cell *matCellDef="let rate">{{ rate.rate18k }} {{ 'unit.egpPerGramShort' | t }}</td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="historyColumns"></tr>
@@ -126,7 +126,7 @@
           } @else {
             <div class="empty-state">
               <mat-icon>inbox</mat-icon>
-              <p>No rate history found.</p>
+              <p>{{ 'settings.history.empty' | t }}</p>
             </div>
           }
         }
@@ -138,17 +138,17 @@
       <mat-card-header>
         <mat-card-title>
           <mat-icon>toggle_on</mat-icon>
-          إعدادات النظام
+          {{ 'settings.system.title' | t }}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         @if (loadingConfig) {
-          <div class="loading-config">Loading configuration...</div>
+          <div class="loading-config">{{ 'settings.system.loading' | t }}</div>
         } @else {
           <div class="toggle-row">
             <div class="toggle-info">
-              <div class="toggle-title">تحديث أسعار الذهب تلقائياً</div>
-              <div class="toggle-subtitle">يُحدّث أسعار الذهب تلقائياً (للمدير فقط)</div>
+              <div class="toggle-title">{{ 'settings.system.goldAutoUpdate.title' | t }}</div>
+              <div class="toggle-subtitle">{{ 'settings.system.goldAutoUpdate.subtitle' | t }}</div>
             </div>
             <mat-slide-toggle
               [checked]="goldAutoUpdateEnabled"
@@ -158,8 +158,8 @@
 
           <div class="toggle-row">
             <div class="toggle-info">
-              <div class="toggle-title">تكامل الأجهزة</div>
-              <div class="toggle-subtitle">تفعيل الطابعة/درج النقود (للمسؤول فقط)</div>
+              <div class="toggle-title">{{ 'settings.system.hardware.title' | t }}</div>
+              <div class="toggle-subtitle">{{ 'settings.system.hardware.subtitle' | t }}</div>
             </div>
             <mat-slide-toggle
               [checked]="hardwareEnabled"
@@ -175,28 +175,28 @@
       <mat-card-header>
         <mat-card-title>
           <mat-icon>info</mat-icon>
-          معلومات النظام
+          {{ 'settings.info.title' | t }}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div class="info-row">
-          <span class="info-label">اسم النظام:</span>
+          <span class="info-label">{{ 'settings.info.appName' | t }}</span>
           <span class="info-value">AL Mohamadia Jewelry POS</span>
         </div>
         <div class="info-row">
-          <span class="info-label">الإصدار:</span>
+          <span class="info-label">{{ 'settings.info.version' | t }}</span>
           <span class="info-value">1.0.0</span>
         </div>
         <div class="info-row">
-          <span class="info-label">قاعدة البيانات:</span>
+          <span class="info-label">{{ 'settings.info.db' | t }}</span>
           <span class="info-value">H2 In-Memory</span>
         </div>
         <div class="info-row">
-          <span class="info-label">الخادم:</span>
+          <span class="info-label">{{ 'settings.info.server' | t }}</span>
           <span class="info-value">Spring Boot 3.4.1</span>
         </div>
         <div class="info-row">
-          <span class="info-label">الواجهة:</span>
+          <span class="info-label">{{ 'settings.info.frontend' | t }}</span>
           <span class="info-value">Angular 17+</span>
         </div>
       </mat-card-content>
@@ -207,29 +207,29 @@
       <mat-card-header>
         <mat-card-title>
           <mat-icon>tune</mat-icon>
-          تفضيلات المستخدم
+          {{ 'settings.prefs.title' | t }}
         </mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div class="preference-row">
           <mat-icon>language</mat-icon>
           <div class="preference-content">
-            <div class="preference-label">اللغة</div>
-            <div class="preference-value">العربية</div>
+            <div class="preference-label">{{ 'settings.prefs.language' | t }}</div>
+            <div class="preference-value">{{ 'settings.prefs.languageValue' | t }}</div>
           </div>
         </div>
         <div class="preference-row">
           <mat-icon>currency_pound</mat-icon>
           <div class="preference-content">
-            <div class="preference-label">العملة</div>
-            <div class="preference-value">جنيه مصري (EGP)</div>
+            <div class="preference-label">{{ 'settings.prefs.currency' | t }}</div>
+            <div class="preference-value">{{ 'settings.prefs.currencyValue' | t }}</div>
           </div>
         </div>
         <div class="preference-row">
           <mat-icon>scale</mat-icon>
           <div class="preference-content">
-            <div class="preference-label">وحدة الوزن</div>
-            <div class="preference-value">جرام (g)</div>
+            <div class="preference-label">{{ 'settings.prefs.weightUnit' | t }}</div>
+            <div class="preference-value">{{ 'settings.prefs.weightUnitValue' | t }}</div>
           </div>
         </div>
       </mat-card-content>

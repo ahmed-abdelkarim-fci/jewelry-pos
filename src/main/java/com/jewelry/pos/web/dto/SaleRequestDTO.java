@@ -7,14 +7,14 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public record SaleRequestDTO(
-        @NotEmpty(message = "Cart cannot be empty")
+        @NotEmpty(message = "{validation.sale.cart.required}")
         List<String> barcodes,
 
-        @NotNull(message = "Gold Rate is required")
+        @NotNull(message = "{validation.sale.goldRate.required}")
         @Positive
         BigDecimal currentGoldRate,
 
-        @NotEmpty(message = "customer name cannot be empty")
+        @NotEmpty(message = "{validation.sale.customerName.required}")
         String customerName,
 
         String customerPhone,

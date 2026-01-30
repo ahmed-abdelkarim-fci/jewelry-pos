@@ -1,22 +1,22 @@
 <h2 mat-dialog-title>
   <mat-icon>receipt</mat-icon>
-  Sale Details
+  {{ 'saleDetails.title' | t }}
 </h2>
 
 <mat-dialog-content>
   <div class="sale-details">
     <div class="detail-section">
-      <h3>Transaction Information</h3>
+      <h3>{{ 'saleDetails.txInfo' | t }}</h3>
       <div class="detail-row">
-        <span class="label">Sale ID:</span>
+        <span class="label">{{ 'saleDetails.saleId' | t }}</span>
         <code>{{ sale.id }}</code>
       </div>
       <div class="detail-row">
-        <span class="label">Date & Time:</span>
+        <span class="label">{{ 'saleDetails.dateTime' | t }}</span>
         <span>{{ formatDateTime(sale.date) }}</span>
       </div>
       <div class="detail-row">
-        <span class="label">Processed By:</span>
+        <span class="label">{{ 'saleDetails.processedBy' | t }}</span>
         <span>{{ sale.createdBy }}</span>
       </div>
     </div>
@@ -24,13 +24,13 @@
     <mat-divider></mat-divider>
 
     <div class="detail-section">
-      <h3>Customer Information</h3>
+      <h3>{{ 'saleDetails.customerInfo' | t }}</h3>
       <div class="detail-row">
-        <span class="label">Name:</span>
+        <span class="label">{{ 'saleDetails.name' | t }}</span>
         <span><strong>{{ sale.customerName }}</strong></span>
       </div>
       <div class="detail-row">
-        <span class="label">Phone:</span>
+        <span class="label">{{ 'saleDetails.phone' | t }}</span>
         <span>{{ sale.customerPhone }}</span>
       </div>
     </div>
@@ -38,16 +38,16 @@
     <mat-divider></mat-divider>
 
     <div class="detail-section">
-      <h3>Items Sold</h3>
+      <h3>{{ 'saleDetails.items' | t }}</h3>
       <div class="items-list">
         @for (item of sale.items; track item) {
           <div class="item-card">
             <div class="item-info">
               <strong>{{ item.productName }}</strong>
-              <small>Weight: {{ item.weight }}g</small>
+              <small>{{ 'saleDetails.itemWeight' | t }} {{ item.weight }}g</small>
             </div>
             <div class="item-price">
-              {{ formatCurrency(item.priceSnapshot) }} EGP
+              {{ formatCurrency(item.priceSnapshot) }} {{ 'unit.egp' | t }}
             </div>
           </div>
         }
@@ -57,29 +57,29 @@
     <mat-divider></mat-divider>
 
     <div class="detail-section">
-      <h3>Payment Summary</h3>
+      <h3>{{ 'saleDetails.payment' | t }}</h3>
       <div class="detail-row">
-        <span class="label">Subtotal:</span>
-        <span class="amount">{{ formatCurrency(sale.totalAmount) }} EGP</span>
+        <span class="label">{{ 'saleDetails.subtotal' | t }}</span>
+        <span class="amount">{{ formatCurrency(sale.totalAmount) }} {{ 'unit.egp' | t }}</span>
       </div>
       @if (sale.oldGoldTotalValue > 0) {
         <div class="detail-row warning">
-          <span class="label">Less Old Gold:</span>
-          <span class="amount">- {{ formatCurrency(sale.oldGoldTotalValue) }} EGP</span>
+          <span class="label">{{ 'saleDetails.lessOldGold' | t }}</span>
+          <span class="amount">- {{ formatCurrency(sale.oldGoldTotalValue) }} {{ 'unit.egp' | t }}</span>
         </div>
       }
       <div class="detail-row total">
-        <span class="label"><strong>Net Cash Paid:</strong></span>
-        <span class="amount success"><strong>{{ formatCurrency(sale.netCashPaid) }} EGP</strong></span>
+        <span class="label"><strong>{{ 'saleDetails.netPaid' | t }}</strong></span>
+        <span class="amount success"><strong>{{ formatCurrency(sale.netCashPaid) }} {{ 'unit.egp' | t }}</strong></span>
       </div>
     </div>
   </div>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button (click)="close()">Close</button>
+  <button mat-button (click)="close()">{{ 'common.close' | t }}</button>
   <button mat-raised-button color="primary" (click)="downloadReceipt()" [disabled]="downloading">
     <mat-icon>{{ downloading ? 'hourglass_empty' : 'download' }}</mat-icon> 
-    {{ downloading ? 'Downloading...' : 'Download Receipt' }}
+    {{ downloading ? ('saleDetails.downloading' | t) : ('saleDetails.download' | t) }}
   </button>
 </mat-dialog-actions>

@@ -9,7 +9,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { OldGoldService, ScrapInventory } from '../../core/services/old-gold.service';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { OldGoldService, ScrapInventory, OldGoldPurchase } from '../../core/services/old-gold.service';
+import { I18nService } from '../../core/services/i18n.service';
+import { TPipe } from '../../shared/pipes/t.pipe';
 
 @Component({
   selector: 'app-old-gold',
@@ -24,7 +28,10 @@ import { OldGoldService, ScrapInventory } from '../../core/services/old-gold.ser
     MatSelectModule,
     MatButtonModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    TPipe
   ],
   templateUrl: './old-gold.component.html',
   styleUrls: ['./old-gold.component.scss']
@@ -33,9 +40,18 @@ export class OldGoldComponent implements OnInit {
   private fb = inject(FormBuilder);
   private oldGoldService = inject(OldGoldService);
   private snackBar = inject(MatSnackBar);
+  private i18n = inject(I18nService);
 
   purities = ['KARAT_24', 'KARAT_21', 'KARAT_18'];
   scrapInventory: ScrapInventory[] = [];
+  
+  // Purchase history
+  purchases: OldGoldPurchase[] = [];
+  displayedColumns = ['transactionDate', 'purity', 'weight', 'buyRate', 'totalValue', 'customerNationalId'];
+  totalElements = 0;
+  pageSize = 20;
+  currentPage = 0;
+  loadingPurchases = false;
 
   buyCashForm: FormGroup = this.fb.group({
     purity: ['', Validators.required],
@@ -56,6 +72,7 @@ export class OldGoldComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadScrapInventory();
+    this.loadPurchases();
   }
 
   loadScrapInventory(): void {
@@ -64,7 +81,7 @@ export class OldGoldComponent implements OnInit {
         this.scrapInventory = inventory;
       },
       error: () => {
-        this.snackBar.open('Error loading scrap inventory', 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('oldGold.loadScrapError'), this.i18n.t('common.close'), { duration: 3000 });
       }
     });
   }
@@ -73,17 +90,46 @@ export class OldGoldComponent implements OnInit {
     const item = this.scrapInventory.find(s => s.karat === karat);
     return item?.availableWeight || 0;
   }
+  
+  loadPurchases(page: number = 0): void {
+    this.loadingPurchases = true;
+    this.oldGoldService.getAllPurchases(page, this.pageSize).subscribe({
+      next: (response) => {
+        this.purchases = response.content;
+        this.totalElements = response.totalElements;
+        this.currentPage = response.number;
+        this.loadingPurchases = false;
+      },
+      error: () => {
+        this.snackBar.open(this.i18n.t('oldGold.loadPurchasesError'), this.i18n.t('common.close'), { duration: 3000 });
+        this.loadingPurchases = false;
+      }
+    });
+  }
+  
+  onPageChange(event: PageEvent): void {
+    this.pageSize = event.pageSize;
+    this.loadPurchases(event.pageIndex);
+  }
+
+  formatDateTime(value: string): string {
+    if (!value) return '';
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    const date = new Date(value);
+    return date.toLocaleString(locale);
+  }
 
   onBuyCash(): void {
     if (this.buyCashForm.valid) {
       this.oldGoldService.buyCash(this.buyCashForm.value).subscribe({
         next: () => {
-          this.snackBar.open('Old gold purchase recorded successfully', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('oldGold.buySuccess'), this.i18n.t('common.close'), { duration: 3000 });
           this.buyCashForm.reset();
           this.loadScrapInventory();
+          this.loadPurchases(this.currentPage);
         },
         error: () => {
-          this.snackBar.open('Error recording purchase', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('oldGold.buyError'), this.i18n.t('common.close'), { duration: 3000 });
         }
       });
     }
@@ -96,18 +142,18 @@ export class OldGoldComponent implements OnInit {
       const available = this.getAvailableWeight(purity);
 
       if (weightToSell > available) {
-        this.snackBar.open(`Insufficient scrap. Available: ${available}g`, 'Close', { duration: 3000 });
+        this.snackBar.open(this.i18n.t('oldGold.scrapError', { available }), this.i18n.t('common.close'), { duration: 3000 });
         return;
       }
 
       this.oldGoldService.purify(this.purificationForm.value).subscribe({
         next: () => {
-          this.snackBar.open('Purification recorded successfully', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('oldGold.purifySuccess'), this.i18n.t('common.close'), { duration: 3000 });
           this.purificationForm.reset();
           this.loadScrapInventory();
         },
         error: () => {
-          this.snackBar.open('Error recording purification', 'Close', { duration: 3000 });
+          this.snackBar.open(this.i18n.t('oldGold.purifyError'), this.i18n.t('common.close'), { duration: 3000 });
         }
       });
     }
@@ -125,6 +171,7 @@ export class OldGoldComponent implements OnInit {
   }
 
   formatCurrency(value: number): string {
-    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
+    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 }

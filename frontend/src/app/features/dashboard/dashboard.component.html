@@ -1,7 +1,7 @@
 <div class="dashboard-container">
   <div class="dashboard-header">
-    <h1><mat-icon>dashboard</mat-icon> لوحة التحكم</h1>
-    <p class="subtitle">نظرة عامة على اليوم</p>
+    <h1><mat-icon>dashboard</mat-icon> {{ 'dashboard.title' | t }}</h1>
+    <p class="subtitle">{{ 'dashboard.subtitle' | t }}</p>
   </div>
 
   @if (loading) {
@@ -15,8 +15,8 @@
           <mat-icon>attach_money</mat-icon>
         </div>
         <div class="metric-content">
-          <div class="metric-label">الإيرادات</div>
-          <div class="metric-value">{{ formatCurrency(dashboardData.salesRevenue) }} جنيه</div>
+          <div class="metric-label">{{ 'dashboard.metrics.revenue' | t }}</div>
+          <div class="metric-value">{{ formatCurrency(dashboardData.salesRevenue) }} {{ 'unit.egp' | t }}</div>
         </div>
       </mat-card>
 
@@ -25,9 +25,9 @@
           <mat-icon>trending_up</mat-icon>
         </div>
         <div class="metric-content">
-          <div class="metric-label">صافي الربح</div>
+          <div class="metric-label">{{ 'dashboard.metrics.netProfit' | t }}</div>
           <div class="metric-value blur-on-hover">****</div>
-          <div class="metric-value-hidden">{{ formatCurrency(dashboardData.netProfit) }} جنيه</div>
+          <div class="metric-value-hidden">{{ formatCurrency(dashboardData.netProfit) }} {{ 'unit.egp' | t }}</div>
         </div>
       </mat-card>
 
@@ -36,8 +36,8 @@
           <mat-icon>factory</mat-icon>
         </div>
         <div class="metric-content">
-          <div class="metric-label">دخل المصنع</div>
-          <div class="metric-value success-text">{{ formatCurrency(dashboardData.purificationIncome) }} جنيه</div>
+          <div class="metric-label">{{ 'dashboard.metrics.purificationIncome' | t }}</div>
+          <div class="metric-value success-text">{{ formatCurrency(dashboardData.purificationIncome) }} {{ 'unit.egp' | t }}</div>
         </div>
       </mat-card>
 
@@ -46,17 +46,17 @@
           <mat-icon>sell</mat-icon>
         </div>
         <div class="metric-content">
-          <div class="metric-label">مصروفات الذهب القديم</div>
-          <div class="metric-value warning-text">{{ formatCurrency(dashboardData.oldGoldExpense) }} جنيه</div>
+          <div class="metric-label">{{ 'dashboard.metrics.oldGoldExpense' | t }}</div>
+          <div class="metric-value warning-text">{{ formatCurrency(dashboardData.oldGoldExpense) }} {{ 'unit.egp' | t }}</div>
         </div>
       </mat-card>
     </div>
 
     <div class="scrap-section">
-      <h2><mat-icon>inventory</mat-icon> حالة صندوق الخردة</h2>
+      <h2><mat-icon>inventory</mat-icon> {{ 'dashboard.scrap.title' | t }}</h2>
       <div class="scrap-grid">
         <mat-card class="scrap-card">
-          <h3>خردة عيار 21</h3>
+          <h3>{{ 'dashboard.scrap.k21' | t }}</h3>
           <div class="circular-progress">
             <svg viewBox="0 0 200 200">
               <circle
@@ -90,7 +90,7 @@
         </mat-card>
 
         <mat-card class="scrap-card">
-          <h3>خردة عيار 18</h3>
+          <h3>{{ 'dashboard.scrap.k18' | t }}</h3>
           <div class="circular-progress">
             <svg viewBox="0 0 200 200">
               <circle
@@ -127,27 +127,27 @@
 
     <div class="enhanced-section">
       <div class="enhanced-header">
-        <h2><mat-icon>analytics</mat-icon> التحليلات (حسب المدة)</h2>
+        <h2><mat-icon>analytics</mat-icon> {{ 'dashboard.enhanced.title' | t }}</h2>
       </div>
 
       <mat-card class="filters-card">
         <div class="filters-row">
           <mat-form-field appearance="outline">
-            <mat-label>From</mat-label>
+            <mat-label>{{ 'dashboard.filters.from' | t }}</mat-label>
             <input matInput [matDatepicker]="fromPicker" [(ngModel)]="fromDate">
             <mat-datepicker-toggle matSuffix [for]="fromPicker"></mat-datepicker-toggle>
             <mat-datepicker #fromPicker></mat-datepicker>
           </mat-form-field>
 
           <mat-form-field appearance="outline">
-            <mat-label>To</mat-label>
+            <mat-label>{{ 'dashboard.filters.to' | t }}</mat-label>
             <input matInput [matDatepicker]="toPicker" [(ngModel)]="toDate">
             <mat-datepicker-toggle matSuffix [for]="toPicker"></mat-datepicker-toggle>
             <mat-datepicker #toPicker></mat-datepicker>
           </mat-form-field>
 
           <button mat-raised-button color="primary" (click)="loadEnhanced()">
-            <mat-icon>refresh</mat-icon> Load
+            <mat-icon>refresh</mat-icon> {{ 'dashboard.filters.load' | t }}
           </button>
         </div>
       </mat-card>
@@ -160,44 +160,44 @@
         @if (rangeStats) {
           <div class="range-metrics-grid">
             <mat-card class="range-metric">
-              <div class="label">Revenue</div>
-              <div class="value">{{ formatCurrency(rangeStats.salesRevenue) }} EGP</div>
+              <div class="label">{{ 'dashboard.range.revenue' | t }}</div>
+              <div class="value">{{ formatCurrency(rangeStats.salesRevenue) }} {{ 'unit.egp' | t }}</div>
             </mat-card>
             <mat-card class="range-metric">
-              <div class="label">Net Profit</div>
-              <div class="value">{{ formatCurrency(rangeStats.netProfit) }} EGP</div>
+              <div class="label">{{ 'dashboard.range.netProfit' | t }}</div>
+              <div class="value">{{ formatCurrency(rangeStats.netProfit) }} {{ 'unit.egp' | t }}</div>
             </mat-card>
             <mat-card class="range-metric">
-              <div class="label">Sales Count</div>
+              <div class="label">{{ 'dashboard.range.salesCount' | t }}</div>
               <div class="value">{{ rangeStats.salesCount }}</div>
             </mat-card>
             <mat-card class="range-metric">
-              <div class="label">Old Gold Expense</div>
-              <div class="value warning-text">{{ formatCurrency(rangeStats.oldGoldExpense) }} EGP</div>
+              <div class="label">{{ 'dashboard.range.oldGoldExpense' | t }}</div>
+              <div class="value warning-text">{{ formatCurrency(rangeStats.oldGoldExpense) }} {{ 'unit.egp' | t }}</div>
             </mat-card>
           </div>
         }
 
         <div class="enhanced-grid">
           <mat-card class="table-card">
-            <h3><mat-icon>workspace_premium</mat-icon> Top Products</h3>
+            <h3><mat-icon>workspace_premium</mat-icon> {{ 'dashboard.topProducts.title' | t }}</h3>
             <div class="table-container">
               <table mat-table [dataSource]="topProducts">
                 <ng-container matColumnDef="modelName">
-                  <th mat-header-cell *matHeaderCellDef>Product</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.product' | t }}</th>
                   <td mat-cell *matCellDef="let p">{{ p.modelName }}</td>
                 </ng-container>
                 <ng-container matColumnDef="salesCount">
-                  <th mat-header-cell *matHeaderCellDef>Count</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.count' | t }}</th>
                   <td mat-cell *matCellDef="let p">{{ p.salesCount }}</td>
                 </ng-container>
                 <ng-container matColumnDef="totalWeight">
-                  <th mat-header-cell *matHeaderCellDef>Weight</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.weight' | t }}</th>
                   <td mat-cell *matCellDef="let p">{{ p.totalWeight }}g</td>
                 </ng-container>
                 <ng-container matColumnDef="totalRevenue">
-                  <th mat-header-cell *matHeaderCellDef>Revenue</th>
-                  <td mat-cell *matCellDef="let p">{{ formatCurrency(p.totalRevenue) }} EGP</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.revenue' | t }}</th>
+                  <td mat-cell *matCellDef="let p">{{ formatCurrency(p.totalRevenue) }} {{ 'unit.egp' | t }}</td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="topProductsColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: topProductsColumns;"></tr>
@@ -206,31 +206,31 @@
               @if (topProducts.length === 0) {
                 <div class="empty-state">
                   <mat-icon>inbox</mat-icon>
-                  <p>No data for selected range.</p>
+                  <p>{{ 'dashboard.table.empty' | t }}</p>
                 </div>
               }
             </div>
           </mat-card>
 
           <mat-card class="table-card">
-            <h3><mat-icon>groups</mat-icon> User Performance</h3>
+            <h3><mat-icon>groups</mat-icon> {{ 'dashboard.userPerformance.title' | t }}</h3>
             <div class="table-container">
               <table mat-table [dataSource]="userPerformance">
                 <ng-container matColumnDef="fullName">
-                  <th mat-header-cell *matHeaderCellDef>User</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.user' | t }}</th>
                   <td mat-cell *matCellDef="let u">{{ u.fullName }}</td>
                 </ng-container>
                 <ng-container matColumnDef="salesCount">
-                  <th mat-header-cell *matHeaderCellDef>Sales</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.sales' | t }}</th>
                   <td mat-cell *matCellDef="let u">{{ u.salesCount }}</td>
                 </ng-container>
                 <ng-container matColumnDef="totalRevenue">
-                  <th mat-header-cell *matHeaderCellDef>Revenue</th>
-                  <td mat-cell *matCellDef="let u">{{ formatCurrency(u.totalRevenue) }} EGP</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.revenue' | t }}</th>
+                  <td mat-cell *matCellDef="let u">{{ formatCurrency(u.totalRevenue) }} {{ 'unit.egp' | t }}</td>
                 </ng-container>
                 <ng-container matColumnDef="averageSaleValue">
-                  <th mat-header-cell *matHeaderCellDef>Avg</th>
-                  <td mat-cell *matCellDef="let u">{{ formatCurrency(u.averageSaleValue) }} EGP</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.avg' | t }}</th>
+                  <td mat-cell *matCellDef="let u">{{ formatCurrency(u.averageSaleValue) }} {{ 'unit.egp' | t }}</td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="userPerformanceColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: userPerformanceColumns;"></tr>
@@ -239,31 +239,31 @@
               @if (userPerformance.length === 0) {
                 <div class="empty-state">
                   <mat-icon>inbox</mat-icon>
-                  <p>No data for selected range.</p>
+                  <p>{{ 'dashboard.table.empty' | t }}</p>
                 </div>
               }
             </div>
           </mat-card>
 
           <mat-card class="table-card full">
-            <h3><mat-icon>show_chart</mat-icon> Sales Trends</h3>
+            <h3><mat-icon>show_chart</mat-icon> {{ 'dashboard.salesTrends.title' | t }}</h3>
             <div class="table-container">
               <table mat-table [dataSource]="salesTrends">
                 <ng-container matColumnDef="date">
-                  <th mat-header-cell *matHeaderCellDef>Date</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.date' | t }}</th>
                   <td mat-cell *matCellDef="let t">{{ formatDateLabel(t.date) }}</td>
                 </ng-container>
                 <ng-container matColumnDef="salesCount">
-                  <th mat-header-cell *matHeaderCellDef>Sales</th>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.sales' | t }}</th>
                   <td mat-cell *matCellDef="let t">{{ t.salesCount }}</td>
                 </ng-container>
                 <ng-container matColumnDef="totalRevenue">
-                  <th mat-header-cell *matHeaderCellDef>Revenue</th>
-                  <td mat-cell *matCellDef="let t">{{ formatCurrency(t.totalRevenue) }} EGP</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.revenue' | t }}</th>
+                  <td mat-cell *matCellDef="let t">{{ formatCurrency(t.totalRevenue) }} {{ 'unit.egp' | t }}</td>
                 </ng-container>
                 <ng-container matColumnDef="netProfit">
-                  <th mat-header-cell *matHeaderCellDef>Profit</th>
-                  <td mat-cell *matCellDef="let t">{{ formatCurrency(t.netProfit) }} EGP</td>
+                  <th mat-header-cell *matHeaderCellDef>{{ 'dashboard.table.profit' | t }}</th>
+                  <td mat-cell *matCellDef="let t">{{ formatCurrency(t.netProfit) }} {{ 'unit.egp' | t }}</td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="trendsColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: trendsColumns;"></tr>
@@ -272,7 +272,7 @@
               @if (salesTrends.length === 0) {
                 <div class="empty-state">
                   <mat-icon>inbox</mat-icon>
-                  <p>No data for selected range.</p>
+                  <p>{{ 'dashboard.table.empty' | t }}</p>
                 </div>
               }
             </div>

@@ -101,4 +101,10 @@ public class OldGoldService {
     public List<ScrapInventory> getScrapInventory() {
         return scrapRepository.findAll();
     }
+    
+    // Get all old gold purchases with pagination
+    @Transactional(readOnly = true)
+    public org.springframework.data.domain.Page<OldGoldPurchase> getAllPurchases(org.springframework.data.domain.Pageable pageable) {
+        return purchaseRepository.findAll(pageable);
+    }
 }

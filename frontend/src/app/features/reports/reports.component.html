@@ -1,46 +1,46 @@
 <div class="reports-container">
   <div class="reports-header">
     <div>
-      <h1><mat-icon>assessment</mat-icon> REPORTS & HISTORY</h1>
-      <p class="subtitle">View transactions and generate reports</p>
+      <h1><mat-icon>assessment</mat-icon> {{ 'reports.title' | t }}</h1>
+      <p class="subtitle">{{ 'reports.subtitle' | t }}</p>
     </div>
   </div>
 
   <mat-card>
-    <h2>Z-Report (End of Day)</h2>
+    <h2>{{ 'reports.z.title' | t }}</h2>
     <div class="zreport-row">
       <mat-form-field appearance="outline">
-        <mat-label>Date (optional)</mat-label>
+        <mat-label>{{ 'reports.z.dateOptional' | t }}</mat-label>
         <input matInput [matDatepicker]="picker" [(ngModel)]="zReportDate">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
       <button mat-raised-button color="primary" (click)="refreshZReport()">
-        <mat-icon>refresh</mat-icon> Refresh
+        <mat-icon>refresh</mat-icon> {{ 'reports.z.refresh' | t }}
       </button>
     </div>
 
     @if (loadingZReport) {
       <div class="loading-container">
-        <p>Loading Z-Report...</p>
+        <p>{{ 'reports.z.loading' | t }}</p>
       </div>
     } @else if (zReport) {
       <div class="zreport-grid">
         <div class="zitem">
-          <span class="label">Report Date</span>
+          <span class="label">{{ 'reports.z.reportDate' | t }}</span>
           <span class="value">{{ zReport.reportDate }}</span>
         </div>
         <div class="zitem">
-          <span class="label">Total Transactions</span>
+          <span class="label">{{ 'reports.z.totalTransactions' | t }}</span>
           <span class="value">{{ zReport.totalTransactions }}</span>
         </div>
         <div class="zitem">
-          <span class="label">Total Revenue</span>
+          <span class="label">{{ 'reports.z.totalRevenue' | t }}</span>
           <span class="value gold-text">{{ formatCurrency(zReport.totalRevenue) }} EGP</span>
         </div>
         <div class="zitem">
-          <span class="label">Total Gold Weight Sold</span>
+          <span class="label">{{ 'reports.z.totalWeight' | t }}</span>
           <span class="value">{{ zReport.totalGoldWeightSold }} g</span>
         </div>
       </div>
@@ -48,27 +48,27 @@
   </mat-card>
 
   <mat-card>
-    <h2>Recent Transactions</h2>
+    <h2>{{ 'reports.tx.title' | t }}</h2>
     
     @if (loading) {
       <div class="loading-container">
-        <p>Loading transactions...</p>
+        <p>{{ 'reports.tx.loading' | t }}</p>
       </div>
     } @else {
       <div class="table-container scrollbar-custom">
         <table mat-table [dataSource]="transactions">
           <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'reports.table.id' | t }}</th>
             <td mat-cell *matCellDef="let transaction">{{ transaction.id }}</td>
           </ng-container>
 
           <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'reports.table.date' | t }}</th>
             <td mat-cell *matCellDef="let transaction">{{ formatDate(transaction.date) }}</td>
           </ng-container>
 
           <ng-container matColumnDef="type">
-            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'reports.table.type' | t }}</th>
             <td mat-cell *matCellDef="let transaction">
               <span class="type-badge" [class]="transaction.type.toLowerCase()">
                 {{ transaction.type }}
@@ -77,14 +77,14 @@
           </ng-container>
 
           <ng-container matColumnDef="amount">
-            <th mat-header-cell *matHeaderCellDef>Total</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'reports.table.total' | t }}</th>
             <td mat-cell *matCellDef="let transaction">
               <span class="gold-text">{{ formatCurrency(transaction.amount) }} EGP</span>
             </td>
           </ng-container>
 
           <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <th mat-header-cell *matHeaderCellDef>{{ 'reports.table.desc' | t }}</th>
             <td mat-cell *matCellDef="let transaction">{{ transaction.description }}</td>
           </ng-container>
 

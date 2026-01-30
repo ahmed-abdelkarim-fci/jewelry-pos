@@ -1,12 +1,12 @@
 <h2 mat-dialog-title>
   <mat-icon>sell</mat-icon>
-  Add Old Gold Trade-In
+  {{ 'pos.oldGoldDialog.title' | t }}
 </h2>
 
 <mat-dialog-content>
   <form [formGroup]="oldGoldForm">
     <mat-form-field appearance="outline">
-      <mat-label>Purity</mat-label>
+      <mat-label>{{ 'pos.oldGoldDialog.purity' | t }}</mat-label>
       <mat-select formControlName="purity">
         @for (purity of purities; track purity) {
           <mat-option [value]="purity">{{ purity }}</mat-option>
@@ -15,52 +15,52 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Weight (grams)</mat-label>
+      <mat-label>{{ 'pos.oldGoldDialog.weight' | t }}</mat-label>
       <input matInput type="number" formControlName="weight" step="0.1">
       <mat-icon matPrefix>scale</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Buy Rate (EGP/gram)</mat-label>
+      <mat-label>{{ 'pos.oldGoldDialog.buyRate' | t }}</mat-label>
       <input matInput type="number" formControlName="buyRate">
       <mat-icon matPrefix>attach_money</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Customer National ID (Required)</mat-label>
+      <mat-label>{{ 'pos.oldGoldDialog.nationalId' | t }}</mat-label>
       <input matInput formControlName="customerNationalId" maxlength="14">
       <mat-icon matPrefix>badge</mat-icon>
       @if (oldGoldForm.get('customerNationalId')?.hasError('pattern')) {
-        <mat-error>National ID must be 14 digits</mat-error>
+        <mat-error>{{ 'pos.oldGoldDialog.nationalIdError' | t }}</mat-error>
       }
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Customer Phone Number (Optional)</mat-label>
+      <mat-label>{{ 'pos.oldGoldDialog.phone' | t }}</mat-label>
       <input matInput formControlName="customerPhoneNumber" maxlength="15">
       <mat-icon matPrefix>phone</mat-icon>
       @if (oldGoldForm.get('customerPhoneNumber')?.hasError('pattern')) {
-        <mat-error>Phone must be 10-15 digits</mat-error>
+        <mat-error>{{ 'pos.oldGoldDialog.phoneError' | t }}</mat-error>
       }
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-      <mat-label>Description (Optional)</mat-label>
+      <mat-label>{{ 'pos.oldGoldDialog.description' | t }}</mat-label>
       <textarea matInput formControlName="description" rows="3"></textarea>
     </mat-form-field>
 
     @if (oldGoldForm.get('weight')?.value && oldGoldForm.get('buyRate')?.value) {
       <div class="total-value">
-        <strong>Total Value:</strong>
-        <span class="warning-text">{{ getTotalValue().toLocaleString() }} EGP</span>
+        <strong>{{ 'pos.oldGoldDialog.total' | t }}:</strong>
+        <span class="warning-text">{{ formatCurrency(getTotalValue()) }} EGP</span>
       </div>
     }
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onCancel()">{{ 'common.cancel' | t }}</button>
   <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!oldGoldForm.valid">
-    Add to Trade-In
+    {{ 'pos.oldGoldDialog.add' | t }}
   </button>
 </mat-dialog-actions>

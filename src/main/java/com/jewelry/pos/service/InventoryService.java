@@ -23,10 +23,17 @@ public class InventoryService {
 
     @Transactional
     public Product createProduct(ProductRequestDTO dto) {
-        if (productRepository.findByBarcode(dto.barcode()).isPresent()) {
+        // Generate UUID barcode if null or blank
+//        String barcode = (dto.barcode() == null || dto.barcode().isBlank())
+//            ? java.util.UUID.randomUUID().toString()
+//            : dto.barcode();
+        String barcode = java.util.UUID.randomUUID().toString();
+        if (productRepository.findByBarcode(barcode).isPresent()) {
             throw new IllegalStateException("Product with this barcode already exists.");
         }
+        
         Product product = productMapper.toEntity(dto);
+        product.setBarcode(barcode);
         return productRepository.save(product);
     }
 
@@ -67,6 +74,19 @@ public class InventoryService {
         }
 
         return productRepository.searchAvailableProducts(query).stream()
+                .map(productMapper::toLiteDTO)
+                .collect(Collectors.toList());
+    }
+    
+    public List<ProductLiteDTO> searchProductsWithFilters(
+            String query,
+            com.jewelry.pos.domain.entity.PurityEnum purity,
+            com.jewelry.pos.domain.entity.JewelryTypeEnum type,
+            java.math.BigDecimal minWeight,
+            java.math.BigDecimal maxWeight) {
+        
+        return productRepository.searchProductsWithFilters(query, purity, type, minWeight, maxWeight)
+                .stream()
                 .map(productMapper::toLiteDTO)
                 .collect(Collectors.toList());
     }

@@ -4,12 +4,12 @@
       @for (rate of goldRates; track rate.karat) {
         <span class="ticker-item">
           <strong>{{ getKaratLabel(rate.karat) }}:</strong> 
-          {{ formatPrice(rate.sellRate) }} جنيه
+          {{ formatPrice(rate.sellRate) }} {{ 'unit.egp' | t }}
           <span class="separator">|</span>
         </span>
       }
     } @else {
-      <span class="ticker-item">جاري تحميل أسعار الذهب...</span>
+      <span class="ticker-item">{{ 'gold.loading' | t }}</span>
     }
   </div>
 </div>

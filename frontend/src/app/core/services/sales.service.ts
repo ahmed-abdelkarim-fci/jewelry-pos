@@ -45,7 +45,7 @@ export class SalesService {
     let params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString())
-      .set('sort', 'transactionDate,desc');
+      .set('sort', 'lastModifiedDate,desc');
 
     if (query) params = params.set('query', query);
     if (fromDate) params = params.set('fromDate', fromDate);

@@ -77,7 +77,7 @@ export class OldGoldService {
     const params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString())
-      .set('sort', 'transactionDate,desc');
+      .set('sort', 'lastModifiedDate,desc');
     return this.http.get<PageResponse<OldGoldPurchase>>(`${this.API_URL}/purchases`, { params });
   }
 
@@ -85,7 +85,7 @@ export class OldGoldService {
     const params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString())
-      .set('sort', 'transactionDate,desc');
+      .set('sort', 'lastModifiedDate,desc');
     return this.http.get<PageResponse<ScrapPurification>>(`${this.API_URL}/purifications`, { params });
   }
 }

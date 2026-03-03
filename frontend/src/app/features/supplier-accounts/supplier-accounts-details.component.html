@@ -1,0 +1,127 @@
+<div class="supplier-accounts-details-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ 'supplierAccounts.supplierDetails' | t : { name: supplierName || supplierId } }}</mat-card-title>
+      <mat-card-subtitle>{{ 'supplierAccounts.subtitle' | t }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="top-actions">
+        <button mat-stroked-button (click)="back()">
+          <mat-icon>arrow_back</mat-icon>
+          {{ 'supplierAccounts.backToList' | t }}
+        </button>
+      </div>
+
+      <div class="add-form">
+        <h3>{{ 'supplierAccounts.addTransaction' | t }}</h3>
+
+        <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'supplierAccounts.transactionDate' | t }}</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="transactionDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'supplierAccounts.transactionType' | t }}</mat-label>
+              <mat-select formControlName="transactionType" required>
+                <mat-option value="RECEIVABLE">{{ 'supplierAccounts.receivable' | t }}</mat-option>
+                <mat-option value="PAYABLE">{{ 'supplierAccounts.payable' | t }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'supplierAccounts.weight' | t }}</mat-label>
+              <input matInput type="number" step="0.001" formControlName="weight">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'supplierAccounts.fees' | t }}</mat-label>
+              <input matInput type="number" step="0.01" formControlName="fees">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'supplierAccounts.numberOfPieces' | t }}</mat-label>
+              <input matInput type="number" formControlName="numberOfPieces">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ 'supplierAccounts.statement' | t }}</mat-label>
+            <textarea matInput rows="2" formControlName="statement"></textarea>
+          </mat-form-field>
+
+          <div class="form-actions">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.valid">
+              <mat-icon>save</mat-icon>
+              {{ 'common.add' | t }}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <table mat-table [dataSource]="transactions" class="mat-elevation-z2">
+          <ng-container matColumnDef="transactionDate">
+            <th mat-header-cell *matHeaderCellDef>{{ 'supplierAccounts.table.date' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatDateTime(row.transactionDate) }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="statement">
+            <th mat-header-cell *matHeaderCellDef>{{ 'supplierAccounts.table.statement' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ row.statement || '-' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="transactionType">
+            <th mat-header-cell *matHeaderCellDef>{{ 'supplierAccounts.table.type' | t }}</th>
+            <td mat-cell *matCellDef="let row">
+              <span [class]="'status-badge ' + row.transactionType.toLowerCase()">
+                {{ 'transactionType.' + row.transactionType | t }}
+              </span>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef>{{ 'supplierAccounts.table.weight' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatWeight(row.weight) }}g</td>
+          </ng-container>
+
+          <ng-container matColumnDef="fees">
+            <th mat-header-cell *matHeaderCellDef>{{ 'supplierAccounts.table.fees' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatCurrency(row.fees) }} {{ 'unit.egp' | t }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="numberOfPieces">
+            <th mat-header-cell *matHeaderCellDef>{{ 'supplierAccounts.table.pieces' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ row.numberOfPieces ?? '-' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>{{ 'supplierAccounts.table.actions' | t }}</th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="warn" (click)="deleteTransaction(row.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator
+          [length]="totalElements"
+          [pageSize]="pageSize"
+          [pageSizeOptions]="[10, 20, 50]"
+          (page)="onPageChange($event)">
+        </mat-paginator>
+
+        <div *ngIf="loading" class="loading">{{ 'supplierAccounts.loading' | t }}</div>
+        <div *ngIf="!loading && transactions.length === 0" class="no-data">{{ 'supplierAccounts.noData' | t }}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

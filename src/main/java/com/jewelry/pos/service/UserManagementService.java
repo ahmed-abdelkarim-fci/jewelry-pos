@@ -143,9 +143,9 @@ public class UserManagementService {
         superAdminRole.setPermissions(Set.of(p1, p2, p3));
         roleRepository.save(superAdminRole);
 
-        // Role 2: ADMIN (Has P2, P3)
+        // Role 2: ADMIN (Has P1, P2, P3 - Full access like SUPER_ADMIN)
         Role adminRole = new Role("ROLE_ADMIN");
-        adminRole.setPermissions(Set.of(p2, p3));
+        adminRole.setPermissions(Set.of(p1, p2, p3));
         roleRepository.save(adminRole);
 
         // Role 3: USER (Has P3 only)

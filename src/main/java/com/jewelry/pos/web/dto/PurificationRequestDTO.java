@@ -19,7 +19,6 @@ public record PurificationRequestDTO(
         @Positive(message = "{validation.purification.cash.positive}")
         BigDecimal cashReceived,
 
-        //شخص عادي ممكن اسم
-        @jakarta.validation.constraints.NotBlank(message = "{validation.purification.factoryName.required}")
-        String factoryName
+        @jakarta.validation.constraints.NotBlank(message = "{validation.purification.supplierId.required}")
+        String supplierId
 ) {}

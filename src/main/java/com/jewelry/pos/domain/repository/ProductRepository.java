@@ -17,6 +17,16 @@ import java.util.Optional;
 public interface ProductRepository extends JpaRepository<Product, String> {
     Optional<Product> findByBarcode(String barcode);
     long countByStatus(ProductStatusEnum status);
+
+    @Query("SELECT p FROM Product p ORDER BY " +
+            "CASE " +
+            "  WHEN p.status = 'AVAILABLE' THEN 1 " +
+            "  WHEN p.status = 'RESERVED' THEN 2 " +
+            "  WHEN p.status = 'SOLD' THEN 3 " +
+            "  ELSE 4 " +
+            "END, " +
+            "p.lastModifiedDate DESC")
+    Page<Product> findAllOrderByStatusPriorityAndLastModifiedDateDesc(Pageable pageable);
     
     @Query("SELECT p FROM Product p WHERE " +
             "(LOWER(p.modelName) LIKE LOWER(CONCAT('%', :query, '%')) " +

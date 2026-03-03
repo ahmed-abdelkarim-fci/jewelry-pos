@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -28,6 +29,11 @@ public class DashboardService {
     private final OldGoldPurchaseRepository oldGoldRepository;
     private final ScrapInventoryRepository scrapInventoryRepository;
     private final ScrapPurificationRepository purificationRepository;
+
+    // Account Repositories
+    private final PersonalAccountRepository personalAccountRepository;
+    private final SupplierAccountRepository supplierAccountRepository;
+    private final HomeExpenseRepository homeExpenseRepository;
 
     // User Repository for performance analytics
     private final UserRepository userRepository;
@@ -91,28 +97,114 @@ public class DashboardService {
                 .collect(Collectors.toMap(s -> s.getPurity().name(), ScrapInventory::getTotalWeight));
 
         // ==========================================
-        // 5. BUILD RESPONSE
+        // 5. PERSONAL ACCOUNTS ANALYTICS
         // ==========================================
-        return Map.of(
-                // Sales Section
-                "salesRevenue", totalRevenue,
-                "cost", totalCost,
-                "netProfit", netProfit,
-                "salesCount", (long) sales.size(),
-                "itemsInStock", availableItems,
+        List<PersonalAccount> personalAccounts = personalAccountRepository.findAllByTransactionDateBetween(startOfDay, endOfDay);
+        
+        BigDecimal personalMoneyReceivable = BigDecimal.ZERO;
+        BigDecimal personalMoneyPayable = BigDecimal.ZERO;
+        BigDecimal personalWeightReceivable = BigDecimal.ZERO;
+        BigDecimal personalWeightPayable = BigDecimal.ZERO;
+        
+        for (PersonalAccount pa : personalAccounts) {
+            if (pa.getTransactionType() == TransactionTypeEnum.RECEIVABLE) {
+                personalMoneyReceivable = personalMoneyReceivable.add(pa.getMoney());
+                personalWeightReceivable = personalWeightReceivable.add(pa.getWeight());
+            } else {
+                personalMoneyPayable = personalMoneyPayable.add(pa.getMoney());
+                personalWeightPayable = personalWeightPayable.add(pa.getWeight());
+            }
+        }
 
-                // Old Gold Section (Today's Activity)
-                "oldGoldBoughtWeight", oldGoldBoughtWeight,
-                "oldGoldExpense", oldGoldExpense,
+        // ==========================================
+        // 6. SUPPLIER ACCOUNTS ANALYTICS
+        // ==========================================
+        List<SupplierAccount> supplierAccounts = supplierAccountRepository.findAllByTransactionDateBetween(startOfDay, endOfDay);
+        
+        BigDecimal supplierFeesReceivable = BigDecimal.ZERO;
+        BigDecimal supplierFeesPayable = BigDecimal.ZERO;
+        BigDecimal supplierWeightReceivable = BigDecimal.ZERO;
+        BigDecimal supplierWeightPayable = BigDecimal.ZERO;
+        
+        for (SupplierAccount sa : supplierAccounts) {
+            if (sa.getTransactionType() == TransactionTypeEnum.RECEIVABLE) {
+                supplierFeesReceivable = supplierFeesReceivable.add(sa.getFees());
+                supplierWeightReceivable = supplierWeightReceivable.add(sa.getWeight());
+            } else {
+                supplierFeesPayable = supplierFeesPayable.add(sa.getFees());
+                supplierWeightPayable = supplierWeightPayable.add(sa.getWeight());
+            }
+        }
 
-                // Factory Section (Today's Activity)
-                "purificationIncome", purificationIncome,
+        // ==========================================
+        // 7. HOME EXPENSES ANALYTICS
+        // ==========================================
+        List<HomeExpense> homeExpenses = homeExpenseRepository.findAllByTransactionDateBetween(startOfDay, endOfDay);
+        
+        BigDecimal homeMoneyReceivable = BigDecimal.ZERO;
+        BigDecimal homeMoneyPayable = BigDecimal.ZERO;
+        BigDecimal homeWeightReceivable = BigDecimal.ZERO;
+        BigDecimal homeWeightPayable = BigDecimal.ZERO;
+        
+        for (HomeExpense he : homeExpenses) {
+            if (he.getTransactionType() == TransactionTypeEnum.RECEIVABLE) {
+                homeMoneyReceivable = homeMoneyReceivable.add(he.getMoney());
+                homeWeightReceivable = homeWeightReceivable.add(he.getWeight());
+            } else {
+                homeMoneyPayable = homeMoneyPayable.add(he.getMoney());
+                homeWeightPayable = homeWeightPayable.add(he.getWeight());
+            }
+        }
 
-                // Inventory Section (Current State)
-                "scrapInventory", scrapBoxMap,
+        // ==========================================
+        // 8. BUILD RESPONSE
+        // ==========================================
+        Map<String, Object> response = new LinkedHashMap<>();
+        
+        // Sales Section
+        response.put("salesRevenue", totalRevenue);
+        response.put("cost", totalCost);
+        response.put("netProfit", netProfit);
+        response.put("salesCount", (long) sales.size());
+        response.put("itemsInStock", availableItems);
 
-                "lastUpdated", LocalDateTime.now()
-        );
+        // Old Gold Section (Today's Activity)
+        response.put("oldGoldBoughtWeight", oldGoldBoughtWeight);
+        response.put("oldGoldExpense", oldGoldExpense);
+
+        // Factory Section (Today's Activity)
+        response.put("purificationIncome", purificationIncome);
+
+        // Inventory Section (Current State)
+        response.put("scrapInventory", scrapBoxMap);
+
+        // Personal Accounts Section
+        response.put("personalMoneyReceivable", personalMoneyReceivable);
+        response.put("personalMoneyPayable", personalMoneyPayable);
+        response.put("personalWeightReceivable", personalWeightReceivable);
+        response.put("personalWeightPayable", personalWeightPayable);
+        response.put("personalNetMoney", personalMoneyReceivable.subtract(personalMoneyPayable));
+        response.put("personalNetWeight", personalWeightReceivable.subtract(personalWeightPayable));
+
+        // Supplier Accounts Section
+        response.put("supplierFeesReceivable", supplierFeesReceivable);
+        response.put("supplierFeesPayable", supplierFeesPayable);
+        response.put("supplierWeightReceivable", supplierWeightReceivable);
+        response.put("supplierWeightPayable", supplierWeightPayable);
+        response.put("supplierNetFees", supplierFeesReceivable.subtract(supplierFeesPayable));
+        response.put("supplierNetWeight", supplierWeightReceivable.subtract(supplierWeightPayable));
+
+        // Home Expenses Section
+        response.put("homeMoneyReceivable", homeMoneyReceivable);
+        response.put("homeMoneyPayable", homeMoneyPayable);
+        response.put("homeWeightReceivable", homeWeightReceivable);
+        response.put("homeWeightPayable", homeWeightPayable);
+        response.put("homeNetMoney", homeMoneyReceivable.subtract(homeMoneyPayable));
+        response.put("homeNetWeight", homeWeightReceivable.subtract(homeWeightPayable));
+
+        response.put("lastUpdated", LocalDateTime.now());
+        
+        return response;
     }
 
     // ==========================================

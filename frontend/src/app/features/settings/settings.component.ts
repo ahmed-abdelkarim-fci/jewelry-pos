@@ -13,6 +13,7 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { GoldRateService, GoldRate, PageResponse } from '../../core/services/gold-rate.service';
 import { ConfigService } from '../../core/services/config.service';
 import { I18nService } from '../../core/services/i18n.service';
+import { AuthService } from '../../core/services/auth.service';
 import { TPipe } from '../../shared/pipes/t.pipe';
 
 @Component({
@@ -41,6 +42,7 @@ export class SettingsComponent implements OnInit {
   private configService = inject(ConfigService);
   private snackBar = inject(MatSnackBar);
   private i18n = inject(I18nService);
+  private authService = inject(AuthService);
 
   goldRateForm!: FormGroup;
   saving = false;
@@ -99,22 +101,30 @@ export class SettingsComponent implements OnInit {
     this.configService.getGoldAutoUpdateStatus().subscribe({
       next: (res) => {
         this.goldAutoUpdateEnabled = !!res.enabled;
+        if (!this.isSuperAdmin) {
+          this.loadingConfig = false;
+        }
       },
       error: () => {
         this.snackBar.open(this.i18n.t('settings.errorLoadAutoUpdate'), this.i18n.t('common.close'), { duration: 3000 });
+        if (!this.isSuperAdmin) {
+          this.loadingConfig = false;
+        }
       }
     });
 
-    this.configService.getHardwareStatus().subscribe({
-      next: (res) => {
-        this.hardwareEnabled = !!res.enabled;
-        this.loadingConfig = false;
-      },
-      error: () => {
-        this.loadingConfig = false;
-        this.snackBar.open(this.i18n.t('settings.errorLoadHardware'), this.i18n.t('common.close'), { duration: 3000 });
-      }
-    });
+    if (this.isSuperAdmin) {
+      this.configService.getHardwareStatus().subscribe({
+        next: (res) => {
+          this.hardwareEnabled = !!res.enabled;
+          this.loadingConfig = false;
+        },
+        error: () => {
+          this.loadingConfig = false;
+          this.snackBar.open(this.i18n.t('settings.errorLoadHardware'), this.i18n.t('common.close'), { duration: 3000 });
+        }
+      });
+    }
   }
 
   onToggleGoldAutoUpdate(enabled: boolean): void {
@@ -225,5 +235,9 @@ export class SettingsComponent implements OnInit {
       month: 'short',
       day: 'numeric'
     });
+  }
+
+  get isSuperAdmin(): boolean {
+    return this.authService.getRole() === 'ROLE_SUPER_ADMIN';
   }
 }

@@ -13,10 +13,13 @@
                  #barcodeInput
                  [(ngModel)]="barcode"
                  (keyup.enter)="onBarcodeSubmit()"
-                 [placeholder]="'pos.scan.placeholder' | t"
                  autocomplete="off">
           <mat-icon matPrefix>qr_code_scanner</mat-icon>
         </mat-form-field>
+        
+        <button mat-raised-button color="accent" (click)="openProductBrowser()" class="browse-btn">
+          <mat-icon>search</mat-icon> {{ 'pos.browseProducts' | t }}
+        </button>
       </mat-card>
 
       @if (lastScannedProduct) {

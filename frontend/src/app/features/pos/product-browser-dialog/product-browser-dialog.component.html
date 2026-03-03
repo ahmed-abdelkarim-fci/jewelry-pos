@@ -1,0 +1,138 @@
+<h2 mat-dialog-title>
+  <mat-icon>search</mat-icon>
+  {{ 'pos.browser.title' | t }}
+</h2>
+
+<mat-dialog-content>
+  <div class="search-filters">
+    <mat-form-field appearance="outline" class="search-field">
+      <mat-label>{{ 'pos.browser.search' | t }}</mat-label>
+      <input matInput [(ngModel)]="searchQuery" (keyup.enter)="searchProducts()" [placeholder]="'pos.browser.searchPlaceholder' | t">
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'pos.browser.purity' | t }}</mat-label>
+      <mat-select [(ngModel)]="selectedPurity">
+        <mat-option [value]="null">{{ 'pos.browser.all' | t }}</mat-option>
+        @for (purity of purities; track purity) {
+          <mat-option [value]="purity">{{ purity }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'pos.browser.type' | t }}</mat-label>
+      <mat-select [(ngModel)]="selectedType">
+        <mat-option [value]="null">{{ 'pos.browser.all' | t }}</mat-option>
+        @for (type of types; track type) {
+          <mat-option [value]="type">{{ getTypeLabel(type) }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="weight-field">
+      <mat-label>{{ 'pos.browser.minWeight' | t }}</mat-label>
+      <input matInput type="number" [(ngModel)]="minWeight" step="0.1">
+      <span matSuffix>g</span>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="weight-field">
+      <mat-label>{{ 'pos.browser.maxWeight' | t }}</mat-label>
+      <input matInput type="number" [(ngModel)]="maxWeight" step="0.1">
+      <span matSuffix>g</span>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="date-field">
+      <mat-label>{{ 'pos.browser.createdFrom' | t }}</mat-label>
+      <input matInput [matDatepicker]="pickerFrom" [(ngModel)]="createdFrom">
+      <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+      <mat-datepicker #pickerFrom></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="date-field">
+      <mat-label>{{ 'pos.browser.createdTo' | t }}</mat-label>
+      <input matInput [matDatepicker]="pickerTo" [(ngModel)]="createdTo">
+      <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+      <mat-datepicker #pickerTo></mat-datepicker>
+    </mat-form-field>
+
+    <div class="filter-actions">
+      <button mat-raised-button color="primary" (click)="searchProducts()">
+        <mat-icon>search</mat-icon> {{ 'pos.browser.searchBtn' | t }}
+      </button>
+      <button mat-button (click)="clearFilters()">
+        <mat-icon>clear</mat-icon> {{ 'pos.browser.clear' | t }}
+      </button>
+    </div>
+  </div>
+
+  @if (loading) {
+    <div class="loading-container">
+      <p>{{ 'pos.browser.loading' | t }}</p>
+    </div>
+  } @else if (products.length > 0) {
+    <div class="products-table">
+      <table mat-table [dataSource]="products">
+        <ng-container matColumnDef="barcode">
+          <th mat-header-cell *matHeaderCellDef>{{ 'pos.browser.table.barcode' | t }}</th>
+          <td mat-cell *matCellDef="let product"><code>{{ product.barcode }}</code></td>
+        </ng-container>
+
+        <ng-container matColumnDef="modelName">
+          <th mat-header-cell *matHeaderCellDef>{{ 'pos.browser.table.name' | t }}</th>
+          <td mat-cell *matCellDef="let product">{{ product.modelName }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef>{{ 'pos.browser.table.type' | t }}</th>
+          <td mat-cell *matCellDef="let product">{{ getTypeLabel(product.type) }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="purityEnum">
+          <th mat-header-cell *matHeaderCellDef>{{ 'pos.browser.table.purity' | t }}</th>
+          <td mat-cell *matCellDef="let product">{{ product.purityEnum }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="grossWeight">
+          <th mat-header-cell *matHeaderCellDef>{{ 'pos.browser.table.weight' | t }}</th>
+          <td mat-cell *matCellDef="let product">{{ product.grossWeight }}g</td>
+        </ng-container>
+
+        <ng-container matColumnDef="estimatedPrice">
+          <th mat-header-cell *matHeaderCellDef>{{ 'pos.browser.table.price' | t }}</th>
+          <td mat-cell *matCellDef="let product">{{ formatCurrency(product.estimatedPrice) }} {{ 'unit.egp' | t }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>{{ 'pos.browser.table.select' | t }}</th>
+          <td mat-cell *matCellDef="let product">
+            <button mat-raised-button color="primary" (click)="selectProduct(product)">
+              <mat-icon>add_shopping_cart</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+
+    <mat-paginator
+      [length]="totalElements"
+      [pageSize]="pageSize"
+      [pageIndex]="currentPage"
+      [pageSizeOptions]="[5, 10, 20]"
+      (page)="onPageChange($event)">
+    </mat-paginator>
+  } @else {
+    <div class="empty-state">
+      <mat-icon>inventory_2</mat-icon>
+      <p>{{ 'pos.browser.noProducts' | t }}</p>
+    </div>
+  }
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">{{ 'common.cancel' | t }}</button>
+</mat-dialog-actions>

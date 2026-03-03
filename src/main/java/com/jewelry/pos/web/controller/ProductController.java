@@ -11,6 +11,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +36,7 @@ public class ProductController {
     @Operation(summary = "Get all products with pagination")
     @PreAuthorize("hasAuthority('SALE_EXECUTE')")
     public ResponseEntity<Page<ProductLiteDTO>> getAllProducts(
-            @PageableDefault(size = 20, sort = "modelName") Pageable pageable
+            @PageableDefault(size = 20, sort = "lastModifiedDate", direction = Sort.Direction.DESC) Pageable pageable
     ) {
         return ResponseEntity.ok(inventoryService.getAllProducts(pageable));
     }

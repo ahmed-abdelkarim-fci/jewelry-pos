@@ -46,8 +46,7 @@ export class InventoryService {
   getAllProducts(page: number = 0, size: number = 20): Observable<PageResponse<Product>> {
     const params = new HttpParams()
       .set('page', page.toString())
-      .set('size', size.toString())
-      .set('sort', 'modelName');
+      .set('size', size.toString());
     return this.http.get<PageResponse<Product>>(this.API_URL, { params });
   }
 

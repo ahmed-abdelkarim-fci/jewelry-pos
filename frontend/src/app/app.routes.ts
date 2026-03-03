@@ -48,6 +48,34 @@ export const routes: Routes = [
         loadComponent: () => import('./features/profile/profile.component').then(m => m.ProfileComponent)
       },
       {
+        path: 'personal-accounts',
+        loadComponent: () => import('./features/personal-accounts/personal-accounts.component').then(m => m.PersonalAccountsComponent)
+      },
+      {
+        path: 'personal-persons',
+        loadComponent: () => import('./features/personal-persons/personal-persons.component').then(m => m.PersonalPersonsComponent)
+      },
+      {
+        path: 'supplier-accounts',
+        loadComponent: () => import('./features/supplier-accounts/supplier-accounts.component').then(m => m.SupplierAccountsComponent)
+      },
+      {
+        path: 'supplier-accounts/:supplierId',
+        loadComponent: () => import('./features/supplier-accounts/supplier-accounts-details.component').then(m => m.SupplierAccountsDetailsComponent)
+      },
+      {
+        path: 'home-expenses',
+        loadComponent: () => import('./features/home-expenses/home-expenses.component').then(m => m.HomeExpensesComponent)
+      },
+      {
+        path: 'personal-accounts/:personId',
+        loadComponent: () => import('./features/personal-accounts/personal-accounts-details.component').then(m => m.PersonalAccountsDetailsComponent)
+      },
+      {
+        path: 'suppliers',
+        loadComponent: () => import('./features/suppliers/suppliers.component').then(m => m.SuppliersComponent)
+      },
+      {
         path: '',
         redirectTo: 'dashboard',
         pathMatch: 'full'

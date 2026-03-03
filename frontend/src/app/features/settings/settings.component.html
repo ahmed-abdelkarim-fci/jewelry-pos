@@ -120,6 +120,7 @@
             <mat-paginator
               [length]="totalHistoryElements"
               [pageSize]="historyPageSize"
+              [pageIndex]="currentHistoryPage"
               [pageSizeOptions]="[5, 10, 20]"
               (page)="onHistoryPageChange($event)">
             </mat-paginator>
@@ -156,51 +157,55 @@
             </mat-slide-toggle>
           </div>
 
-          <div class="toggle-row">
-            <div class="toggle-info">
-              <div class="toggle-title">{{ 'settings.system.hardware.title' | t }}</div>
-              <div class="toggle-subtitle">{{ 'settings.system.hardware.subtitle' | t }}</div>
+          @if (isSuperAdmin) {
+            <div class="toggle-row">
+              <div class="toggle-info">
+                <div class="toggle-title">{{ 'settings.system.hardware.title' | t }}</div>
+                <div class="toggle-subtitle">{{ 'settings.system.hardware.subtitle' | t }}</div>
+              </div>
+              <mat-slide-toggle
+                [checked]="hardwareEnabled"
+                (change)="onToggleHardware($event.checked)">
+              </mat-slide-toggle>
             </div>
-            <mat-slide-toggle
-              [checked]="hardwareEnabled"
-              (change)="onToggleHardware($event.checked)">
-            </mat-slide-toggle>
-          </div>
+          }
         }
       </mat-card-content>
     </mat-card>
 
     <!-- System Information -->
-    <mat-card class="settings-card">
-      <mat-card-header>
-        <mat-card-title>
-          <mat-icon>info</mat-icon>
-          {{ 'settings.info.title' | t }}
-        </mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <div class="info-row">
-          <span class="info-label">{{ 'settings.info.appName' | t }}</span>
-          <span class="info-value">AL Mohamadia Jewelry POS</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">{{ 'settings.info.version' | t }}</span>
-          <span class="info-value">1.0.0</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">{{ 'settings.info.db' | t }}</span>
-          <span class="info-value">H2 In-Memory</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">{{ 'settings.info.server' | t }}</span>
-          <span class="info-value">Spring Boot 3.4.1</span>
-        </div>
-        <div class="info-row">
-          <span class="info-label">{{ 'settings.info.frontend' | t }}</span>
-          <span class="info-value">Angular 17+</span>
-        </div>
-      </mat-card-content>
-    </mat-card>
+    @if (isSuperAdmin) {
+      <mat-card class="settings-card">
+        <mat-card-header>
+          <mat-card-title>
+            <mat-icon>info</mat-icon>
+            {{ 'settings.info.title' | t }}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="info-row">
+            <span class="info-label">{{ 'settings.info.appName' | t }}</span>
+            <span class="info-value">AL Mohamadia Jewelry POS</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">{{ 'settings.info.version' | t }}</span>
+            <span class="info-value">1.0.0</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">{{ 'settings.info.db' | t }}</span>
+            <span class="info-value">H2 In-Memory</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">{{ 'settings.info.server' | t }}</span>
+            <span class="info-value">Spring Boot 3.4.1</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">{{ 'settings.info.frontend' | t }}</span>
+            <span class="info-value">Angular 17+</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    }
 
     <!-- User Preferences -->
     <mat-card class="settings-card">

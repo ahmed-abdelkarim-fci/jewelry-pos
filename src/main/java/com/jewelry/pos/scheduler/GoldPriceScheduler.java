@@ -13,6 +13,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -101,5 +102,17 @@ public class GoldPriceScheduler {
             }
         }
         return null;
+    }
+
+    // Run daily at 2 AM to clean up old gold rate history
+    @Scheduled(cron = "0 0 2 * * ?")
+    public void cleanupOldGoldRates() {
+        try {
+            LocalDateTime oneMonthAgo = LocalDateTime.now().minusMonths(1);
+            goldRateService.deleteRatesOlderThan(oneMonthAgo);
+            log.info("✅ Cleaned up gold rates older than 1 month");
+        } catch (Exception e) {
+            log.error("❌ Failed to cleanup old gold rates: {}", e.getMessage());
+        }
     }
 }

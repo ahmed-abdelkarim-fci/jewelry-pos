@@ -22,8 +22,6 @@
     <mat-toolbar class="top-toolbar">
       <app-gold-ticker></app-gold-ticker>
       
-      <span class="spacer"></span>
-      
       <button mat-icon-button [matMenuTriggerFor]="notificationMenu">
         <mat-icon
           [matBadge]="(unreadCount$ | async) ?? 0"

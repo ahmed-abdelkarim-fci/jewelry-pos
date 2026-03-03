@@ -50,6 +50,14 @@ export interface SaleItemDTO {
   priceSnapshot: number;
 }
 
+export interface PageResponse<T> {
+  content: T[];
+  totalElements: number;
+  totalPages: number;
+  size: number;
+  number: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -59,6 +67,28 @@ export class PosService {
 
   getProductByBarcode(barcode: string): Observable<Product> {
     return this.http.post<Product>(`/api/pos/scan/${barcode}`, {});
+  }
+
+  searchProducts(
+    query?: string,
+    purity?: string,
+    type?: string,
+    minWeight?: number,
+    maxWeight?: number,
+    createdFrom?: string,
+    createdTo?: string,
+    page: number = 0,
+    size: number = 20
+  ): Observable<PageResponse<Product>> {
+    let url = `/api/products/search/advanced?page=${page}&size=${size}`;
+    if (query) url += `&query=${encodeURIComponent(query)}`;
+    if (purity) url += `&purity=${encodeURIComponent(purity)}`;
+    if (type) url += `&type=${encodeURIComponent(type)}`;
+    if (minWeight !== undefined) url += `&minWeight=${minWeight}`;
+    if (maxWeight !== undefined) url += `&maxWeight=${maxWeight}`;
+    if (createdFrom) url += `&createdFrom=${encodeURIComponent(createdFrom)}`;
+    if (createdTo) url += `&createdTo=${encodeURIComponent(createdTo)}`;
+    return this.http.get<PageResponse<Product>>(url);
   }
 
   createSale(saleRequest: SaleRequest): Observable<void> {

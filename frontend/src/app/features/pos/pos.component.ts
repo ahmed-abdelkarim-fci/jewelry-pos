@@ -12,6 +12,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { PosService, Product, OldGoldItem } from '../../core/services/pos.service';
 import { GoldRateService, GoldRate } from '../../core/services/gold-rate.service';
 import { AddOldGoldDialogComponent } from './add-old-gold-dialog/add-old-gold-dialog.component';
+import { ProductBrowserDialogComponent } from './product-browser-dialog/product-browser-dialog.component';
 import { I18nService } from '../../core/services/i18n.service';
 import { TPipe } from '../../shared/pipes/t.pipe';
 
@@ -133,6 +134,22 @@ export class PosComponent implements OnInit, AfterViewInit {
     if (index > -1) {
       this.oldGoldItems.splice(index, 1);
     }
+  }
+
+  openProductBrowser(): void {
+    const dialogRef = this.dialog.open(ProductBrowserDialogComponent, {
+      width: '95vw',
+      maxWidth: '1200px',
+      height: '90vh'
+    });
+
+    dialogRef.afterClosed().subscribe((product: Product) => {
+      if (product) {
+        this.addToCart(product);
+        this.lastScannedProduct = product;
+        this.barcodeInput.nativeElement.focus();
+      }
+    });
   }
 
   getSubtotal(): number {

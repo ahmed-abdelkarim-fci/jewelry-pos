@@ -12,6 +12,7 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { OldGoldService, ScrapInventory, OldGoldPurchase, ScrapPurification } from '../../core/services/old-gold.service';
+import { SupplierService, Supplier } from '../../core/services/supplier.service';
 import { I18nService } from '../../core/services/i18n.service';
 import { TPipe } from '../../shared/pipes/t.pipe';
 
@@ -39,11 +40,13 @@ import { TPipe } from '../../shared/pipes/t.pipe';
 export class OldGoldComponent implements OnInit {
   private fb = inject(FormBuilder);
   private oldGoldService = inject(OldGoldService);
+  private supplierService = inject(SupplierService);
   private snackBar = inject(MatSnackBar);
   private i18n = inject(I18nService);
 
   purities = ['KARAT_24', 'KARAT_21', 'KARAT_18'];
   scrapInventory: ScrapInventory[] = [];
+  suppliers: Supplier[] = [];
   
   // Purchase history
   purchases: OldGoldPurchase[] = [];
@@ -55,7 +58,7 @@ export class OldGoldComponent implements OnInit {
 
   // Purification history
   purifications: ScrapPurification[] = [];
-  purificationColumns = ['transactionDate', 'purity', 'weightOut', 'cashReceived', 'factoryName'];
+  purificationColumns = ['transactionDate', 'purity', 'weightOut', 'cashReceived', 'supplierId'];
   purificationTotalElements = 0;
   purificationPageSize = 20;
   purificationCurrentPage = 0;
@@ -74,14 +77,25 @@ export class OldGoldComponent implements OnInit {
     purity: ['', Validators.required],
     weightToSell: ['', [Validators.required, Validators.min(0.1)]],
     cashReceived: ['', [Validators.required, Validators.min(1)]],
-    factoryName: ['', Validators.required],
-    description: ['']
+    supplierId: ['', Validators.required]
   });
 
   ngOnInit(): void {
+    this.loadSuppliers();
     this.loadScrapInventory();
     this.loadPurchases();
     this.loadPurifications();
+  }
+
+  loadSuppliers(): void {
+    this.supplierService.getAllSuppliers().subscribe({
+      next: (suppliers) => {
+        this.suppliers = suppliers;
+      },
+      error: () => {
+        this.snackBar.open(this.i18n.t('suppliers.noData'), this.i18n.t('common.close'), { duration: 3000 });
+      }
+    });
   }
 
   loadScrapInventory(): void {

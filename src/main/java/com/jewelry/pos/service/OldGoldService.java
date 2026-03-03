@@ -6,9 +6,12 @@ import com.jewelry.pos.domain.entity.PurityEnum;
 import com.jewelry.pos.domain.entity.PurityEnumKaratConverter;
 import com.jewelry.pos.domain.entity.ScrapInventory;
 import com.jewelry.pos.domain.entity.ScrapPurification;
+import com.jewelry.pos.domain.entity.SupplierAccount;
+import com.jewelry.pos.domain.entity.TransactionTypeEnum;
 import com.jewelry.pos.domain.repository.OldGoldPurchaseRepository;
 import com.jewelry.pos.domain.repository.ScrapInventoryRepository;
 import com.jewelry.pos.domain.repository.ScrapPurificationRepository;
+import com.jewelry.pos.domain.repository.SupplierAccountRepository;
 import com.jewelry.pos.web.dto.OldGoldRequestDTO;
 import com.jewelry.pos.web.dto.PurificationRequestDTO;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +29,7 @@ public class OldGoldService {
     private final OldGoldPurchaseRepository purchaseRepository;
     private final ScrapInventoryRepository scrapRepository;
     private final ScrapPurificationRepository purificationRepository;
+    private final SupplierAccountRepository supplierAccountRepository;
 
     // --- 1. BUY LOGIC (Add to Scrap Box) ---
     @Transactional
@@ -81,9 +85,21 @@ public class OldGoldService {
         purification.setPurity(karatEnum);
         purification.setWeightOut(request.weightToSell());
         purification.setCashReceived(request.cashReceived());
-        purification.setFactoryName(request.factoryName());
+        purification.setSupplierId(request.supplierId());
 
-        purificationRepository.save(purification);
+        ScrapPurification savedPurification = purificationRepository.save(purification);
+
+        // D. Create Supplier Account Transaction (Payable - we sent weight to supplier, received cash)
+        SupplierAccount supplierAccount = new SupplierAccount();
+        supplierAccount.setSupplierId(request.supplierId());
+        supplierAccount.setTransactionDate(LocalDateTime.now());
+        supplierAccount.setStatement("Purification - Sent scrap to factory");
+        supplierAccount.setTransactionType(TransactionTypeEnum.PAYABLE);
+        supplierAccount.setWeight(request.weightToSell());
+        supplierAccount.setFees(request.cashReceived());
+        supplierAccount.setPurificationId(savedPurification.getId());
+        
+        supplierAccountRepository.save(supplierAccount);
     }
 
     // Helper: Safely add weight to inventory

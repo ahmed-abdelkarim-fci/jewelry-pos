@@ -120,16 +120,15 @@
               </mat-form-field>
 
               <mat-form-field appearance="outline">
-                <mat-label>{{ 'oldGold.factoryName' | t }}</mat-label>
-                <input matInput formControlName="factoryName">
+                <mat-label>{{ 'oldGold.supplier' | t }}</mat-label>
+                <mat-select formControlName="supplierId">
+                  @for (supplier of suppliers; track supplier.id) {
+                    <mat-option [value]="supplier.id">{{ supplier.name }}</mat-option>
+                  }
+                </mat-select>
                 <mat-icon matPrefix>business</mat-icon>
               </mat-form-field>
             </div>
-
-            <mat-form-field appearance="outline" class="full-width">
-              <mat-label>{{ 'oldGold.description' | t }}</mat-label>
-              <textarea matInput formControlName="description" rows="3"></textarea>
-            </mat-form-field>
 
             @if (purificationForm.get('cashReceived')?.value) {
               <div class="total-display income">
@@ -251,9 +250,9 @@
                   </td>
                 </ng-container>
 
-                <ng-container matColumnDef="factoryName">
-                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.table.factoryName' | t }}</th>
-                  <td mat-cell *matCellDef="let p">{{ p.factoryName || '-' }}</td>
+                <ng-container matColumnDef="supplierId">
+                  <th mat-header-cell *matHeaderCellDef>{{ 'oldGold.supplier' | t }}</th>
+                  <td mat-cell *matCellDef="let p">{{ p.supplierId || '-' }}</td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="purificationColumns"></tr>

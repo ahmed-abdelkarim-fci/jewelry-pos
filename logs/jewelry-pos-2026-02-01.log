@@ -1,0 +1,278 @@
+2026-02-01 00:07:44 WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h40m14s730ms737µs300ns).
+2026-02-01 00:07:58 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:07:58 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:08:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:08:47 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:09:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:09:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:27 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:28 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:29 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.BackupScheduler - Starting scheduled database backup...
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.BackupScheduler - Backup successful: backups/auto_backup_20260201_001030.zip
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:30 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:31 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:32 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:42 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:10:43 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:10:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:10:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:11:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:11:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:12:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:12:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:13:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:13:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:14:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:14:49 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:15:40 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-01 00:15:40 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-01 00:15:40 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-01 00:15:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-01 00:15:40 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-02-01 00:15:55 INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-02-01 00:15:55 INFO  c.jewelry.pos.JewelryShopApplication - Starting JewelryShopApplication using Java 21.0.6 with PID 18916 (C:\Silicon\Examples\jewelry_shop\jewelry\target\classes started by 148533 in C:\Silicon\Examples\jewelry_shop\jewelry)
+2026-02-01 00:15:55 INFO  c.jewelry.pos.JewelryShopApplication - No active profile set, falling back to 1 default profile: "default"
+2026-02-01 00:16:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-01 00:16:00 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 155 ms. Found 15 JPA repository interfaces.
+2026-02-01 00:16:02 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-02-01 00:16:02 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-02-01 00:16:02 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-02-01 00:16:02 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-02-01 00:16:02 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-02-01 00:16:02 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 6836 ms
+2026-02-01 00:16:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-02-01 00:16:03 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/jewelry_db user=ADMIN_JEWELER
+2026-02-01 00:16:03 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-02-01 00:16:04 INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:h2:file:./data/jewelry_db (H2 2.3)
+2026-02-01 00:16:04 WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: H2 2.3.232 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.224.
+2026-02-01 00:16:04 INFO  o.f.core.internal.command.DbValidate - Successfully validated 3 migrations (execution time 00:00.065s)
+2026-02-01 00:16:04 INFO  o.f.core.internal.command.DbMigrate - Current version of schema "PUBLIC": 3
+2026-02-01 00:16:04 INFO  o.f.core.internal.command.DbMigrate - Schema "PUBLIC" is up to date. No migration necessary.
+2026-02-01 00:16:04 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-01 00:16:04 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-02-01 00:16:04 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-02-01 00:16:04 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-02-01 00:16:05 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-01 00:16:07 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-02-01 00:16:07 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-01 00:16:08 INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-02-01 00:16:12 INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-02-01 00:16:12 WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-02-01 00:16:12 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-01 00:16:13 INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-02-01 00:16:14 INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/jewelry_db'
+2026-02-01 00:16:14 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-02-01 00:16:14 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-02-01 00:16:14 INFO  c.jewelry.pos.JewelryShopApplication - Started JewelryShopApplication in 19.746 seconds (process running for 29.216)
+2026-02-01 00:16:14 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:16:14 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:16:15 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:16:15 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:21:14 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:21:14 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:21:17 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-02-01 00:21:17 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-02-01 00:21:17 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-02-01 00:21:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:17 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:21:17 WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2026-02-01 00:21:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:19 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:21:41 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:41 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:21:44 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:44 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:21:55 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:22:01 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:22:01 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:22:03 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:24:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:24:38 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:24:38 INFO  c.j.pos.service.CheckoutService - Financial Transaction Persisted: Sale ID 0PBFGCN33QCQE | Total: 22534.25360 | Old Gold: 68000 | Net Paid: -45465.74640
+2026-02-01 00:24:38 INFO  c.j.pos.service.CheckoutService - Hardware disabled in settings. Skipping cash drawer/printer.
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:24:42 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:24:45 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:24:45 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:25:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:25:25 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:25:29 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:25:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:25:56 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:26:14 INFO  c.j.pos.scheduler.GoldPriceScheduler - Connecting to Gold Price Source: https://egypt.gold-price-today.com/
+2026-02-01 00:26:14 INFO  c.j.pos.scheduler.GoldPriceScheduler - ✅ Gold Price Updated: 24k = 7785 EGP
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT Token found for user: super_admin
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:26:15 INFO  c.j.p.s.JwtAuthenticationFilter - JWT authentication successful for user: super_admin
+2026-02-01 00:26:48 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-02-01 00:26:48 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-02-01 00:26:48 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-02-01 00:26:48 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-02-01 00:26:48 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

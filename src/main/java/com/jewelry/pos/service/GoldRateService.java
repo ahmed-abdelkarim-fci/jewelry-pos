@@ -53,4 +53,9 @@ public class GoldRateService {
             case K18 -> latestRate.getRate18k();
         };
     }
+
+    @Transactional
+    public void deleteRatesOlderThan(LocalDateTime cutoffDate) {
+        goldRateRepository.deleteByEffectiveDateBefore(cutoffDate);
+    }
 }

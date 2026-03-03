@@ -74,7 +74,7 @@ public class GoldRateController {
     @Operation(summary = "Get historical gold rates")
     @PreAuthorize("hasAuthority('PRODUCT_MANAGE')") // Only Managers care about history
     public ResponseEntity<Page<GoldRate>> getRateHistory(
-            @PageableDefault(size = 10, sort = "effectiveDate", direction = Sort.Direction.DESC) Pageable pageable
+            @PageableDefault(size = 10, sort = "lastModifiedDate", direction = Sort.Direction.DESC) Pageable pageable
     ) {
         return ResponseEntity.ok(goldRateService.getRateHistory(pageable));
     }

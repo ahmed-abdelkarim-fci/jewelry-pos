@@ -8,6 +8,7 @@ import com.jewelry.pos.web.mapper.ProductMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,7 +59,8 @@ public class InventoryService {
 
     // 1. Get All Products (Paged)
     public Page<ProductLiteDTO> getAllProducts(Pageable pageable) {
-        return productRepository.findAll(pageable)
+        Pageable pageOnly = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize());
+        return productRepository.findAllOrderByStatusPriorityAndLastModifiedDateDesc(pageOnly)
                 .map(productMapper::toLiteDTO);
     }
 

@@ -44,6 +44,11 @@ export class UserDialogComponent {
 
   form: FormGroup;
 
+  availableRoles = [
+    { value: 'ROLE_ADMIN', label: 'Manager' },
+    { value: 'ROLE_USER', label: 'User' }
+  ];
+
   constructor(@Inject(MAT_DIALOG_DATA) public data: User | null) {
     this.isEditMode = !!data;
 
@@ -52,7 +57,8 @@ export class UserDialogComponent {
       lastName: [data?.lastName || '', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
       username: [{ value: data?.username || '', disabled: this.isEditMode }, [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern(/^[a-zA-Z0-9_]*$/)]],
       password: ['', this.isEditMode ? [] : [Validators.required, Validators.minLength(6)]],
-      enabled: [data?.enabled ?? true]
+      enabled: [data?.enabled ?? true],
+      roles: [data?.roles || ['ROLE_USER'], [Validators.required]]
     });
   }
 
@@ -65,7 +71,7 @@ export class UserDialogComponent {
         firstName: this.form.get('firstName')?.value,
         lastName: this.form.get('lastName')?.value,
         enabled: this.form.get('enabled')?.value,
-        roles: this.data.roles // Keep existing roles on update
+        roles: this.form.get('roles')?.value
       };
 
       this.userService.updateUser(this.data.id, payload).subscribe({
@@ -87,7 +93,7 @@ export class UserDialogComponent {
       lastName: this.form.get('lastName')?.value,
       username: this.form.get('username')?.value,
       password: this.form.get('password')?.value,
-      roles: ['ROLE_USER'] // Default role for new users
+      roles: this.form.get('roles')?.value
     };
 
     this.userService.createUser(payload).subscribe({

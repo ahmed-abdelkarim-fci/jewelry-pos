@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { InventoryService, Product } from '../../core/services/inventory.service';
 import { ReportService } from '../../core/services/report.service';
 import { AddProductDialogComponent } from './add-product-dialog/add-product-dialog.component';
@@ -37,6 +39,8 @@ import { TPipe } from '../../shared/pipes/t.pipe';
     MatPaginatorModule,
     MatTooltipModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     TPipe
   ],
   templateUrl: './inventory.component.html',
@@ -50,7 +54,7 @@ export class InventoryComponent implements OnInit {
   private i18n = inject(I18nService);
 
   products: Product[] = [];
-  displayedColumns = ['barcode', 'modelName', 'type', 'purityEnum', 'grossWeight', 'estimatedPrice', 'status', 'actions'];
+  displayedColumns = ['barcode', 'modelName', 'type', 'purityEnum', 'grossWeight', 'estimatedPrice', 'status', 'createdDate', 'actions'];
   loading = true;
   totalElements = 0;
   pageSize = 20;
@@ -64,8 +68,8 @@ export class InventoryComponent implements OnInit {
   selectedType: string | null = null;
   minWeight: number | null = null;
   maxWeight: number | null = null;
-  createdFrom: string | null = null;
-  createdTo: string | null = null;
+  createdFrom: Date | null = null;
+  createdTo: Date | null = null;
   
   purities = ['K24', 'K21', 'K18'];
   types = [
@@ -92,8 +96,18 @@ export class InventoryComponent implements OnInit {
     this.loading = true;
 
     if (this.searching) {
-      const createdFrom = this.toIsoLocalDateTime(this.createdFrom);
-      const createdTo = this.toIsoLocalDateTime(this.createdTo);
+      let createdFrom: string | null = null;
+      let createdTo: string | null = null;
+
+      // Convert Date objects to ISO string format with full day ranges (inclusive)
+      if (this.createdFrom) {
+        const fromDate = new Date(this.createdFrom);
+        createdFrom = `${fromDate.getFullYear()}-${String(fromDate.getMonth() + 1).padStart(2, '0')}-${String(fromDate.getDate()).padStart(2, '0')}T00:00:00`;
+      }
+      if (this.createdTo) {
+        const toDate = new Date(this.createdTo);
+        createdTo = `${toDate.getFullYear()}-${String(toDate.getMonth() + 1).padStart(2, '0')}-${String(toDate.getDate()).padStart(2, '0')}T23:59:59`;
+      }
 
       // Use advanced search with filters
       this.inventoryService.searchProductsAdvanced(
@@ -108,10 +122,15 @@ export class InventoryComponent implements OnInit {
         this.pageSize
       ).subscribe({
         next: (response) => {
-          this.products = response.content;
-          this.totalElements = response.totalElements;
-          this.currentPage = response.number;
-          this.loading = false;
+          // If no results and weight filters are used, try fallback with ±20mg margin
+          if (response.content.length === 0 && (this.minWeight !== null || this.maxWeight !== null)) {
+            this.loadProductsWithWeightFallback(page, createdFrom, createdTo);
+          } else {
+            this.products = response.content;
+            this.totalElements = response.totalElements;
+            this.currentPage = response.number;
+            this.loading = false;
+          }
         },
         error: () => {
           this.snackBar.open(this.i18n.t('inventory.errorSearching'), this.i18n.t('common.close'), { duration: 3000 });
@@ -130,6 +149,54 @@ export class InventoryComponent implements OnInit {
       },
       error: () => {
         this.snackBar.open(this.i18n.t('inventory.errorLoading'), this.i18n.t('common.close'), { duration: 3000 });
+        this.loading = false;
+      }
+    });
+  }
+
+  private loadProductsWithWeightFallback(page: number, createdFromParam: string | null, createdToParam: string | null): void {
+    const margin = 0.02; // 20 milligrams = 0.02 grams
+    let adjustedMinWeight: number | undefined = undefined;
+    let adjustedMaxWeight: number | undefined = undefined;
+
+    // Apply margin based on what user entered
+    if (this.minWeight !== null && this.maxWeight !== null) {
+      // Both min and max: subtract from min, add to max
+      adjustedMinWeight = this.minWeight - margin;
+      adjustedMaxWeight = this.maxWeight + margin;
+    } else if (this.minWeight !== null) {
+      // Only min: apply margin to min
+      adjustedMinWeight = this.minWeight - margin;
+      adjustedMaxWeight = this.minWeight + margin;
+    } else if (this.maxWeight !== null) {
+      // Only max: apply margin to max
+      adjustedMinWeight = this.maxWeight - margin;
+      adjustedMaxWeight = this.maxWeight + margin;
+    }
+
+    // Ensure date parameters are already converted (they come from loadProducts)
+    const createdFrom = createdFromParam;
+    const createdTo = createdToParam;
+
+    this.inventoryService.searchProductsAdvanced(
+      this.searchQuery.trim() || undefined,
+      this.selectedPurity || undefined,
+      this.selectedType || undefined,
+      adjustedMinWeight,
+      adjustedMaxWeight,
+      createdFrom || undefined,
+      createdTo || undefined,
+      page,
+      this.pageSize
+    ).subscribe({
+      next: (response) => {
+        this.products = response.content;
+        this.totalElements = response.totalElements;
+        this.currentPage = response.number;
+        this.loading = false;
+      },
+      error: () => {
+        this.snackBar.open(this.i18n.t('inventory.errorSearching'), this.i18n.t('common.close'), { duration: 3000 });
         this.loading = false;
       }
     });
@@ -160,6 +227,10 @@ export class InventoryComponent implements OnInit {
   
   getTypeLabel(type: string): string {
     return this.i18n.t(`jewelryType.${type}`);
+  }
+
+  getStatusLabel(status: string): string {
+    return this.i18n.t(`productStatus.${status}`);
   }
 
   onPageChange(event: PageEvent): void {
@@ -227,16 +298,32 @@ export class InventoryComponent implements OnInit {
   }
 
   formatCurrency(value: number): string {
-    const locale = this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US';
-    return value.toLocaleString(locale, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+    // Always use English numbers for easy reading
+    return value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
   }
 
   getEstimatedPriceTooltip(): string {
     return this.i18n.t('inventory.tooltip.estPriceFormula');
   }
 
+  formatDate(dateString: string): string {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(this.i18n.currentLang === 'ar' ? 'ar-EG' : 'en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  }
+
   private toIsoLocalDateTime(value: string | null): string | null {
     if (!value) return null;
+
+    // HTML date input returns: YYYY-MM-DD
+    // For date-only filtering, we need to make it inclusive for the full day
+    if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+      // This is a date-only value, will be handled in loadProducts
+      return value;
+    }
 
     // HTML datetime-local typically returns: YYYY-MM-DDTHH:mm (no seconds)
     // Spring ISO.DATE_TIME parsing is more reliable with seconds included.

@@ -81,3 +81,28 @@ table {
 .mat-mdc-row:hover {
   cursor: pointer;
 }
+
+// Status color coding
+mat-chip.status-available {
+  background-color: #4caf50 !important;
+  color: white !important;
+}
+
+mat-chip.status-reserved {
+  background-color: #ff9800 !important;
+  color: white !important;
+}
+
+mat-chip.status-sold {
+  background-color: #f44336 !important;
+  color: white !important;
+}
+
+.gold-text {
+  color: #d4af37;
+  font-weight: 500;
+}
+
+.weight-field {
+  max-width: 180px;
+}

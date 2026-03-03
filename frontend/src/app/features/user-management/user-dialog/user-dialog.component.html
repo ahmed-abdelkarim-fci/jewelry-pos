@@ -29,6 +29,15 @@
       </mat-form-field>
     </div>
 
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>{{ 'users.dialog.roles' | t }}</mat-label>
+      <mat-select formControlName="roles" multiple>
+        @for (role of availableRoles; track role.value) {
+          <mat-option [value]="role.value">{{ role.label }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
     @if (isEditMode) {
       <mat-checkbox formControlName="enabled">{{ 'users.dialog.enabled' | t }}</mat-checkbox>
     }

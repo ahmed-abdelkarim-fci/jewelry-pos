@@ -49,7 +49,7 @@ public class SalesController {
             @RequestParam(required = false) String query,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fromDate,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate toDate,
-            @PageableDefault(size = 20, sort = "transactionDate", direction = Sort.Direction.DESC) Pageable pageable
+            @PageableDefault(size = 20, sort = "lastModifiedDate", direction = Sort.Direction.DESC) Pageable pageable
     ) {
         return ResponseEntity.ok(salesManagementService.searchSales(query, fromDate, toDate, pageable));
     }

@@ -1,0 +1,118 @@
+<div class="personal-accounts-details-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ 'personalAccounts.personDetails' | t : { name: personName } }}</mat-card-title>
+      <mat-card-subtitle>{{ 'personalAccounts.subtitle' | t }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="top-actions">
+        <button mat-stroked-button (click)="back()">
+          <mat-icon>arrow_back</mat-icon>
+          {{ 'personalAccounts.backToList' | t }}
+        </button>
+      </div>
+
+      <div class="add-form">
+        <h3>{{ 'personalAccounts.addTransaction' | t }}</h3>
+
+        <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'personalAccounts.transactionDate' | t }}</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="transactionDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'personalAccounts.transactionType' | t }}</mat-label>
+              <mat-select formControlName="transactionType" required>
+                <mat-option value="RECEIVABLE">{{ 'personalAccounts.receivable' | t }}</mat-option>
+                <mat-option value="PAYABLE">{{ 'personalAccounts.payable' | t }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'personalAccounts.weight' | t }}</mat-label>
+              <input matInput type="number" step="0.001" formControlName="weight">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'personalAccounts.money' | t }}</mat-label>
+              <input matInput type="number" step="0.01" formControlName="money">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ 'personalAccounts.statement' | t }}</mat-label>
+            <textarea matInput rows="2" formControlName="statement"></textarea>
+          </mat-form-field>
+
+          <div class="form-actions">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.valid">
+              <mat-icon>save</mat-icon>
+              {{ 'common.add' | t }}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <table mat-table [dataSource]="transactions" class="mat-elevation-z2">
+          <ng-container matColumnDef="transactionDate">
+            <th mat-header-cell *matHeaderCellDef>{{ 'personalAccounts.table.date' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatDateTime(row.transactionDate) }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="statement">
+            <th mat-header-cell *matHeaderCellDef>{{ 'personalAccounts.table.statement' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ row.statement || '-' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="transactionType">
+            <th mat-header-cell *matHeaderCellDef>{{ 'personalAccounts.table.type' | t }}</th>
+            <td mat-cell *matCellDef="let row">
+              <span [class]="'status-badge ' + row.transactionType.toLowerCase()">
+                {{ 'transactionType.' + row.transactionType | t }}
+              </span>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef>{{ 'personalAccounts.table.weight' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatWeight(row.weight) }}g</td>
+          </ng-container>
+
+          <ng-container matColumnDef="money">
+            <th mat-header-cell *matHeaderCellDef>{{ 'personalAccounts.table.money' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatCurrency(row.money) }} {{ 'unit.egp' | t }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>{{ 'personalAccounts.table.actions' | t }}</th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="warn" (click)="deleteTransaction(row.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator
+          [length]="totalElements"
+          [pageSize]="pageSize"
+          [pageIndex]="currentPage"
+          [pageSizeOptions]="[10, 20, 50]"
+          (page)="onPageChange($event)">
+        </mat-paginator>
+
+        <div *ngIf="loading" class="loading">{{ 'personalAccounts.loading' | t }}</div>
+        <div *ngIf="!loading && transactions.length === 0" class="no-data">{{ 'personalAccounts.noData' | t }}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

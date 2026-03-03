@@ -47,7 +47,7 @@ export class UserService {
     const params = new HttpParams()
       .set('page', page.toString())
       .set('size', size.toString())
-      .set('sort', 'createdDate');
+      .set('sort', 'lastModifiedDate,desc');
     return this.http.get<PageResponse<User>>(`${this.API_URL}`, { params });
   }
 

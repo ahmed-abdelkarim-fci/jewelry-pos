@@ -1,0 +1,145 @@
+<div class="home-expenses-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ 'homeExpenses.title' | t }}</mat-card-title>
+      <mat-card-subtitle>{{ 'homeExpenses.subtitle' | t }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="summary-section" *ngIf="summary">
+        <h3>{{ 'homeExpenses.summary' | t }}</h3>
+        <div class="summary-grid">
+          <div class="summary-card">
+            <span class="label">{{ 'homeExpenses.totalMoneyReceivable' | t }}</span>
+            <span class="value receivable">{{ formatCurrency(summary.totalMoneyReceivable) }} {{ 'unit.egp' | t }}</span>
+          </div>
+          <div class="summary-card">
+            <span class="label">{{ 'homeExpenses.totalMoneyPayable' | t }}</span>
+            <span class="value payable">{{ formatCurrency(summary.totalMoneyPayable) }} {{ 'unit.egp' | t }}</span>
+          </div>
+          <div class="summary-card">
+            <span class="label">{{ 'homeExpenses.netMoney' | t }}</span>
+            <span class="value">{{ formatCurrency(summary.netMoney) }} {{ 'unit.egp' | t }}</span>
+          </div>
+          <div class="summary-card">
+            <span class="label">{{ 'homeExpenses.totalWeightReceivable' | t }}</span>
+            <span class="value receivable">{{ formatWeight(summary.totalWeightReceivable) }}g</span>
+          </div>
+          <div class="summary-card">
+            <span class="label">{{ 'homeExpenses.totalWeightPayable' | t }}</span>
+            <span class="value payable">{{ formatWeight(summary.totalWeightPayable) }}g</span>
+          </div>
+          <div class="summary-card">
+            <span class="label">{{ 'homeExpenses.netWeight' | t }}</span>
+            <span class="value">{{ formatWeight(summary.netWeight) }}g</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions-bar">
+        <button mat-raised-button color="primary" (click)="toggleAddForm()">
+          <mat-icon>{{ showAddForm ? 'close' : 'add' }}</mat-icon>
+          {{ (showAddForm ? 'common.cancel' : 'homeExpenses.addTransaction') | t }}
+        </button>
+      </div>
+
+      <div class="add-form" *ngIf="showAddForm">
+        <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+          <div class="form-row">
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'homeExpenses.transactionDate' | t }}</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="transactionDate" required>
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'homeExpenses.transactionType' | t }}</mat-label>
+              <mat-select formControlName="transactionType" required>
+                <mat-option value="RECEIVABLE">{{ 'homeExpenses.receivable' | t }}</mat-option>
+                <mat-option value="PAYABLE">{{ 'homeExpenses.payable' | t }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'homeExpenses.weight' | t }}</mat-label>
+              <input matInput type="number" formControlName="weight" step="0.001">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'homeExpenses.money' | t }}</mat-label>
+              <input matInput type="number" formControlName="money" step="0.01">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>{{ 'homeExpenses.description' | t }}</mat-label>
+            <textarea matInput formControlName="description" rows="2"></textarea>
+          </mat-form-field>
+
+          <div class="form-actions">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.valid">
+              <mat-icon>save</mat-icon>
+              {{ 'common.add' | t }}
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="table-container">
+        <table mat-table [dataSource]="expenses" class="mat-elevation-z2">
+          <ng-container matColumnDef="transactionDate">
+            <th mat-header-cell *matHeaderCellDef>{{ 'homeExpenses.table.date' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatDateTime(row.transactionDate) }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>{{ 'homeExpenses.table.description' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ row.description || '-' }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="transactionType">
+            <th mat-header-cell *matHeaderCellDef>{{ 'homeExpenses.table.type' | t }}</th>
+            <td mat-cell *matCellDef="let row">
+              <span [class]="'status-badge ' + row.transactionType.toLowerCase()">
+                {{ 'transactionType.' + row.transactionType | t }}
+              </span>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef>{{ 'homeExpenses.table.weight' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatWeight(row.weight) }}g</td>
+          </ng-container>
+
+          <ng-container matColumnDef="money">
+            <th mat-header-cell *matHeaderCellDef>{{ 'homeExpenses.table.money' | t }}</th>
+            <td mat-cell *matCellDef="let row">{{ formatCurrency(row.money) }} {{ 'unit.egp' | t }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>{{ 'homeExpenses.table.actions' | t }}</th>
+            <td mat-cell *matCellDef="let row">
+              <button mat-icon-button color="warn" (click)="deleteTransaction(row.id)">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator
+          [length]="totalElements"
+          [pageSize]="pageSize"
+          [pageSizeOptions]="[10, 20, 50]"
+          (page)="onPageChange($event)">
+        </mat-paginator>
+
+        <div *ngIf="loading" class="loading">{{ 'homeExpenses.loading' | t }}</div>
+        <div *ngIf="!loading && expenses.length === 0" class="no-data">{{ 'homeExpenses.noData' | t }}</div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

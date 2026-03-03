@@ -61,7 +61,7 @@ export class AddProductDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: Product | null) {
     this.isEditMode = !!data;
     this.productForm = this.fb.group({
-      barcode: [{value: data?.barcode || '', disabled: this.isEditMode}, [Validators.pattern(/^[A-Za-z0-9-]+$/)]],
+      barcode: [{value: data?.barcode || '', disabled: true}, [Validators.pattern(/^[A-Za-z0-9-]+$/)]],
       modelName: [data?.modelName || '', [Validators.required, Validators.maxLength(100)]],
       purityEnum: [data?.purityEnum || '', Validators.required],
       type: [data?.type || '', Validators.required],

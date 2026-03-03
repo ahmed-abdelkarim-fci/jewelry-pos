@@ -27,10 +27,10 @@ public abstract class Auditable {
     private LocalDateTime createdDate;
 
     @LastModifiedBy
-    @Column(insertable = false)
+    @Column
     private String lastModifiedBy;
 
     @LastModifiedDate
-    @Column(insertable = false)
+    @Column
     private LocalDateTime lastModifiedDate;
 }

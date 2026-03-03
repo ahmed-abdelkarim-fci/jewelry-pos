@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.data.domain.Sort;
 
 @RestController
 @RequestMapping("/api/old-gold")
@@ -47,7 +48,7 @@ public class OldGoldController {
     @PreAuthorize("hasAuthority('SALE_EXECUTE')")
     @Operation(summary = "Get all old gold purchases with pagination")
     public ResponseEntity<?> getAllPurchases(
-            @org.springframework.data.web.PageableDefault(size = 20, sort = "transactionDate", direction = org.springframework.data.domain.Sort.Direction.DESC) 
+            @org.springframework.data.web.PageableDefault(size = 20, sort = "lastModifiedDate", direction = Sort.Direction.DESC)
             org.springframework.data.domain.Pageable pageable) {
         return ResponseEntity.ok(oldGoldService.getAllPurchases(pageable));
     }
@@ -56,7 +57,7 @@ public class OldGoldController {
     @PreAuthorize("hasAuthority('PRODUCT_MANAGE')")
     @Operation(summary = "Get all scrap purifications with pagination")
     public ResponseEntity<?> getAllPurifications(
-            @org.springframework.data.web.PageableDefault(size = 20, sort = "transactionDate", direction = org.springframework.data.domain.Sort.Direction.DESC)
+            @org.springframework.data.web.PageableDefault(size = 20, sort = "lastModifiedDate", direction = Sort.Direction.DESC)
             org.springframework.data.domain.Pageable pageable) {
         return ResponseEntity.ok(oldGoldService.getAllPurifications(pageable));
     }

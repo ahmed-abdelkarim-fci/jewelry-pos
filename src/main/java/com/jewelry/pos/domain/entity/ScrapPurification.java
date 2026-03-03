@@ -35,5 +35,6 @@ public class ScrapPurification extends Auditable {
     @Column(nullable = false, precision = 12, scale = 2)
     private BigDecimal cashReceived;
 
-    private String factoryName;
+    @Column(length = 26)
+    private String supplierId;
 }

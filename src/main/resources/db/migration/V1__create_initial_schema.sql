@@ -187,7 +187,7 @@ CREATE TABLE scrap_purification (
     purity VARCHAR(10) NOT NULL,
     weight_out DECIMAL(10,3) NOT NULL,
     cash_received DECIMAL(12,2) NOT NULL,
-    factory_name VARCHAR(255),
+    supplier_id VARCHAR(26),
     created_by VARCHAR(100),
     created_date TIMESTAMP,
     last_modified_by VARCHAR(100),
@@ -195,9 +195,93 @@ CREATE TABLE scrap_purification (
 );
 
 CREATE INDEX idx_scrap_purification_date ON scrap_purification(transaction_date DESC);
+CREATE INDEX idx_scrap_purification_supplier ON scrap_purification(supplier_id);
 
 -- =====================================================
--- 6. SYSTEM SETTINGS TABLE
+-- 6. SUPPLIER MANAGEMENT TABLES
+-- =====================================================
+
+-- Supplier Table
+CREATE TABLE supplier (
+    id VARCHAR(26) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(50),
+    address VARCHAR(500),
+    notes VARCHAR(1000),
+    created_by VARCHAR(100),
+    created_date TIMESTAMP,
+    last_modified_by VARCHAR(100),
+    last_modified_date TIMESTAMP
+);
+
+CREATE INDEX idx_supplier_name ON supplier(name);
+
+-- =====================================================
+-- 7. PERSONAL ACCOUNTS TABLE
+-- =====================================================
+
+CREATE TABLE personal_account (
+    id VARCHAR(26) PRIMARY KEY,
+    person_name VARCHAR(255) NOT NULL,
+    transaction_date TIMESTAMP NOT NULL,
+    description VARCHAR(1000),
+    transaction_type VARCHAR(20) NOT NULL,
+    weight DECIMAL(10,3) DEFAULT 0,
+    money DECIMAL(12,2) DEFAULT 0,
+    created_by VARCHAR(100),
+    created_date TIMESTAMP,
+    last_modified_by VARCHAR(100),
+    last_modified_date TIMESTAMP
+);
+
+CREATE INDEX idx_personal_account_person ON personal_account(person_name);
+CREATE INDEX idx_personal_account_date ON personal_account(transaction_date DESC);
+
+-- =====================================================
+-- 8. SUPPLIER ACCOUNTS TABLE
+-- =====================================================
+
+CREATE TABLE supplier_account (
+    id VARCHAR(26) PRIMARY KEY,
+    supplier_id VARCHAR(26) NOT NULL,
+    transaction_date TIMESTAMP NOT NULL,
+    statement VARCHAR(1000),
+    transaction_type VARCHAR(20) NOT NULL,
+    weight DECIMAL(10,3) DEFAULT 0,
+    fees DECIMAL(12,2) DEFAULT 0,
+    number_of_pieces INTEGER,
+    purification_id VARCHAR(26),
+    created_by VARCHAR(100),
+    created_date TIMESTAMP,
+    last_modified_by VARCHAR(100),
+    last_modified_date TIMESTAMP
+);
+
+CREATE INDEX idx_supplier_account_supplier ON supplier_account(supplier_id);
+CREATE INDEX idx_supplier_account_date ON supplier_account(transaction_date DESC);
+CREATE INDEX idx_supplier_account_purification ON supplier_account(purification_id);
+
+-- =====================================================
+-- 9. HOME EXPENSES TABLE
+-- =====================================================
+
+CREATE TABLE home_expense (
+    id VARCHAR(26) PRIMARY KEY,
+    transaction_date TIMESTAMP NOT NULL,
+    description VARCHAR(1000),
+    transaction_type VARCHAR(20) NOT NULL,
+    weight DECIMAL(10,3) DEFAULT 0,
+    money DECIMAL(12,2) DEFAULT 0,
+    created_by VARCHAR(100),
+    created_date TIMESTAMP,
+    last_modified_by VARCHAR(100),
+    last_modified_date TIMESTAMP
+);
+
+CREATE INDEX idx_home_expense_date ON home_expense(transaction_date DESC);
+
+-- =====================================================
+-- 10. SYSTEM SETTINGS TABLE
 -- =====================================================
 
 CREATE TABLE system_setting (
@@ -206,7 +290,7 @@ CREATE TABLE system_setting (
 );
 
 -- =====================================================
--- 7. INITIAL DATA SEEDING
+-- 11. INITIAL DATA SEEDING
 -- =====================================================
 
 -- Insert default scrap inventory records
